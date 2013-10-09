@@ -5,7 +5,7 @@ date: 2013-10-08 13:07
 comments: false
 categories: future cities hackathon, urban data
 ---
-We were honored to be a platform partner and host the data for the future cities hackathon organised by [Data Science London](http://futurecitieshackathon.com/) during the weekend of the 5th - 6th of October.
+We were honored to be a platform partner and host the data for [The Future Cities Hackathon: Open Urban Data for The Citizens](http://futurecitieshackathon.com/) a collaborative project by [Data Science London](http://datasciencelondon.org/) during the weekend of the 5th - 6th of October.
 
 Granular Data sets where provided by the City of Westminster by street and a period of around a year.
 The full list data sets are below:
@@ -39,7 +39,7 @@ There were many more amazing projects submitted that could make the lives of peo
 
 Unfortunately, getting the data in the first place was incredibly difficult.  The painful process and route that it took to get to us was described by Carlos in his talk.  The data was passsed between a multitude of intermediary companies and crossed the Oceans a few times in the below manner
 
-"Sensor device > American Company > people > DB > people > ETL > people> CSV > Council > people > ETL> Big Massive IT vendor > DW > people  > CSV > Sharepoint  > Dropbox > and... us !!! "
+"Sensor device >  Data Provider > people > DB > people > ETL > people> CSV > public entity> people > ETL>  IT Vendor> DW > people > CSV > Sharepoint > Dropbox > and… us !!!"
 
 This process harms everyone from the council to residents. We can and need to simplify this process.
 

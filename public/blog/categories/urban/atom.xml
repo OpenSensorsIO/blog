@@ -4,7 +4,7 @@
   <title><![CDATA[Category: urban | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/urban/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2013-10-08T17:54:15+01:00</updated>
+  <updated>2013-10-09T09:22:18+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.opensensors.io/blog/2013/10/08/future-cities/"/>
     <updated>2013-10-08T13:07:00+01:00</updated>
     <id>http://blog.opensensors.io/blog/2013/10/08/future-cities</id>
-    <content type="html"><![CDATA[<p>We were honored to be a platform partner and host the data for the future cities hackathon organised by <a href="http://futurecitieshackathon.com/">Data Science London</a> during the weekend of the 5th &ndash; 6th of October.</p>
+    <content type="html"><![CDATA[<p>We were honored to be a platform partner and host the data for <a href="http://futurecitieshackathon.com/">The Future Cities Hackathon: Open Urban Data for The Citizens</a> a collaborative project by <a href="http://datasciencelondon.org/">Data Science London</a> during the weekend of the 5th &ndash; 6th of October.</p>
 
 <p>Granular Data sets where provided by the City of Westminster by street and a period of around a year.
 The full list data sets are below:</p>
@@ -59,7 +59,7 @@ The full list data sets are below:</p>
 
 <p>Unfortunately, getting the data in the first place was incredibly difficult.  The painful process and route that it took to get to us was described by Carlos in his talk.  The data was passsed between a multitude of intermediary companies and crossed the Oceans a few times in the below manner</p>
 
-<p>&ldquo;Sensor device > American Company > people > DB > people > ETL > people> CSV > Council > people > ETL> Big Massive IT vendor > DW > people  > CSV > Sharepoint  > Dropbox > and&hellip; us !!! &rdquo;</p>
+<p>&ldquo;Sensor device >  Data Provider > people > DB > people > ETL > people> CSV > public entity> people > ETL>  IT Vendor> DW > people > CSV > Sharepoint > Dropbox > and… us !!!&rdquo;</p>
 
 <p>This process harms everyone from the council to residents. We can and need to simplify this process.</p>
 
