@@ -1,24 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[OpenSensors.IO]]></title>
-  <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
-  <link href="http://blog.opensensors.io/"/>
-  <updated>2013-11-26T00:36:55+00:00</updated>
-  <id>http://blog.opensensors.io/</id>
-  <author>
-    <name><![CDATA[OpenSensors.IO]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The Big Red Button - OpenSensors.IO</title>
+  <meta name="author" content="OpenSensors.IO">
 
   
-  <entry>
-    <title type="html"><![CDATA[The Big Red Button]]></title>
-    <link href="http://blog.opensensors.io/blog/2013/11/25/the-big-red-button/"/>
-    <updated>2013-11-25T23:48:00+00:00</updated>
-    <id>http://blog.opensensors.io/blog/2013/11/25/the-big-red-button</id>
-    <content type="html"><![CDATA[<p>I have a development harness for my Clojure systems called <a href="https://github.com/juxt/jig?source=c">Jig</a>. Jig has
+  <meta name="description" content="I have a development harness for my Clojure systems called Jig. Jig has
+a feature that allows me to teardown and reinitialize the entire state
+of the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.opensensors.io/blog/2013/11/25/the-big-red-button/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45360850-2', 'opensensors.io');
+  ga('send', 'pageview');
+
+</script>
+  <link href="/atom.xml" rel="alternate" title="OpenSensors.IO" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">OpenSensors.IO</a></h1>
+  
+    <h2>News and Updates about OpenSensors.IO</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.opensensors.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="http://opensensors.io">Home</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      
+        <h1 class="entry-title">The Big Red Button</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-25T23:48:00+00:00" pubdate data-updated="true">Nov 25<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I have a development harness for my Clojure systems called <a href="https://github.com/juxt/jig?source=c">Jig</a>. Jig has
 a feature that allows me to teardown and reinitialize the entire state
 of the system, while loading in any code that has changed since the last
 reset. It allows for a rapid development experience approaching that of
@@ -36,7 +124,7 @@ trainee pilot, level off and gracefully descend to the ground</li>
 </ul>
 
 
-<p><img src="http://blog.opensensors.io/images/Big_Red_Button.jpg" /></p>
+<p><img src="/images/Big_Red_Button.jpg" /></p>
 
 <p>The Big Red Button at opensensors was bought from <a href="http://www.dreamcheeky.com/big-red-button">Dream Cheeky</a></p>
 
@@ -211,81 +299,122 @@ and start pressing the button. If you&rsquo;ve done everything correctly,
 you&rsquo;ll see your messages in your browser.</p>
 
 <p>Have fun!</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[future cities]]></title>
-    <link href="http://blog.opensensors.io/blog/2013/10/08/future-cities/"/>
-    <updated>2013-10-08T13:07:00+01:00</updated>
-    <id>http://blog.opensensors.io/blog/2013/10/08/future-cities</id>
-    <content type="html"><![CDATA[<p>We were honored to be a platform partner and host the data for <a href="http://futurecitieshackathon.com/">The Future Cities Hackathon: Open Urban Data for The Citizens</a> a collaborative project by <a href="http://datasciencelondon.org/">Data Science London</a> during the weekend of the 5th &ndash; 6th of October.</p>
 
-<p>Granular Data sets where provided by the City of Westminster by street and a period of around a year.
-The full list data sets are below:</p>
+<span class="byline author vcard">Posted by <span class="fn">Malcolm Sparks</span></span>
 
-<ul>
-<li>Anti Social Behavior data</li>
-<li>Dog fouling</li>
-<li>Graffiti</li>
-<li>Parking Sensors</li>
-<li>Parking Tickets issued</li>
-<li>Crowd Dynamics data measuring foot falls once an hour</li>
-<li>Parking Cashless transactions data</li>
-</ul>
+      
 
 
-<p>Participants spent the weekend working on projects aimed to improve the experiences of City of Westminster residents.  There were approximately 15 submissions in order to win one of 3 prizes.  The prize categories were for Statistical modelling, Data Visualisation and a Windows phone application.  The quality of the final submissions were outstanding.</p>
-
-<p>A few of the submissions were</p>
-
-<ul>
-<li><p>Team &lsquo;Fjölmenni&rsquo;, who won the Statistical modeling challenge, made a &lsquo;CrowdWalk&rsquo; application that predicted how busy streets would be by time and day.</p></li>
-<li><p>Team &lsquo;Kung fu pandas&rsquo; made a number of statistical models on parking spaces, one of the most interesting was finding under utilized car parking spaces.</p></li>
-</ul>
 
 
-<p><img src="http://blog.opensensors.io/images/IMAG0731.jpg" /></p>
-
-<ul>
-<li>Team &lsquo;Street Sweep&rsquo; won the best Visualisation catergory and made a fantastic game 3d game using the opensensors.io api and open street map.  The game allowed players to clean dog fouling, vomit, etc from real data</li>
-</ul>
 
 
-<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/jWkxDIYp6sU "></iframe></div>
 
 
-<p>There were many more amazing projects submitted that could make the lives of people of Westminster so much easier.</p>
-
-<h3>The Problem</h3>
-
-<p>Unfortunately, getting the data in the first place was incredibly difficult.  The painful process and route that it took to get to us was described by Carlos in his talk.  The data was passsed between a multitude of intermediary companies and crossed the Oceans a few times in the below manner</p>
-
-<p>&ldquo;Sensor device >  Data Provider > people > DB > people > ETL > people> CSV > public entity> people > ETL>  IT Vendor> DW > people > CSV > Sharepoint > Dropbox > and… us !!!&rdquo;</p>
-
-<p>This process harms everyone from the council to residents. We can and need to simplify this process.</p>
-
-<p>Smart environments need not be a dream of the distant future if we open the data and enable businesses and developers to build services for the benefit of everyone.</p>
-]]></content>
-  </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://blog.opensensors.io/blog/2013/10/07/hello-world/"/>
-    <updated>2013-10-07T06:06:00+01:00</updated>
-    <id>http://blog.opensensors.io/blog/2013/10/07/hello-world</id>
-    <content type="html"><![CDATA[<h2>Introducing <a href="http://opensensors.io">OpenSensors.IO</a></h2>
 
-<p>Opensensors.IO is a project by <a href="http://atomicdatalabs.com/">Atomic Data Labs</a> built to simplify large scale publishing and subscribing of device data. We want to make available, under open data licences, the real time and historical data generated by devices all around us.</p>
 
-<p>The motivation for this project is to enable developers and citizens to easily unlock the value of data generated all around us.  This data should be communally shared so that anyone can build services for their communities.</p>
+<time datetime="2013-11-25T23:48:00+00:00" pubdate data-updated="true">Nov 25<span>th</span>, 2013</time>
+      
 
-<p>The &lsquo;Smart Cities / Future Cities&rsquo; revolution need not be about expensive infastructure projects that will cost governments millions or even billions to build.  Devices such as Parking Sensors, Energy Consumption devices as well as Pollution monitoring sensors already log and monitor most urban areas. Start ups and developers will be able to build smart applications from data from these devices alone if given the chance to get access to them.</p>
-
-<p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
-
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#x6c;&#108;&#x6f;&#64;&#x6f;&#x70;&#101;&#x6e;&#115;&#101;&#110;&#x73;&#111;&#x72;&#115;&#46;&#105;&#x6f;">&#x68;&#x65;&#108;&#108;&#111;&#x40;&#111;&#112;&#101;&#x6e;&#115;&#101;&#x6e;&#115;&#111;&#114;&#115;&#x2e;&#x69;&#111;</a>&rsquo; to join our private beta.</p>
-]]></content>
-  </entry>
+<span class="categories">
   
-</feed>
+    <a class='category' href='/blog/categories/big-red-button/'>Big-Red-Button</a>, <a class='category' href='/blog/categories/tutorial/'>Tutorial,</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.opensensors.io/blog/2013/11/25/the-big-red-button/" data-via="opensensorsio" data-counturl="http://blog.opensensors.io/blog/2013/11/25/the-big-red-button/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2013/10/08/future-cities/" title="Previous Post: future cities">&laquo; future cities</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+  <h1>Twitter</h1>
+  <a class="twitter-timeline" href="https://twitter.com/OpenSensorsIO" data-widget-id="387067353206226945">Tweets by @OpenSensorsIO</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/25/the-big-red-button/">The Big Red Button</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/future-cities/">Future Cities</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/07/hello-world/">Hello World</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - OpenSensors.IO -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
