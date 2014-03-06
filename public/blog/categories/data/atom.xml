@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: data | OpenSensors.IO]]></title>
+  <title><![CDATA[Category: Data | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/data/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2013-11-26T00:36:55+00:00</updated>
+  <updated>2014-03-06T14:28:37+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[future cities]]></title>
+    <title type="html"><![CDATA[Future Cities]]></title>
     <link href="http://blog.opensensors.io/blog/2013/10/08/future-cities/"/>
     <updated>2013-10-08T13:07:00+01:00</updated>
     <id>http://blog.opensensors.io/blog/2013/10/08/future-cities</id>

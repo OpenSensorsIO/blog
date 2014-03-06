@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2013-11-26T00:36:55+00:00</updated>
+  <updated>2014-03-06T14:28:37+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -215,7 +215,7 @@ you&rsquo;ll see your messages in your browser.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[future cities]]></title>
+    <title type="html"><![CDATA[Future Cities]]></title>
     <link href="http://blog.opensensors.io/blog/2013/10/08/future-cities/"/>
     <updated>2013-10-08T13:07:00+01:00</updated>
     <id>http://blog.opensensors.io/blog/2013/10/08/future-cities</id>
@@ -284,7 +284,7 @@ The full list data sets are below:</p>
 
 <p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
 
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#x6c;&#108;&#x6f;&#64;&#x6f;&#x70;&#101;&#x6e;&#115;&#101;&#110;&#x73;&#111;&#x72;&#115;&#46;&#105;&#x6f;">&#x68;&#x65;&#108;&#108;&#111;&#x40;&#111;&#112;&#101;&#x6e;&#115;&#101;&#x6e;&#115;&#111;&#114;&#115;&#x2e;&#x69;&#111;</a>&rsquo; to join our private beta.</p>
+<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x68;&#x65;&#x6c;&#108;&#111;&#x40;&#111;&#112;&#101;&#110;&#115;&#101;&#110;&#x73;&#111;&#x72;&#115;&#x2e;&#105;&#x6f;">&#x68;&#x65;&#x6c;&#108;&#x6f;&#64;&#111;&#x70;&#101;&#110;&#115;&#101;&#x6e;&#x73;&#111;&#x72;&#x73;&#46;&#105;&#x6f;</a>&rsquo; to join our private beta.</p>
 ]]></content>
   </entry>
   
