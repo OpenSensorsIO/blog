@@ -1,0 +1,15 @@
+#publishers {margin-bottom: 40px;}
+#publishers a {margin: 20px 20px 20px 20px;
+	      border: 20px 20px 20px 20px;
+	      }
+
+#publishers a :active {background-color: #2b8cbe;}
+
+#topic {padding-left: 150px;}
+
+#topic p {font-size: 18px;
+		    }
+
+#connector {position: absolute;
+	    left:20px;
+	    top:45px;}
