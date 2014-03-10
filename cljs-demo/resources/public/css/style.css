@@ -9,10 +9,12 @@
 
 #publishers a :active {background-color: #2b8cbe;}
 
-#topic {padding-left: 150px;}
 
-#topic p {font-size: 18px;
-		    }
+
+#topic {position: absolute;
+	  font-size: 18px;
+	  left: 600px;
+	 top: 200px}
 
 #connector {position: absolute;
 	    left:20px;
