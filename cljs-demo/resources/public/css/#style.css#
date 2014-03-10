@@ -1,9 +1,7 @@
 #publishers img {margin-bottom: 40px;
 
-		}
-#publishers a {margin: 10px 10px 10px 10px;}
-
-#publishers a img {margin: 20px 20px 20px 20px;
+	    }
+#publishers a {margin: 20px 20px 20px 20px;
 	      border: 20px 20px 20px 20px;
 	      }
 
