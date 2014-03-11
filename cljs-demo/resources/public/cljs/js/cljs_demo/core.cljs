@@ -36,9 +36,16 @@
     (.setAttribute "repeatCount" "indefinite")
     (.setAttribute "calcMode" "linear")))
 
+
+(defn rotate-lmax [rotate]
+  (swap! rotate + 18)
+  (.setAttribute (sel1 [:#l]) "transform" (str "rotate(" @rotate "300,37,55)"))
+  )
+
 (defn pub-component [{:keys [type listens image monitors]} chan x]
   (let [i (atom (rand-int 100))
         topic (atom (str type "/" (rand-nth monitors) "/" i))
+        degree-rotate (atom 0)
         new-topic (fn [chan]
                       (do
                         (js/setInterval
@@ -48,9 +55,10 @@
                             (->> (reset! i (rand-int 100))
                                  (str type "/" (rand-nth monitors) "/")
                                  (reset! topic))
+                            (rotate-lmax degree-rotate)
                             (recur)) 1000)
                         (d/append! (sel1 "#messages svg") (node
-                                                           [:circle {:cx x :cy 40 :r 5 :fill "purple" :opacity 0.5}
+                                                           [:circle {:cx x :cy 40 :r 5 :fill "#b2182b" :opacity 1}
                                                             (make-animatex x)
                                                             (make-annimatey)
                                                             ]))))]
@@ -79,7 +87,7 @@
   (let [top [:g {:transform "translate(37, 55)"}
              [:circle {:r 17.5 :fill "none" :stroke "#045a8d" :stroke-width 6}]]
          f [:g {:transform "translate(0, -20)"}
-            [:rect {:width 3 :height 5 :fill "#2b8cbe"}]]
+            [:rect {:width 3 :height 5 :fill "black"}]]
         tail [:g {:transform "rotate(18, 0, 20)"}
         [:rect {:width 3 :height 5 :fill "#a6bddb"}]]
         ]
@@ -90,13 +98,15 @@
        [:text {:x 28 :y 28 :font-size 2} "Message Broker"]]
 
       ;;draw it
-      (loop [a (conj tail tail)
-             i 0]
-        (if (= 19 i)
-          (conj top (conj f a))
-          (recur (conj tail a) (inc i))))
+      [:g#l {:transform "rotate(0,0,0)"}
+       (loop [a (conj tail tail)
+              i 0]
+         (if (= 19 i)
+           (conj top (conj f a))
+           (recur (conj tail a) (inc i))))]
       
       ]]))
+
 
 (set! (.-onload js/window)
       (fn []
