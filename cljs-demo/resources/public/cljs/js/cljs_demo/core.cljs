@@ -24,9 +24,6 @@
     (.setAttribute "attributeName" "cx") ; animate the radius value
     (.setAttribute "from" (+ x 20))
     (.setAttribute "to" 250)
-  ;;  (.setAttribute "attributeName" "cy")
-  ;;  (.setAttribute "from" -100)
-  ;;  (.setAttribute "to" 250)
     (.setAttribute "repeatCount" "indefinite")
     (.setAttribute "calcMode" "linear")))
 
@@ -79,11 +76,27 @@
     (recur)))
 
 (def lmax
-  [:div#lmax
-   [:svg {:viewBox "0 0 250 80"}
-    [:rect {:x 25 :y 20 :rx 5 :ry 5 :width 25 :height 5:fill "#a6bddb" :stroke "black" :stroke-width 0.5}]
-    [:text {:x 28 :y 23 :font-size 3} "MQTT Broker"]
-    [:circle {:cx 40 :cy 55 :r 20 :fill "none" :stroke "#2b8cbe" :stroke-width 4}]]])
+  (let [top [:g {:transform "translate(37, 55)"}
+             [:circle {:r 17.5 :fill "none" :stroke "#045a8d" :stroke-width 6}]]
+         f [:g {:transform "translate(0, -20)"}
+            [:rect {:width 3 :height 5 :fill "#2b8cbe"}]]
+        tail [:g {:transform "rotate(18, 0, 20)"}
+        [:rect {:width 3 :height 5 :fill "#a6bddb"}]]
+        ]
+    [:div#lmax
+     [:svg {:viewBox "0 0 250 80"}
+      [:g
+       [:rect {:x 25 :y 25 :rx 5 :ry 5 :width 25 :height 5 :fill "#a6bddb" :stroke "black" :stroke-width 0.5}]
+       [:text {:x 28 :y 28 :font-size 2} "Message Broker"]]
+
+      ;;draw it
+      (loop [a (conj tail tail)
+             i 0]
+        (if (= 19 i)
+          (conj top (conj f a))
+          (recur (conj tail a) (inc i))))
+      
+      ]]))
 
 (set! (.-onload js/window)
       (fn []
@@ -92,7 +105,7 @@
           (d/append! (sel1 [:#model]) [:div#publishers [:div#messages [:svg {:width 800 :height 300}
                                                                        ]]])
           (.log js/console (render-publishers things c))
-          (d/append! (sel1 [:#publishers]) [:div#topic [:h2 "Messages"] [:p "Start Simulation by clicking on the devices"]])
+          (d/append! (sel1 [:#publishers]) [:div#topic [:h2 "Received Messages"] [:p "Start simulation by clicking on the devices"]])
          
           (d/append! (sel1 [:#model]) lmax)
           (d/append! (sel1 [:#model]) [:div#msg])
