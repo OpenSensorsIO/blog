@@ -206,3 +206,33 @@ continue;
 break;
 }
 });
+/**
+* True is s is nil, empty, or contains only whitespace.
+*/
+clojure.string.blank_QMARK_ = (function blank_QMARK_(s){return goog.string.isEmptySafe(s);
+});
+/**
+* Return a new string, using cmap to escape each character ch
+* from s as follows:
+* 
+* If (cmap ch) is nil, append ch to the new string.
+* If (cmap ch) is non-nil, append (str (cmap ch)) instead.
+*/
+clojure.string.escape = (function escape__$1(s,cmap){var buffer = (new goog.string.StringBuffer());var length = s.length;var index = 0;while(true){
+if(cljs.core._EQ_.call(null,length,index))
+{return buffer.toString();
+} else
+{var ch = s.charAt(index);var temp__4090__auto___13099 = cljs.core.get.call(null,cmap,ch);if(cljs.core.truth_(temp__4090__auto___13099))
+{var replacement_13100 = temp__4090__auto___13099;buffer.append([cljs.core.str(replacement_13100)].join(''));
+} else
+{buffer.append(ch);
+}
+{
+var G__13101 = (index + 1);
+index = G__13101;
+continue;
+}
+}
+break;
+}
+});
