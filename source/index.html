@@ -6,8 +6,9 @@ layout: default
   {% assign index = true %}
   {% for post in paginator.posts %}
   {% assign content = post.content %}
-    <article>
-      {% include article.html %}
+  <article>
+    {% include article.html %}
+    <script type="text/javascript" src="/javascripts/github.js"></script>
     </article>
   {% endfor %}
   <div class="pagination">

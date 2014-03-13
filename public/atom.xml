@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2014-03-06T15:58:39+00:00</updated>
+  <updated>2014-03-13T13:29:19+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,6 +12,103 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IOT in the City]]></title>
+    <link href="http://blog.opensensors.io/blog/2014/03/12/iot-in-the-city/"/>
+    <updated>2014-03-12T13:41:00+00:00</updated>
+    <id>http://blog.opensensors.io/blog/2014/03/12/iot-in-the-city</id>
+    <content type="html"><![CDATA[<h2>Architecting Internet of Things Software for Cities</h2>
+
+<p>We are often asked to advise on how best to build scalable products for
+the Internet of Things, specifically to provide City wide services. City scale projects, also marketed as Smart or Future
+Cities, within an IOT context are projects that combine aspects of the physical
+and digital worlds to provide infrastructure and
+services. Inherently these projects have to tackle the challenge of
+scalable software management as well as distributed data management i.e. Big Data.</p>
+
+<p>Among the projects we are involved in are parking management
+applications using parking sensors, real time analysis of pollution data from
+pollution monitors and using telemetry data to map routes for people with
+disabilities.</p>
+
+<p>The problem space that connected devices are used in is diverse but
+technologically speaking the architectural model is fairly common. There are usually
+a number of different types of sensors each measuring distinct factors
+which in turn are listened to by either other devices or
+software services. In the parking situation, a connected car can
+listen to sensors in a particular area in order to ascertain
+the nearest parking availability.  Any serious IOT project will
+quickly evolve to having thousands, if not millions, of devices
+connected to it.  It will also need to be able to cope with potentially millions of listeners such as the
+individual cars in the parking scenario.</p>
+
+<h2>Architectural Model</h2>
+
+<p>We strongly favour the Publish/Subscribe (aka PUB/SUB) model of
+building software in IOT.  In pub/sub, &ldquo;Publishers&rdquo; are usually the
+devices but can also be data from smart phones and the &ldquo;Subscribers&rdquo; are all the
+services that care about the data that the device is emitting.  In the PUB/SUB
+model devices can have one or many subscribers and subscribers
+can listen to one or many publishers. This is essential when building
+systems for Cities.  Let&rsquo;s take the example of pollution monitoring,
+there are many potential groups interested in this data from environmental groups to those
+concerned by the impact on health.  Each group should be free to build
+applications that are relevant to them without being impacted by the
+needs of the other subscribers.  You do not want a situation where
+each pollution monitor can only talk to one monolytic, and
+often proprietary, system thereby needing to set up another pollution monitor on
+the same street for each group which is frankly impractical and
+wasteful. The PUB/SUB model eliminates this situation.</p>
+
+<p>Scaling this model has been our obsession since the start of
+opensensors.IO.  We have open sourced our engine to enable others to
+be able to also create scalable services. <a href="https://github.com/OpenSensorsIO/azondi">Azondi</a> is our
+<a href="http://opensensors.io/">MQTT</a> based engine to enable processing device data at
+scale.</p>
+
+<p>All of this has been possible by standing on the shoulders of giants
+using battle test components.  Our MQTT broker relies on <a href="http://netty.io/">Netty</a> in order to provide an extensible
+broker.  Netty is used by a host of tech companies to build various
+real time systems such as Twitter, Facebook and Avast.  We also rely on
+<a href="https://github.com/reactor/reactor">Project Reactor</a> to get a non-blocking
+dispatcher for event driven programming based on the
+<a href="http://en.wikipedia.org/wiki/Reactor_pattern">Reactor Pattern</a>. This dispatcher acts as a kind of sorting office between devices and their
+listeners. It receives all messages and &lsquo;delivers&rsquo; messages to
+interested listeners.</p>
+
+<p>The most important motivation behind the technological choices we made to build
+Azondi is the need to avoid polling at all costs. When you have
+potentially 100,000s of services listening to each device message you
+never want a situation where you are being simultaneously hit by requests.</p>
+
+<h2>Model of a City</h2>
+
+<p>Putting the above theory into a real world model, below is a diagram
+on how Azondi would be implemented in reality.  Let us pretend that we are processing device data from
+disparate sources for the London Borough of Camden.</p>
+
+<p>In the example, there are environmental monitors that measure
+pollution and noise as well as a weather station monitoring temperature and
+wind speeds.  In addition, cars send information about traffic
+ in their vicinity. On the other hand, Mary&rsquo;s car is listening for local parking
+information and Sophie&rsquo;s phone listens to information on noise,
+pollution, temperature and energy readings.  Both Mary&rsquo;s car and Sophie
+would have the option to filter the information they receive
+i.e. local information only or when pollution hits dangerous levels.  Camden Council cares about all of the data sets and
+would probably have a dashboard or a decision support system.</p>
+
+<h2>Illustration of Azondi in action</h2>
+
+<p>Click on each device to get it to publish (random) data and watch the
+subscribers receive their information.</p>
+
+<iframe src="http://city-model.s3-website-us-east-1.amazonaws.com/#" height=800px width=900px></iframe>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Big Red Button]]></title>
@@ -284,7 +381,7 @@ The full list data sets are below:</p>
 
 <p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
 
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#104;&#x65;&#x6c;&#x6c;&#x6f;&#x40;&#111;&#x70;&#x65;&#x6e;&#x73;&#101;&#x6e;&#x73;&#x6f;&#x72;&#115;&#x2e;&#x69;&#x6f;">&#104;&#101;&#x6c;&#108;&#111;&#64;&#111;&#x70;&#101;&#110;&#x73;&#101;&#x6e;&#x73;&#x6f;&#114;&#115;&#46;&#105;&#x6f;</a>&rsquo; to join our private beta.</p>
+<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x68;&#x65;&#108;&#x6c;&#111;&#x40;&#111;&#x70;&#x65;&#x6e;&#x73;&#x65;&#x6e;&#x73;&#x6f;&#114;&#x73;&#x2e;&#x69;&#x6f;">&#x68;&#101;&#x6c;&#x6c;&#111;&#x40;&#x6f;&#112;&#x65;&#x6e;&#115;&#101;&#110;&#115;&#x6f;&#x72;&#115;&#x2e;&#105;&#x6f;</a>&rsquo; to join our private beta.</p>
 ]]></content>
   </entry>
   

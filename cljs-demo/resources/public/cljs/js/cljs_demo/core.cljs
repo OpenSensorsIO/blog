@@ -39,7 +39,7 @@
     (.setAttribute "dur" "1s") ; over 1 second
     (.setAttribute "attributeName" "cy")
     (.setAttribute "from" 0)
-    (.setAttribute "to" 150)
+    (.setAttribute "to" 200)
     (.setAttribute "repeatCount" "indefinite")
     (.setAttribute "calcMode" "linear")))
 
@@ -61,16 +61,16 @@
    (doto (.createElementNS js/document "http://www.w3.org/2000/svg" "animate")
     (.setAttribute "dur" "1s") ; over 1 second
     (.setAttribute "attributeName" "cy")
-    (.setAttribute "from" 500)
-    (.setAttribute "to" 700)
+    (.setAttribute "from" 450)
+    (.setAttribute "to" 650)
     (.setAttribute "repeatCount" "indefinite")
     (.setAttribute "calcMode" "linear")))
 
 (defn to-subscriber []
- (.log js/console  (for [x [70 170 270 370 470]]
-        (d/append! (sel1 "#messages svg") (node [:circle {:cx 300 :cy 300 :r 5 :fill "purple" :opacity 1}
-                                                                 (make-animate-s-x x)
-                                                                 (make-annimate-s-y)])))))
+  (doseq [x [70 170 270 370 470]]
+                       (d/append! (sel1 "#messages svg") (node [:circle {:cx 300 :cy 300 :r 5 :fill "purple" :opacity 1}
+                                                                (make-animate-s-x x)
+                                                                (make-annimate-s-y)]))))
  
 
 (defn pub-component [{:keys [type listens image monitors]} chan x]
@@ -96,7 +96,7 @@
 
     
     (doto (node
-           [:a {:href "#" :style {:active "background-color: #2b8cbe;" }} type [:img {:src (str img-path image) :width 30 :height 35 :style {:position "absolute" :left (str x "px") :top "30px" :margin-bottom "40px"}}]])
+           [:a {:href "#" :style {:active "background-color: #2b8cbe;" }} [:p {:style {:display "inline" :position "absolute" :left  (str x "px") :top "50px"}} type] [:img {:src (str img-path image) :width 30 :height 35 :style {:position "absolute" :left (str x "px") :top "15px" :margin-bottom "40px"}}]])
            (d/listen! :click #(new-topic chan)))))
     
                                                   
@@ -117,18 +117,14 @@
                     (if (some #{sensor} (:listens s))
                       (:name s)))
         listeners (filter #(not (nil? %)) l)]
-    (.log js/console
-          (for [x listeners]
-            (d/replace! (sel1 "#received p" ) [:p (str x " received message " topic)])))))
+    (doseq [x listeners]
+      (d/replace! (sel1 "#received p" ) [:p (str x " received message " topic)]))))
 
-
-;;(d/replace! (sel1 ("#received p"))
-;;                        (node [:p (str x "received message" topic)])
 
 (defn renderer [things chan type div]
   (let [pub-sub (filter #(contains? % type) things)
         x (atom 35)]
-    (for [t pub-sub]
+    (doseq [t pub-sub]
       (do
         (d/append! (sel1 div) (if (= type :monitors)
                                 (pub-component t chan @x)
@@ -151,7 +147,7 @@
         ]
     [:div#lmax
      
-     [:svg {:viewBox "0 0 250 500";;20 100 250 500"
+     [:svg {:viewBox "-10 15 150 100";;20 100 250 500"
             }
       [:g
        [:rect {:x 25 :y 25 :rx 5 :ry 5 :width 25 :height 5 :fill "#a6bddb" :stroke "black" :stroke-width 0.1}]
@@ -177,16 +173,10 @@
                      [:div#publishers [:div#messages [:svg {:width 800 :height 1000}]]])
           (d/append! (sel1 [:#publishers]) [:div#topic [:h2 "Sent Messages"] [:p "Start simulation by clicking on the devices"]])
          
-          (d/append! (sel1 [:#model]) lmax)
+          (d/append! (sel1 "#model") lmax)
           (d/append! (sel1 [:#model]) [:div#msg])
           (d/append! (sel1 [:#model]) [:div#subscribers (node [:ul {:style {:padding-left "10px" :list-style-type "none"}}])])
            (d/append! (sel1 [:#subscribers]) [:div#received [:h2 "Received Messages"] [:p "No Messages Received"]])
-           (.log js/console (do
-                              (renderer things c :monitors "#publishers")
-                              (renderer things c :listens  "#subscribers ul")))
-           
-           ;; (.log js/console 
-           )))
-
-
-
+          
+           (renderer things c :monitors "#publishers")
+           (renderer things c :listens  "#subscribers ul"))))
