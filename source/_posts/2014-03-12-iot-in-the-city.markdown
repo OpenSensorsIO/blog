@@ -89,5 +89,6 @@ would probably have a dashboard or a decision support system.
 Click on each device to get it to publish (random) data and watch the
 subscribers receive their information.
 
-<iframe src="http://city-model.s3-website-us-east-1.amazonaws.com/#" height=800px width=900px></iframe>
+<iframe src="http://city-model.s3-website-us-east-1.amazonaws.com/#"
+height=800px width=900px scrolling = "no"></iframe>
 

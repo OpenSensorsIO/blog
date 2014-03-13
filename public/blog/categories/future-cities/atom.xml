@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Future-Cities, | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/future-cities/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2014-03-13T13:40:54+00:00</updated>
+  <updated>2014-03-13T14:24:33+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -103,7 +103,8 @@ would probably have a dashboard or a decision support system.</p>
 <p>Click on each device to get it to publish (random) data and watch the
 subscribers receive their information.</p>
 
-<iframe src="http://city-model.s3-website-us-east-1.amazonaws.com/#" height=800px width=900px></iframe>
+<iframe src="http://city-model.s3-website-us-east-1.amazonaws.com/#"
+height=800px width=900px scrolling = "no"></iframe>
 
 
 
