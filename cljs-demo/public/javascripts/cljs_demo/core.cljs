@@ -6,7 +6,7 @@
    [cljs.core.async.macros :refer [go go-loop]]
    [dommy.macros :refer [node sel1]]))
 
-(def img-path "/resources/public/imgs/")
+(def img-path "resources/public/imgs/")
 
 (def things [{:type "env-monitor" :monitors ["pollution" "noise"] :image "glyphicons_001_leaf.png"}
              {:type "personA" :name "John" :monitors ["crowdflow" "heatbeat"] :listens ["parking"] :image "glyphicons_003_user.png"}
@@ -96,10 +96,9 @@
 
     
     (doto (node
-           [:a {:href "#" :style {:active "background-color: #2b8cbe;" }} type [:img {:src (str img-path image) :width 30 :height 35 :style {:position "absolute" :left (str x "px") :top "30px" :margin-bottom "40px"}}]])
-           (d/listen! :click #(new-topic chan)))))
-    
-                                                  
+           [:a {:href "#"} type [:img {:src (str img-path image) :width 30 :height 35 :style {:position "absolute" :left (str x "px") :top "15px"}} ]])
+      (d/listen! :click #(new-topic chan)))))
+
 (defn sub [listens topic]
   (let []
     (some #{sub} listens)))
@@ -116,11 +115,19 @@
         l (for [s sub]
                     (if (some #{sensor} (:listens s))
                       (:name s)))
-        listeners (filter #(not (nil? %)) l)]
+        listeners (filter #(not (nil? %)) l)
+        i (atom 0)]
     (.log js/console
           (for [x listeners]
-            (d/replace! (sel1 "#received p" ) [:p (str x " received message " topic)])))))
-
+            (case
+                (= @i 0) (d/replace! (sel1 "#received p" ) [:p (str x " received message " topic)])
+                (> 10 @i) (do
+                            (d/append! (sel1 "#received p" ) [:p (str x " received message " topic)])
+                            (swap! i inc))
+                
+                :else (do
+                        (d/replace! (sel1 "#received p" ) [:p (str x " received message " topic)])
+                        (reset! i 0)))))))
 
 ;;(d/replace! (sel1 ("#received p"))
 ;;                        (node [:p (str x "received message" topic)])
@@ -150,9 +157,7 @@
         [:rect {:width 3 :height 5 :fill "#F6F7E4"}]]
         ]
     [:div#lmax
-     
-     [:svg {:viewBox "0 0 250 500";;20 100 250 500"
-            }
+     [:svg {:viewBox "0 0 250 80"}
       [:g
        [:rect {:x 25 :y 25 :rx 5 :ry 5 :width 25 :height 5 :fill "#a6bddb" :stroke "black" :stroke-width 0.1}]
        [:text {:x 28 :y 28 :font-size 2} "Message Broker"]]
@@ -181,12 +186,5 @@
           (d/append! (sel1 [:#model]) [:div#msg])
           (d/append! (sel1 [:#model]) [:div#subscribers (node [:ul {:style {:padding-left "10px" :list-style-type "none"}}])])
            (d/append! (sel1 [:#subscribers]) [:div#received [:h2 "Received Messages"] [:p "No Messages Received"]])
-           (.log js/console (do
-                              (renderer things c :monitors "#publishers")
-                              (renderer things c :listens  "#subscribers ul")))
-           
-           ;; (.log js/console 
-           )))
-
-
-
+          (.log js/console (renderer things c :monitors [:#publishers]))
+          (.log js/console (renderer things c :listens  "#subscribers ul")))))

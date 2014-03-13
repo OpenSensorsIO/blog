@@ -1,6 +1,3 @@
-#publishers img {margin-bottom: 40px;
-
-		}
 #publishers a {margin: 10px 10px 10px 10px;}
 
 #publishers a img {margin: 20px 20px 20px 20px;
@@ -11,7 +8,7 @@
 
 #topic {position: absolute;
 	  font-size: 18px;
-	  left: 600px;
+	  left: 550px;
 	 top: 200px}
 
 #connector {position: absolute;
@@ -19,12 +16,12 @@
 	    top:45px;}
 
 
-#messages svg {position: absolute;
+#messages svg {position: fixed;
 	       left: 20px;
 	       top: 45px;
 	  
 	      }
 
-#received  {position: absolute;
-	     left: 600px;
-	     top: 600}
+#received {position: absolute;
+	   left: 550px;
+	     top: 500px }

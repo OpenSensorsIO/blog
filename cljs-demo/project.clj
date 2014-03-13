@@ -17,7 +17,8 @@
                         :source-paths ["src-cljs"]
                                         ; The standard ClojureScript compiler options:
         ; (See the ClojureScript compiler documentation for details.)
-        :compiler {
+                        :compiler {
+
                    :output-dir "../cljs-demo/resources/public/cljs/js"
                    :output-to "../cljs-demo/resources/public/cljs/js/main.js"
                    :source-map "../cljs-demo/resources/public/cljs/js/main.js.map"

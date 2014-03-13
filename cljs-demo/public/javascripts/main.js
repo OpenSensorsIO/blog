@@ -18938,7 +18938,7 @@ dommy.core.fire_BANG_ = function() {
   return b;
 }();
 var cljs_demo = {core:{}};
-cljs_demo.core.img_path = "/resources/public/imgs/";
+cljs_demo.core.img_path = "resources/public/imgs/";
 cljs_demo.core.things = new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "type", "type", 1017479852), "env-monitor", new cljs.core.Keyword(null, "monitors", "monitors", 685105611), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["pollution", "noise"], null), new cljs.core.Keyword(null, "image", "image", 1114217677), "glyphicons_001_leaf.png"], null), new cljs.core.PersistentArrayMap(null, 
 5, [new cljs.core.Keyword(null, "type", "type", 1017479852), "personA", new cljs.core.Keyword(null, "name", "name", 1017277949), "John", new cljs.core.Keyword(null, "monitors", "monitors", 685105611), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["crowdflow", "heatbeat"], null), new cljs.core.Keyword(null, "listens", "listens", 1195876094), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["parking"], null), new cljs.core.Keyword(null, 
 "image", "image", 1114217677), "glyphicons_003_user.png"], null), new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "type", "type", 1017479852), "personB", new cljs.core.Keyword(null, "name", "name", 1017277949), "Mary", new cljs.core.Keyword(null, "listens", "listens", 1195876094), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["parking", "pollution", "temprature"], null), new cljs.core.Keyword(null, "image", "image", 1114217677), "glyphicons_035_woman.png"], 
@@ -19077,15 +19077,14 @@ cljs_demo.core.pub_component = function(a, b, c) {
   a = function() {
     var a = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
     a.setAttribute("href", "#");
-    cljs.core.truth_(new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "active", "active", 3885920888), "background-color: #2b8cbe;"], null)) && a.setAttribute("style", dommy.core.style_str.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "active", "active", 3885920888), "background-color: #2b8cbe;"], null)));
     a.appendChild(dommy.template.__GT_node_like.call(null, f));
     a.appendChild(function() {
       var a = document.createElementNS("http://www.w3.org/1999/xhtml", "img");
       cljs.core.truth_([cljs.core.str(cljs_demo.core.img_path), cljs.core.str(e)].join("")) && a.setAttribute("src", [cljs.core.str(cljs_demo.core.img_path), cljs.core.str(e)].join(""));
       a.setAttribute("width", 30);
       a.setAttribute("height", 35);
-      cljs.core.truth_(new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "position", "position", 1761709211), "absolute", new cljs.core.Keyword(null, "left", "left", 1017222009), [cljs.core.str(c), cljs.core.str("px")].join(""), new cljs.core.Keyword(null, "top", "top", 1014019271), "30px", new cljs.core.Keyword(null, "margin-bottom", "margin-bottom", 3099939484), "40px"], null)) && a.setAttribute("style", dommy.core.style_str.call(null, new cljs.core.PersistentArrayMap(null, 
-      4, [new cljs.core.Keyword(null, "position", "position", 1761709211), "absolute", new cljs.core.Keyword(null, "left", "left", 1017222009), [cljs.core.str(c), cljs.core.str("px")].join(""), new cljs.core.Keyword(null, "top", "top", 1014019271), "30px", new cljs.core.Keyword(null, "margin-bottom", "margin-bottom", 3099939484), "40px"], null)));
+      cljs.core.truth_(new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "position", "position", 1761709211), "absolute", new cljs.core.Keyword(null, "left", "left", 1017222009), [cljs.core.str(c), cljs.core.str("px")].join(""), new cljs.core.Keyword(null, "top", "top", 1014019271), "15px"], null)) && a.setAttribute("style", dommy.core.style_str.call(null, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "position", "position", 1761709211), "absolute", new cljs.core.Keyword(null, 
+      "left", "left", 1017222009), [cljs.core.str(c), cljs.core.str("px")].join(""), new cljs.core.Keyword(null, "top", "top", 1014019271), "15px"], null)));
       return a;
     }());
     return a;
@@ -19139,7 +19138,7 @@ cljs_demo.core.who_is_listening = function(a) {
     return cljs.core.contains_QMARK_.call(null, a, new cljs.core.Keyword(null, "listens", "listens", 1195876094));
   }, cljs_demo.core.things), c = cljs.core.second.call(null, clojure.string.split.call(null, a, /\//)), d = function() {
     return function(a, b) {
-      return function l(c) {
+      return function m(c) {
         return new cljs.core.LazySeq(null, function(a, b) {
           return function() {
             for (;;) {
@@ -19150,8 +19149,8 @@ cljs_demo.core.who_is_listening = function(a) {
                   a: {
                     for (var g = 0;;) {
                       if (g < e) {
-                        var k = cljs.core._nth.call(null, d, g);
-                        cljs.core.chunk_append.call(null, f, cljs.core.truth_(cljs.core.some.call(null, cljs.core.PersistentHashSet.fromArray([b], !0), (new cljs.core.Keyword(null, "listens", "listens", 1195876094)).cljs$core$IFn$_invoke$arity$1(k))) ? (new cljs.core.Keyword(null, "name", "name", 1017277949)).cljs$core$IFn$_invoke$arity$1(k) : null);
+                        var h = cljs.core._nth.call(null, d, g);
+                        cljs.core.chunk_append.call(null, f, cljs.core.truth_(cljs.core.some.call(null, cljs.core.PersistentHashSet.fromArray([b], !0), (new cljs.core.Keyword(null, "listens", "listens", 1195876094)).cljs$core$IFn$_invoke$arity$1(h))) ? (new cljs.core.Keyword(null, "name", "name", 1017277949)).cljs$core$IFn$_invoke$arity$1(h) : null);
                         g += 1;
                       } else {
                         d = !0;
@@ -19160,10 +19159,10 @@ cljs_demo.core.who_is_listening = function(a) {
                     }
                     d = void 0;
                   }
-                  return d ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, f), l.call(null, cljs.core.chunk_rest.call(null, a))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, f), null);
+                  return d ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, f), m.call(null, cljs.core.chunk_rest.call(null, a))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, f), null);
                 }
                 f = cljs.core.first.call(null, a);
-                return cljs.core.cons.call(null, cljs.core.truth_(cljs.core.some.call(null, cljs.core.PersistentHashSet.fromArray([b], !0), (new cljs.core.Keyword(null, "listens", "listens", 1195876094)).cljs$core$IFn$_invoke$arity$1(f))) ? (new cljs.core.Keyword(null, "name", "name", 1017277949)).cljs$core$IFn$_invoke$arity$1(f) : null, l.call(null, cljs.core.rest.call(null, a)));
+                return cljs.core.cons.call(null, cljs.core.truth_(cljs.core.some.call(null, cljs.core.PersistentHashSet.fromArray([b], !0), (new cljs.core.Keyword(null, "listens", "listens", 1195876094)).cljs$core$IFn$_invoke$arity$1(f))) ? (new cljs.core.Keyword(null, "name", "name", 1017277949)).cljs$core$IFn$_invoke$arity$1(f) : null, m.call(null, cljs.core.rest.call(null, a)));
               }
               return null;
             }
@@ -19175,32 +19174,40 @@ cljs_demo.core.who_is_listening = function(a) {
     return function(a) {
       return null != a;
     };
-  }(b, c, d), d);
+  }(b, c, d), d), f = cljs.core.atom.call(null, 0);
   return console.log(function() {
-    return function g(b) {
+    return function h(b) {
       return new cljs.core.LazySeq(null, function() {
         for (;;) {
           var c = cljs.core.seq.call(null, b);
           if (c) {
             if (cljs.core.chunked_seq_QMARK_.call(null, c)) {
-              var d = cljs.core.chunk_first.call(null, c), e = cljs.core.count.call(null, d), n = cljs.core.chunk_buffer.call(null, e);
-              a: {
-                for (var q = 0;;) {
-                  if (q < e) {
-                    var r = cljs.core._nth.call(null, d, q);
-                    cljs.core.chunk_append.call(null, n, dommy.core.replace_BANG_.call(null, document.querySelector("#received p"), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), [cljs.core.str(r), cljs.core.str(" received message "), cljs.core.str(a)].join("")], null)));
-                    q += 1;
+              var d = cljs.core.chunk_first.call(null, c), e = cljs.core.count.call(null, d), q = cljs.core.chunk_buffer.call(null, e);
+              return function() {
+                for (var b = 0;;) {
+                  if (b < e) {
+                    var c = cljs.core._nth.call(null, d, b);
+                    cljs.core.chunk_append.call(null, q, function() {
+                      var b = cljs.core._EQ_.call(null, cljs.core.deref.call(null, f), 0);
+                      return cljs.core._EQ_.call(null, cljs.core.swap_BANG_.call(null, f, cljs.core.inc), b) || cljs.core._EQ_.call(null, dommy.core.append_BANG_.call(null, document.querySelector("#received p"), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), [cljs.core.str(c), cljs.core.str(" received message "), cljs.core.str(a)].join("")], null)), b) || cljs.core._EQ_.call(null, new cljs.core.Symbol(null, "do", 
+                      "do", -1640528316, null), b) ? new cljs.core.Keyword(null, "else", "else", 1017020587) : cljs.core._EQ_.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), [cljs.core.str(c), cljs.core.str(" received message "), cljs.core.str(a)].join("")], null), b) || cljs.core._EQ_.call(null, document.querySelector("#received p"), b) || cljs.core._EQ_.call(null, new cljs.core.Symbol("d", "replace!", 
+                      "d/replace!", -2070858021, null), b) ? 10 > cljs.core.deref.call(null, f) : new cljs.core.Keyword(null, "else", "else", 1017020587) ? (dommy.core.replace_BANG_.call(null, document.querySelector("#received p"), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), [cljs.core.str(c), cljs.core.str(" received message "), cljs.core.str(a)].join("")], null)), cljs.core.reset_BANG_.call(null, f, 0)) : 
+                      null;
+                    }());
+                    b += 1;
                   } else {
-                    d = !0;
-                    break a;
+                    return!0;
                   }
                 }
-                d = void 0;
-              }
-              return d ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, n), g.call(null, cljs.core.chunk_rest.call(null, c))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, n), null);
+              }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, q), h.call(null, cljs.core.chunk_rest.call(null, c))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, q), null);
             }
-            n = cljs.core.first.call(null, c);
-            return cljs.core.cons.call(null, dommy.core.replace_BANG_.call(null, document.querySelector("#received p"), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), [cljs.core.str(n), cljs.core.str(" received message "), cljs.core.str(a)].join("")], null)), g.call(null, cljs.core.rest.call(null, c)));
+            var r = cljs.core.first.call(null, c);
+            return cljs.core.cons.call(null, function() {
+              var b = cljs.core._EQ_.call(null, cljs.core.deref.call(null, f), 0);
+              return cljs.core._EQ_.call(null, cljs.core.swap_BANG_.call(null, f, cljs.core.inc), b) || cljs.core._EQ_.call(null, dommy.core.append_BANG_.call(null, document.querySelector("#received p"), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), [cljs.core.str(r), cljs.core.str(" received message "), cljs.core.str(a)].join("")], null)), b) || cljs.core._EQ_.call(null, new cljs.core.Symbol(null, "do", "do", 
+              -1640528316, null), b) ? new cljs.core.Keyword(null, "else", "else", 1017020587) : cljs.core._EQ_.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), [cljs.core.str(r), cljs.core.str(" received message "), cljs.core.str(a)].join("")], null), b) || cljs.core._EQ_.call(null, document.querySelector("#received p"), b) || cljs.core._EQ_.call(null, new cljs.core.Symbol("d", "replace!", "d/replace!", 
+              -2070858021, null), b) ? 10 > cljs.core.deref.call(null, f) : new cljs.core.Keyword(null, "else", "else", 1017020587) ? (dommy.core.replace_BANG_.call(null, document.querySelector("#received p"), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), [cljs.core.str(r), cljs.core.str(" received message "), cljs.core.str(a)].join("")], null)), cljs.core.reset_BANG_.call(null, f, 0)) : null;
+            }(), h.call(null, cljs.core.rest.call(null, c)));
           }
           return null;
         }
@@ -19313,7 +19320,7 @@ cljs_demo.core.lmax = function() {
   "r", 1013904356), 17.5, new cljs.core.Keyword(null, "fill", "fill", 1017047285), "none", new cljs.core.Keyword(null, "stroke", "stroke", 4416891306), "black", new cljs.core.Keyword(null, "stroke-width", "stroke-width", 3636011363), 6], null)], null)], null), b = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "g", "g", 1013904345), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "transform", "transform", 2066570974), 
   "translate(0, -20)"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "rect", "rect", 1017400662), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "width", "width", 1127031096), 3, new cljs.core.Keyword(null, "height", "height", 4087841945), 5, new cljs.core.Keyword(null, "fill", "fill", 1017047285), "black"], null)], null)], null), c = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, 
   [new cljs.core.Keyword(null, "g", "g", 1013904345), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "transform", "transform", 2066570974), "rotate(18, 0, 20)"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "rect", "rect", 1017400662), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "width", "width", 1127031096), 3, new cljs.core.Keyword(null, "height", "height", 4087841945), 5, 
-  new cljs.core.Keyword(null, "fill", "fill", 1017047285), "#F6F7E4"], null)], null)], null), d = cljs.core.PersistentVector, e = cljs.core.PersistentVector.EMPTY_NODE, f = new cljs.core.Keyword(null, "div#lmax", "div#lmax", 1313772956), g = cljs.core.PersistentVector, h = cljs.core.PersistentVector.EMPTY_NODE, l = new cljs.core.Keyword(null, "svg", "svg", 1014018518), m = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "viewBox", "viewBox", 1468104792), "0 0 250 500"], null), 
+  new cljs.core.Keyword(null, "fill", "fill", 1017047285), "#F6F7E4"], null)], null)], null), d = cljs.core.PersistentVector, e = cljs.core.PersistentVector.EMPTY_NODE, f = new cljs.core.Keyword(null, "div#lmax", "div#lmax", 1313772956), g = cljs.core.PersistentVector, h = cljs.core.PersistentVector.EMPTY_NODE, l = new cljs.core.Keyword(null, "svg", "svg", 1014018518), m = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "viewBox", "viewBox", 1468104792), "0 0 250 80"], null), 
   k = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "g", "g", 1013904345), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "rect", "rect", 1017400662), cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null, "width", "width", 1127031096), new cljs.core.Keyword(null, "rx", "rx", 1013907896), new cljs.core.Keyword(null, "ry", "ry", 1013907897), new cljs.core.Keyword(null, 
   "y", "y", 1013904363), new cljs.core.Keyword(null, "x", "x", 1013904362), new cljs.core.Keyword(null, "fill", "fill", 1017047285), new cljs.core.Keyword(null, "stroke", "stroke", 4416891306), new cljs.core.Keyword(null, "stroke-width", "stroke-width", 3636011363), new cljs.core.Keyword(null, "height", "height", 4087841945)], [25, 5, 5, 25, 25, "#a6bddb", "black", 0.1, 5])], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "text", 
   "text", 1017460895), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "x", "x", 1013904362), 28, new cljs.core.Keyword(null, "y", "y", 1013904363), 28, new cljs.core.Keyword(null, "font-size", "font-size", 3722789425), 2], null), "Message Broker"], null)], null), n = cljs.core.PersistentVector, q = cljs.core.PersistentVector.EMPTY_NODE, r = new cljs.core.Keyword(null, "g#l", "g#l", 1014004418), s = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "transform", 
@@ -19351,10 +19358,8 @@ window.onload = function() {
   }()], null));
   dommy.core.append_BANG_.call(null, document.querySelector(dommy.core.selector.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "#subscribers", "#subscribers", 2078691450)], null))), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div#received", "div#received", 4272036101), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, 
   "h2", "h2", 1013907516), "Received Messages"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), "No Messages Received"], null)], null));
-  return console.log(function() {
-    cljs_demo.core.renderer.call(null, cljs_demo.core.things, a, new cljs.core.Keyword(null, "monitors", "monitors", 685105611), "#publishers");
-    return cljs_demo.core.renderer.call(null, cljs_demo.core.things, a, new cljs.core.Keyword(null, "listens", "listens", 1195876094), "#subscribers ul");
-  }());
+  console.log(cljs_demo.core.renderer.call(null, cljs_demo.core.things, a, new cljs.core.Keyword(null, "monitors", "monitors", 685105611), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "#publishers", "#publishers", 4464968140)], null)));
+  return console.log(cljs_demo.core.renderer.call(null, cljs_demo.core.things, a, new cljs.core.Keyword(null, "listens", "listens", 1195876094), "#subscribers ul"));
 };
 
 //# sourceMappingURL=main.js.map
