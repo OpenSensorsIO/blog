@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2014-03-13T14:24:33+00:00</updated>
+  <updated>2014-09-13T08:12:12+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Getting Started With Arduino on Linux (Ubuntu)]]></title>
+    <link href="http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux/"/>
+    <updated>2014-09-13T07:56:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux</id>
+    <content type="html"><![CDATA[<p>Ordered and received your Arduino Uno (I actually received it a while ago!) now what? The first step is to rush to the <a href="http://arduino.cc/en/Guide/HomePage">&lsquo;Getting Started&rsquo;</a> page on Arduino&rsquo;s website.</p>
+
+<p>To install Arduino on Linux (I&rsquo;m running Ubuntu 14.04) visit the <a href="http://playground.arduino.cc/Learning/Linux">wiki page</a> with instructions for most Linux distributions. I used the instructions for Ubuntu 12.04 or newer and ran <pre><code>~$ sudo apt-get update &amp;&amp; sudo apt-get install arduino arduino-core</code></pre>
+Afterwards you should be able to plug your Arduino and use Arduino IDE to code/upload code to it. It didn&rsquo;t work directly for me. I couldn&rsquo;t launch Arduino IDE by clicking the logo so I tried the CLI <pre><code>~$ arduino</code></pre> Here&rsquo;s the error it returned:</p>
+
+<blockquote><p>Exception in thread &ldquo;main&rdquo; java.lang.ExceptionInInitializerError.</p></blockquote>
+
+<p><img src="http://blog.opensensors.io/images/arduino_bug1.png" /></p>
+
+<p>I found a solution on <a href="http://askubuntu.com/questions/26474/unable-to-install-arduino">AskUbuntu</a> forum. I downgraded from java 7 to java 6 using the command: <pre><code>~$ sudo update-alternatives &mdash;config java</code></pre>
+I then managed to launch Arduino from the CLI (I was asked to authenticate) and tried to upload a code example to my Arduino (Files > Examples > 01.Basics > Blink).
+I received this error message:</p>
+
+<blockquote><p>processing.app.SerialNotFoundException: Serial port &lsquo;COM1&rsquo; not found. Did you select the right one from the Tools > Serial Port menu?</p></blockquote>
+
+<p><img src="http://blog.opensensors.io/images/arduinobug2.png" /></p>
+
+<p>In Tools I saw that Serial Port was greyed out so I couldn&rsquo;t even select the port.
+from <a href="http://stackoverflow.com/questions/19322432/arduino-tools-serial-port-greyed-out">Stackoverflow</a> I found that to give read and write privilege on the usb port I could run Arduino with the administrator privileges.
+And so I used <pre><code>~$ sudo arduino</code></pre> &ndash;> It worked! It blinked!
+Here&rsquo;s a proof:</p>
+
+<p><img src="http://blog.opensensors.io/images/arduino_blinks.jpg" /></p>
+
+<h2>Troubleshooting</h2>
+
+<ul>
+<li>Check your Arduino IDE settings: Tools > Board (the right borad is select), Tool > Serial Port (the right port for your device is ticked).</li>
+<li>Check all dependencies were downloaded with arduino and arduino-core .
+
+<ul>
+<li>Arduino&rsquo;s dependencies: arduino-core, default-jre, libjna-java, librtx-java</li>
+<li>Arduino-core&rsquo;s dependencies: avr-libc, avrdude, gcc, gcc-avr</li>
+</ul>
+</li>
+<li>Also try LadyAda&rsquo;s [help page] (<a href="http://www.ladyada.net/learn/arduino/help.html">http://www.ladyada.net/learn/arduino/help.html</a>).</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IOT in the City]]></title>
@@ -382,7 +428,7 @@ The full list data sets are below:</p>
 
 <p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
 
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x68;&#101;&#x6c;&#x6c;&#x6f;&#x40;&#111;&#x70;&#x65;&#x6e;&#115;&#x65;&#110;&#x73;&#111;&#x72;&#x73;&#46;&#105;&#111;">&#x68;&#101;&#x6c;&#108;&#111;&#x40;&#x6f;&#x70;&#101;&#x6e;&#115;&#101;&#x6e;&#115;&#x6f;&#114;&#x73;&#x2e;&#105;&#x6f;</a>&rsquo; to join our private beta.</p>
+<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x68;&#x65;&#108;&#108;&#111;&#64;&#111;&#112;&#x65;&#110;&#115;&#101;&#110;&#115;&#111;&#x72;&#115;&#46;&#105;&#111;">&#104;&#x65;&#x6c;&#108;&#111;&#64;&#111;&#112;&#101;&#110;&#115;&#x65;&#110;&#115;&#x6f;&#114;&#115;&#46;&#105;&#111;</a>&rsquo; to join our private beta.</p>
 ]]></content>
   </entry>
   

@@ -6,7 +6,7 @@
    [cljs.core.async.macros :refer [go go-loop]]
    [dommy.macros :refer [node sel1]]))
 
-(def img-path "/resources/public/imgs/")
+(def img-path "/home/yods/work/opensensorsBlog/cljs-demo/resources/public/imgs/")
 
 (def things [{:type "env-monitor" :monitors ["pollution" "noise"] :image "glyphicons_001_leaf.png"}
              {:type "personA" :name "John" :monitors ["crowdflow" "heatbeat"] :listens ["parking"] :image "glyphicons_003_user.png"}
@@ -39,7 +39,7 @@
     (.setAttribute "dur" "1s") ; over 1 second
     (.setAttribute "attributeName" "cy")
     (.setAttribute "from" 0)
-    (.setAttribute "to" 200)
+    (.setAttribute "to" 300)
     (.setAttribute "repeatCount" "indefinite")
     (.setAttribute "calcMode" "linear")))
 
@@ -52,7 +52,7 @@
   (doto (.createElementNS js/document "http://www.w3.org/2000/svg" "animate")
     (.setAttribute "dur" "1s") ; over 1 second
     (.setAttribute "attributeName" "cx") ; animate the radius value
-    (.setAttribute "from" 250)
+    (.setAttribute "from" 450)
     (.setAttribute "to" y)
     (.setAttribute "repeatCount" "indefinite")
     (.setAttribute "calcMode" "linear")))
@@ -145,8 +145,7 @@
         tail [:g {:transform "rotate(18, 0, 20)"}
         [:rect {:width 3 :height 5 :fill "#F6F7E4"}]]
         ]
-    [:div#lmax
-     
+    [:div#lmax     
      [:svg {:viewBox "-10 15 150 100";;20 100 250 500"
             }
       [:g
@@ -170,9 +169,10 @@
         (let [c (doto (chan 100)
                   (watch-events!))]
           (d/append! (sel1 [:#model])
-                     [:div#publishers [:div#messages [:svg {:width 800 :height 1000}]]])
+                     [:div#publishers [:div#messages [:svg;; {:width 800 :height 1000}
+                                                      ]]])
           (d/append! (sel1 [:#publishers]) [:div#topic [:h2 "Sent Messages"] [:p "Start simulation by clicking on the devices"]])
-         
+          
           (d/append! (sel1 "#model") lmax)
           (d/append! (sel1 [:#model]) [:div#msg])
           (d/append! (sel1 [:#model]) [:div#subscribers (node [:ul {:style {:padding-left "10px" :list-style-type "none"}}])])

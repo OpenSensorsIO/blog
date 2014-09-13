@@ -17,12 +17,18 @@
         <lastmod>2014-03-13T14:24:32+00:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux/
+        </loc>
+        <lastmod>2014-09-13T08:10:52+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://blog.opensensors.io/</loc>
-        <lastmod>2014-03-13T14:24:32+00:00</lastmod>
+        <lastmod>2014-09-13T08:10:52+01:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/archives/</loc>
-        <lastmod>2014-03-13T14:24:32+00:00</lastmod>
+        <lastmod>2014-09-13T08:10:52+01:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/robots.txt</loc>
