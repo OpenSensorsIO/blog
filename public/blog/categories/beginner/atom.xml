@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Beginner | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/beginner/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2014-09-13T08:12:12+01:00</updated>
+  <updated>2014-09-13T12:18:35+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -53,7 +53,7 @@ Here&rsquo;s a proof:</p>
 <li>Arduino-core&rsquo;s dependencies: avr-libc, avrdude, gcc, gcc-avr</li>
 </ul>
 </li>
-<li>Also try LadyAda&rsquo;s [help page] (<a href="http://www.ladyada.net/learn/arduino/help.html">http://www.ladyada.net/learn/arduino/help.html</a>).</li>
+<li>Also try LadyAda&rsquo;s <a href="http://www.ladyada.net/learn/arduino/help.html">help page</a>.</li>
 </ul>
 
 ]]></content>

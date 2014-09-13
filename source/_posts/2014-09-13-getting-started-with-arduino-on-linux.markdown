@@ -37,4 +37,4 @@ Troubleshooting
 * Check all dependencies were downloaded with arduino and arduino-core .
   * Arduino's dependencies: arduino-core, default-jre, libjna-java, librtx-java
   * Arduino-core's dependencies: avr-libc, avrdude, gcc, gcc-avr
-* Also try LadyAda's [help page] (http://www.ladyada.net/learn/arduino/help.html). 
+* Also try LadyAda's [help page](http://www.ladyada.net/learn/arduino/help.html). 
