@@ -16,7 +16,7 @@ Afterwards you should be able to plug your Arduino and use Arduino IDE to code/u
 
 <img src="{{ root_url }}/images/arduino_bug1.png" />
 
-I found a solution on [AskUbuntu](http://askubuntu.com/questions/26474/unable-to-install-arduino) forum. I downgraded from java 7 to java 6 _(\*\*\*)_ using the command: <pre><code>~$ sudo update-alternatives --config java</code></pre>
+I found a solution on [AskUbuntu](http://askubuntu.com/questions/26474/unable-to-install-arduino) forum. I downgraded from java 7 to java 6 __(\*\*\*)__ using the command: <pre><code>~$ sudo update-alternatives --config java</code></pre>
 I then managed to launch Arduino from the CLI (I was asked to authenticate) and tried to upload a code example to my Arduino (Files > Examples > 01.Basics > Blink).
 I received this error message: 
 
@@ -40,7 +40,8 @@ Troubleshooting
 * Also try LadyAda's [help page](http://www.ladyada.net/learn/arduino/help.html). 
 
 
-_(\*\*\*) Well, well. You might realise later that you actually need java 7 for another program to work! But fear not, see the alternatives below._
+
+__(\*\*\*) Well, well. You might realise later that you actually need java 7 for another program to work! But fear not, see the alternatives below.__
 
 Alternatives to Arduino IDE
 --------------------
