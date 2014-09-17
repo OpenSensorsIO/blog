@@ -16,7 +16,7 @@ Afterwards you should be able to plug your Arduino and use Arduino IDE to code/u
 
 <img src="{{ root_url }}/images/arduino_bug1.png" />
 
-I found a solution on [AskUbuntu](http://askubuntu.com/questions/26474/unable-to-install-arduino) forum. I downgraded from java 7 to java 6 (\*) using the command: <pre><code>~$ sudo update-alternatives --config java</code></pre>
+I found a solution on [AskUbuntu](http://askubuntu.com/questions/26474/unable-to-install-arduino) forum. I downgraded from java 7 to java 6 _(\*\*\*)_ using the command: <pre><code>~$ sudo update-alternatives --config java</code></pre>
 I then managed to launch Arduino from the CLI (I was asked to authenticate) and tried to upload a code example to my Arduino (Files > Examples > 01.Basics > Blink).
 I received this error message: 
 
@@ -39,9 +39,12 @@ Troubleshooting
   * Arduino-core's dependencies: avr-libc, avrdude, gcc, gcc-avr
 * Also try LadyAda's [help page](http://www.ladyada.net/learn/arduino/help.html). 
 
-(\*) Well, well. You might realise later that you actually need java 7 for another program to work (I need it for Cassandra).
-But fear not! There is a way to code for Arduino while keeping java 7.
-[Arduino IDE](http://arduino.cc/en/main/software) is based on java but luckily there other tools to code for Arduino.
+
+_(\*\*\*) Well, well. You might realise later that you actually need java 7 for another program to work! But fear not, see the alternatives below._
+
+Alternatives to Arduino IDE
+--------------------
+[Arduino IDE](http://arduino.cc/en/main/software) is based on java but luckily there other tools to write code for Arduino.
 I tried [Ino](http://inotool.org/) which is written in Python and is a command line tool and allows to write code in any text editor.
 It is straightforward to install with instructions given. You will need to install picocom program if you don't have it <pre><code>$ sudo apt-get install picocom</code></pre>
 There are other [alternatives](https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces) to the Arduino IDE like [Codebender](https://codebender.cc/) which is an online development platform.
