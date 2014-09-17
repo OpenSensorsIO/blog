@@ -46,6 +46,7 @@ __(\*\*\*) Well, well. You might realise later that you actually need java 7 for
 Alternatives to Arduino IDE
 --------------------
 [Arduino IDE](http://arduino.cc/en/main/software) is based on java but luckily there other tools to write code for Arduino.
+
 I tried [Ino](http://inotool.org/) which is written in Python and is a command line tool and allows to write code in any text editor.
 It is straightforward to install with instructions given. You will need to install picocom program if you don't have it <pre><code>~$ sudo apt-get install picocom</code></pre>
 There are other [alternatives](https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces) to the Arduino IDE like [Codebender](https://codebender.cc/) which is an online development platform.
