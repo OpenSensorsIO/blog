@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Institute | OpenSensors.IO]]></title>
+  <link href="http://blog.opensensors.io/blog/categories/institute/atom.xml" rel="self"/>
+  <link href="http://blog.opensensors.io/"/>
+  <updated>2014-10-30T19:53:07+00:00</updated>
+  <id>http://blog.opensensors.io/</id>
+  <author>
+    <name><![CDATA[OpenSensors.IO]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[An Open Data Startup]]></title>
+    <link href="http://blog.opensensors.io/blog/2014/10/30/an-open-data-startup/"/>
+    <updated>2014-10-30T18:00:00+00:00</updated>
+    <id>http://blog.opensensors.io/blog/2014/10/30/an-open-data-startup</id>
+    <content type="html"><![CDATA[<p>In that intense start up haze we occupy, the fact that
+OpenSensors has turned 1 this month completely passed me
+by! I feel that occasion should be marked with at least a post to
+reflect on how far we have come in a year.</p>
+
+<h2>An ODI startup <img src="/images/odi.png" /></h2>
+
+<p>The highlight of the year has to be our inclusion to the
+<a href="http://opendatainstitute.org/">Open Data Institute&rsquo;s</a> startup
+program.</p>
+
+<p>The ODI&rsquo;s mission is to unlock the potential of public data held by
+governments and businesses to help solve the world&rsquo;s hard
+problems. As our mission is to build a connected world based on open
+data and technologies, being part of the ODI&rsquo;s network of like minded
+people is the natural home for OpenSensors.</p>
+
+<h2>Engineering Middleware is Hard</h2>
+
+<p>The original middleware we designed and prototyped for OpenSensors has long been thrown
+out, actually rewritten several times. We have spent hundreds of
+engineering hours making it fast and secure. We can now comfortably process millions of
+messages per second from hundreds of thousands of devices.  And most
+importantly we let each of our users get their own real time feeds of data that they are interested in.</p>
+
+<p>If you told me a year ago that it would take this long to build the
+middleware we would be happy with, how I would have laughed at you&hellip;.</p>
+
+<h2>Hardware is very Hard</h2>
+
+<p>After spending some time working under the radar, towards the middle of 2014 year the Internet
+of Things
+<a href="http://www.forbes.com/sites/gilpress/2014/08/18/its-official-the-internet-of-things-takes-over-big-data-as-the-most-hyped-technology/">hypecycle</a>
+suddenly went into overdrive.</p>
+
+<p>That being said designing and manufacturing hardware products at scale
+is a significantly different proposition to scaling software. The
+skill sets necessary to build and manufacture electronics products is
+rare and laborious. We have found ourselves in the surprising position
+of prototyping hardware for clients and cities as well as learning the
+process of manufacturing.</p>
+
+<h2>Aims for the coming year</h2>
+
+<p>Our central ambition for the next year is to make it very easy for
+people to find and contribute to rich sources of real time data that is of interest to them.</p>
+
+<p>We have some exciting partnerships and projects with various cities and
+groups in parking, disability accessibility and smart buildings all publishing open data. We
+also want to help showcase the excellent work of the many community
+based environmental sensing projects.</p>
+
+<h2>Sunsetting the early access period</h2>
+
+<p>As of the 1st of December 2014, we will be charging for private use of the
+service. Open Data projects will always be free. Private projects
+will incur a small monthly cost towards the service based on the
+number of devices you run.</p>
+
+<p>For a full details of the pricing, see <a href="https://opensensors.io/pricing">https://opensensors.io/pricing</a></p>
+]]></content>
+  </entry>
+  
+</feed>

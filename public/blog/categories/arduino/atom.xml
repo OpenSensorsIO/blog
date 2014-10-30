@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Arduino, | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/arduino/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2014-09-13T12:18:35+01:00</updated>
+  <updated>2014-10-30T19:53:07+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Getting Started With Arduino on Linux (Ubuntu)]]></title>
+    <title type="html"><![CDATA[Getting started with Arduino on Linux (Ubuntu)]]></title>
     <link href="http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux/"/>
     <updated>2014-09-13T07:56:00+01:00</updated>
     <id>http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux</id>
@@ -27,7 +27,7 @@ Afterwards you should be able to plug your Arduino and use Arduino IDE to code/u
 
 <p><img src="/images/arduino_bug1.png" /></p>
 
-<p>I found a solution on <a href="http://askubuntu.com/questions/26474/unable-to-install-arduino">AskUbuntu</a> forum. I downgraded from java 7 to java 6 using the command: <pre><code>~$ sudo update-alternatives &mdash;config java</code></pre>
+<p>I found a solution on <a href="http://askubuntu.com/questions/26474/unable-to-install-arduino">AskUbuntu</a> forum. I downgraded from java 7 to java 6 <strong>(***)</strong> using the command: <pre><code>~$ sudo update-alternatives &mdash;config java</code></pre>
 I then managed to launch Arduino from the CLI (I was asked to authenticate) and tried to upload a code example to my Arduino (Files > Examples > 01.Basics > Blink).
 I received this error message:</p>
 
@@ -56,6 +56,16 @@ Here&rsquo;s a proof:</p>
 <li>Also try LadyAda&rsquo;s <a href="http://www.ladyada.net/learn/arduino/help.html">help page</a>.</li>
 </ul>
 
+
+<p><strong>(***) Well, well. You might realise later that you actually need java 7 for another program to work! But fear not, see the alternatives below.</strong></p>
+
+<h2>Alternatives to Arduino IDE</h2>
+
+<p><a href="http://arduino.cc/en/main/software">Arduino IDE</a> is based on java but luckily there other tools to write code for Arduino.</p>
+
+<p>I tried <a href="http://inotool.org/">Ino</a> which is written in Python and is a command line tool and allows to write code in any text editor.
+It is straightforward to install with instructions given. You will need to install picocom program if you don&rsquo;t have it <pre><code>~$ sudo apt-get install picocom</code></pre>
+There are other <a href="https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces">alternatives</a> to the Arduino IDE like <a href="https://codebender.cc/">Codebender</a> which is an online development platform.</p>
 ]]></content>
   </entry>
   

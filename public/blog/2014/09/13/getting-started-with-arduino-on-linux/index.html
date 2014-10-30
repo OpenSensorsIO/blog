@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Getting Started With Arduino on Linux (Ubuntu) - OpenSensors.IO</title>
+  <title>Getting started with Arduino on Linux (Ubuntu) - OpenSensors.IO</title>
   <meta name="author" content="OpenSensors.IO">
 
   
@@ -19,55 +19,34 @@
 
   
   <link rel="canonical" href="http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux">
-  <link href="/os.png" rel="icon">
+  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="OpenSensors.IO" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Germania+One' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
 
   
 
 </head>
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<logo>
 
-</logo>
-
-
-
-<body 
-       
-      >
+<body   >
   <header role="banner"><hgroup>
-  <h1><a href="http://opensensors.io/">OpenSensors.IO</a></h1>
+  <h1><a href="/">OpenSensors.IO</a></h1>
   
     <h2>News and Updates about OpenSensors.IO</h2>
   
 </hgroup>
 
 </header>
-  <nav role="navigation"><ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
 </ul>
-
-<br>
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
@@ -76,12 +55,10 @@
   </fieldset>
 </form>
   
-<!--
-<ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
 </ul>
--->
 
 </nav>
   <div id="main">
@@ -123,7 +100,7 @@ Afterwards you should be able to plug your Arduino and use Arduino IDE to code/u
 
 <p><img src="/images/arduino_bug1.png" /></p>
 
-<p>I found a solution on <a href="http://askubuntu.com/questions/26474/unable-to-install-arduino">AskUbuntu</a> forum. I downgraded from java 7 to java 6 using the command: <pre><code>~$ sudo update-alternatives &mdash;config java</code></pre>
+<p>I found a solution on <a href="http://askubuntu.com/questions/26474/unable-to-install-arduino">AskUbuntu</a> forum. I downgraded from java 7 to java 6 <strong>(***)</strong> using the command: <pre><code>~$ sudo update-alternatives &mdash;config java</code></pre>
 I then managed to launch Arduino from the CLI (I was asked to authenticate) and tried to upload a code example to my Arduino (Files > Examples > 01.Basics > Blink).
 I received this error message:</p>
 
@@ -152,10 +129,49 @@ Here&rsquo;s a proof:</p>
 <li>Also try LadyAda&rsquo;s <a href="http://www.ladyada.net/learn/arduino/help.html">help page</a>.</li>
 </ul>
 
+
+<p><strong>(***) Well, well. You might realise later that you actually need java 7 for another program to work! But fear not, see the alternatives below.</strong></p>
+
+<h2>Alternatives to Arduino IDE</h2>
+
+<p><a href="http://arduino.cc/en/main/software">Arduino IDE</a> is based on java but luckily there other tools to write code for Arduino.</p>
+
+<p>I tried <a href="http://inotool.org/">Ino</a> which is written in Python and is a command line tool and allows to write code in any text editor.
+It is straightforward to install with instructions given. You will need to install picocom program if you don&rsquo;t have it <pre><code>~$ sudo apt-get install picocom</code></pre>
+There are other <a href="https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces">alternatives</a> to the Arduino IDE like <a href="https://codebender.cc/">Codebender</a> which is an online development platform.</p>
 </div>
 
 
   <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Eleonore Mayola</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-13T07:56:00+01:00" pubdate data-updated="true">Sep 13<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arduino/'>Arduino,</a>, <a class='category' href='/blog/categories/beginner/'>Beginner</a>
+  
+</span>
+
+
+    </p>
     
       <div class="sharing">
   
@@ -168,25 +184,10 @@ Here&rsquo;s a proof:</p>
     
     <p class="meta">
       
-  
-
-<span class="byline author vcard">Text authored by <span class="fn">Eleonore Mayola</span></span>
-
-
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/arduino/'>Arduino,</a>, <a class='category' href='/blog/categories/beginner/'>Beginner</a>
-  
-</span>
-
-
-    </p>
-    <p class="meta">
-      
         <a class="basic-alignment left" href="/blog/2014/03/12/iot-in-the-city/" title="Previous Post: IOT in the city">&laquo; IOT in the city</a>
       
+      
+        <a class="basic-alignment right" href="/blog/2014/10/30/an-open-data-startup/" title="Next Post: An Open Data Startup">An Open Data Startup &raquo;</a>
       
     </p>
   </footer>
@@ -194,12 +195,9 @@ Here&rsquo;s a proof:</p>
 
 </div>
 
-
-<!-- <aside class="sidebar"> -->
-
-<!--    -->
-
-<!--   
+<aside class="sidebar">
+  
+    
 <section>
   <h1>Twitter</h1>
   <a class="twitter-timeline" href="https://twitter.com/OpenSensorsIO" data-widget-id="387067353206226945">Tweets by @OpenSensorsIO</a>
@@ -210,6 +208,10 @@ Here&rsquo;s a proof:</p>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/30/an-open-data-startup/">An Open Data Startup</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/09/13/getting-started-with-arduino-on-linux/">Getting Started With Arduino on Linux (Ubuntu)</a>
@@ -227,27 +229,18 @@ Here&rsquo;s a proof:</p>
         <a href="/blog/2013/10/08/future-cities/">Future Cities</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/10/07/hello-world/">Hello World</a>
-      </li>
-    
   </ul>
 </section>
- -->
 
-<!--    -->
-
-<!-- </aside> -->
-
+  
+</aside>
 
 
     </div>
   </div>
-  <footer role="contentinfo">
-
-<p>
-  Website copyright &copy; 2014 - OpenSensors.IO |
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> </span>.
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - OpenSensors.IO -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
