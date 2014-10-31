@@ -34,7 +34,7 @@ If you told me a year ago that it would take this long to build the
 middleware we would be happy with, how I would have laughed at you....
 
 ## Hardware is very Hard
-After spending some time working under the radar, towards the middle of 2014 year the Internet
+After spending some time working under the radar, towards the middle of 2014 the Internet
 of Things
 [hypecycle](http://www.forbes.com/sites/gilpress/2014/08/18/its-official-the-internet-of-things-takes-over-big-data-as-the-most-hyped-technology/)
 suddenly went into overdrive.
