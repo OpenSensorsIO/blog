@@ -9,9 +9,7 @@
   <meta name="author" content="OpenSensors.IO">
 
   
-  <meta name="description" content="In that intense start up haze we occupy, the fact that
-OpenSensors has turned 1 this month completely passed me
-by! I feel that occasion should be &hellip;">
+  <meta name="description" content="Today we’re going to look at using the OwnTracks app within the OpenSensors platform. &lsquo;OwnTracks&rsquo; (formerly MQTTitude) allows you to keep &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +65,196 @@ by! I feel that occasion should be &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/20/owntracks-journey-part-one/">OwnTracks Journey - Part One</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-20T12:56:00+00:00" pubdate data-updated="true">Jan 20<span>th</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today we’re going to look at using the OwnTracks app within the OpenSensors platform. <a href="http://owntracks.org">&lsquo;OwnTracks&rsquo; (formerly MQTTitude)</a> allows you to keep track of your connected devices location. The app is open-source and uses open protocols for secure and private communications. First off we’ll start by installing the OwnTracks app on our device, I’m using a Nexus tablet for this attempt. Also, make sure your device <em>Location Data is enabled</em>. Whilst we’re waiting for that to sort itself out, let’s open up OpenSensors.io.</p>
+
+<p>If you haven’t already, create a new account, when you’re in &ndash; select Devices on the nav bar to the left. You should see the interface below.</p>
+
+<p><img src="/images/createdev.jpg" /></p>
+
+<p>Click <em>Create New Device</em>, give it a name and, optionally, a description (what is your device?). Importantly, choose whether you’d like to publish your data as public Open Data or Private Data. Whilst we’re on this screen, take note of the <em>Client ID</em> and <em>Password</em>, if you forget or lose your device password, don’t worry, just come back to <a href="https://opensensors.io/devices">this page</a>, select your device and click the small padlock icon on the far right next to the bin, this will reset your password.</p>
+
+<p>Now we’ve got that sorted, let’s run OwnTracks on our device. You should see this screen. In the top right we see two buttons, on the left is the Report button, essentially submitting data to our server, and the right, options. Click options and then preferences.</p>
+
+<p><img src="/images/owntracks.png" /> alongside <img src="/images/owntrackspref.png" /></p>
+
+<p>As you can see we’re currently disconnected from any network, let’s change that. Firstly, click <em>Advanced</em> and select <em>Advanced connection preferences</em>. Now go back to preferences menu and click <em>Connection</em> and input the following &ndash; input your own <em>username</em>, <em>Device ID</em> and <em>Device Password</em> as displayed earlier on OpenSensors.io device manager, and type OpenSensors.io as <em>Host</em> and 1883 as <em>Port Number</em>. Change <em>Connection Security</em> to None. These are OSIO’s settings. You can go back to Preferences and change the automatic reporting interval etc.</p>
+
+<p><img src="/images/owntracksconnection.png" /></p>
+
+<p>We’re all set. Now let’s go back to our devices page, and scroll down to the <em>Events</em> box, whereas before it looked this…</p>
+
+<p><img src="/images/events1.jpg" /></p>
+
+<p>We should now be publishing data &ndash; test your new connected device, publishing your location data by pressing the <em>Report</em> button on the OwnTracks main screen. Each time you submit data through the app you should see…</p>
+
+<p><img src="/images/eventssuccess.jpg" /></p>
+
+<p>You’re now publishing Open Data through the OpenSensors.io messaging broker! From this you are able to create smart apps and projects using your data, all we need to do now is have your app and project subscribe to our twitter hashtags of the IoT, topics &ndash; but you’ll have to wait and see until part two of our OwnTrack journey!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/19/installing-an-arduino-wifi-shield/">Installing an Arduino Wifi Shield</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-19T20:07:00+00:00" pubdate data-updated="true">Nov 19<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After a few Arduino projects (mainly blinking LEDs and connecting sensors) I tried
+to connect my Arduino to the internet using a Wifi shield!</p>
+
+<p>I started by looking at Arduino Wifi shield <a href="http://arduino.cc/en/Guide/ArduinoWiFiShield">instructions</a>.</p>
+
+<p>Then I physically connected my Arduino and Wifi shield:</p>
+
+<p><img src="/images/arduino-wifishield.jpg" /></p>
+
+<p>As a test I wanted to scan for available networks using the example code on <a href="http://arduino.cc/en/Guide/ArduinoWiFiShield#toc5">this</a>
+Arduino Wifi shield webpage.</p>
+
+<p>I mentioned in a previous blog <a href="http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux/">post</a>
+I had an issue with the Arduino IDE and now use <a href="http://inotool.org/">inotool</a>.
+It enables to code for Arduino in your text editor/IDE of choice and compile and
+upload code from the command line (but it still needs the Arduino IDE to be installed).</p>
+
+<p>Here&rsquo;s how I start a project with inotool:</p>
+
+<pre><code>~$ mkdir new_project && cd new_project</code>
+<code>~$ ino init</code></pre>
+
+
+<p>Here&rsquo;s the structure of my project afterwards:</p>
+
+<p><img src="/images/directory_structure.png" /></p>
+
+<p>I can then edit the code in src/sketch.ino. In that case I just copied/pasted
+the code from Arduino&rsquo;s example:</p>
+
+<p><img src="/images/Test_wifishield.png" /></p>
+
+<p>I built as usual using this command: <pre><code>~$ ino build</code></pre> &hellip; and got
+the following error:</p>
+
+<p><img src="/images/build_error_wifi.png" /></p>
+
+<p>=> It seemed there was a conflict between the Ethernet and WiFi Libraries.</p>
+
+<p>&hellip; Then I kind of lost it (O_O) and tried all those things:</p>
+
+<ul>
+<li>bypassing both Arduino IDE and inotool by using a Makefile for compiling Arduino (<a href="http://hardwarefun.com/tutorials/compiling-arduino-sketches-using-makefile">http://hardwarefun.com/tutorials/compiling-arduino-sketches-using-makefile</a>)
+   => and I got lost down makefile rabbit hole&hellip;</li>
+<li>updating (or trying to update) the wifi shield firmware using Arduino&rsquo;s <a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading">instructions</a> and blog posts.
+  => when I finally managed it, it didn&rsquo;t have any effect&hellip;</li>
+<li>downgrading from Arduino IDE version 1.0.5 to 1.0.2 (older versions are found <a href="http://arduino.cc/en/Main/OldSoftwareReleases">here</a>).
+  => no improvement really&hellip;</li>
+</ul>
+
+
+<p>I went back and forth between those solutions and at best I could compile the sketch but my MAC address was 0.0.0.0 (same for my IP address)!</p>
+
+<p><strong>Here&rsquo;s how it finally worked for me:</strong></p>
+
+<ul>
+<li>I downgraded to Arduino IDE version 1.0.1.</li>
+<li>Copied &ldquo;arduino-1.0.1&rdquo; in usr/share/ and renamed it to &ldquo;arduino&rdquo; so that the path to the IDE was /usr/share/arduino/.</li>
+<li>I added wifishield/ folder from <a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield">https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield</a> to /usr/share/arduino/hardware/arduino/firmwares/.</li>
+<li>I added the WiFi library from <a href="https://github.com/arduino/Arduino/tree/master/libraries/WiFi">https://github.com/arduino/Arduino/tree/master/libraries/WiFi</a> to /usr/share/arduino.</li>
+<li>I upgraded the firmware (not sure if necessary) => <em>Note</em> : you need a USB 2.0 Mini B cable to link the wifi shield directly to your computer!
+
+<ul>
+<li> here are the instructions to install dfu-programmer: <a href="https://github.com/dfu-programmer/dfu-programmer">https://github.com/dfu-programmer/dfu-programmer</a></li>
+<li> and you can get the latest wifi shield scripts from <a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield/scripts">https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield/scripts</a></li>
+<li> replace your scripts in /usr/share/arduino/hardware/arduino/firmwares/wifishield/scripts/ with the ones from Arduino Github repo.</li>
+<li> close the J3 jumper on the shield (***),
+   then run:
+   <pre><code>~$ sudo ./ArduinoWifiShield_upgrade.sh -a /usr/share/arduino -f all</code></pre></li>
+</ul>
+</li>
+</ul>
+
+
+<p>Yay! (^o^) You can now try new projects like creating a <a href="http://arduino.cc/en/Tutorial/WiFiWebServer">webserver</a> or sending sensor data via internet!</p>
+
+<br>
+
+
+<p>(***) In case you wonder what a <strong>J3 jumper</strong> looks like,
+those pictures could be useful to you:</p>
+
+<ul>
+<li>Here the J3 jumper is open (for when the shield communicate with the Arduino):</li>
+</ul>
+
+
+<p><img src="/images/j3_opened.jpg" /></p>
+
+<ul>
+<li>Here the J3 jumper is closed (or in programming mode, to update the firmware):</li>
+</ul>
+
+
+<p><img src="/images/j3_closed.jpg" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -719,7 +907,7 @@ The full list data sets are below:</p>
 
 <p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
 
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#104;&#x65;&#108;&#x6c;&#x6f;&#x40;&#111;&#112;&#101;&#110;&#115;&#101;&#110;&#x73;&#111;&#114;&#115;&#46;&#105;&#111;">&#104;&#x65;&#108;&#108;&#x6f;&#64;&#x6f;&#x70;&#x65;&#x6e;&#x73;&#x65;&#110;&#x73;&#111;&#x72;&#115;&#46;&#x69;&#x6f;</a>&rsquo; to join our private beta.</p>
+<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x68;&#101;&#x6c;&#x6c;&#111;&#64;&#111;&#112;&#101;&#x6e;&#115;&#101;&#x6e;&#115;&#x6f;&#114;&#115;&#x2e;&#x69;&#x6f;">&#104;&#101;&#108;&#108;&#111;&#64;&#x6f;&#112;&#x65;&#110;&#x73;&#101;&#110;&#x73;&#111;&#114;&#x73;&#46;&#x69;&#x6f;</a>&rsquo; to join our private beta.</p>
 </div>
   
   
@@ -748,6 +936,14 @@ The full list data sets are below:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/01/20/owntracks-journey-part-one/">OwnTracks Journey - Part One</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/19/installing-an-arduino-wifi-shield/">Installing an Arduino Wifi Shield</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/30/an-open-data-startup/">An Open Data Startup</a>
       </li>
     
@@ -759,14 +955,6 @@ The full list data sets are below:</p>
         <a href="/blog/2014/03/12/iot-in-the-city/">IOT in the City</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/25/the-big-red-button/">The Big Red Button</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/08/future-cities/">Future Cities</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -776,7 +964,7 @@ The full list data sets are below:</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - OpenSensors.IO -
+  Copyright &copy; 2015 - OpenSensors.IO -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: OwnTracks, | OpenSensors.IO]]></title>
+  <link href="http://blog.opensensors.io/blog/categories/owntracks/atom.xml" rel="self"/>
+  <link href="http://blog.opensensors.io/"/>
+  <updated>2015-01-20T13:24:50+00:00</updated>
+  <id>http://blog.opensensors.io/</id>
+  <author>
+    <name><![CDATA[OpenSensors.IO]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OwnTracks Journey - Part One]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/01/20/owntracks-journey-part-one/"/>
+    <updated>2015-01-20T12:56:00+00:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/01/20/owntracks-journey-part-one</id>
+    <content type="html"><![CDATA[<p>Today we’re going to look at using the OwnTracks app within the OpenSensors platform. <a href="http://owntracks.org">&lsquo;OwnTracks&rsquo; (formerly MQTTitude)</a> allows you to keep track of your connected devices location. The app is open-source and uses open protocols for secure and private communications. First off we’ll start by installing the OwnTracks app on our device, I’m using a Nexus tablet for this attempt. Also, make sure your device <em>Location Data is enabled</em>. Whilst we’re waiting for that to sort itself out, let’s open up OpenSensors.io.</p>
+
+<p>If you haven’t already, create a new account, when you’re in &ndash; select Devices on the nav bar to the left. You should see the interface below.</p>
+
+<p><img src="/images/createdev.jpg" /></p>
+
+<p>Click <em>Create New Device</em>, give it a name and, optionally, a description (what is your device?). Importantly, choose whether you’d like to publish your data as public Open Data or Private Data. Whilst we’re on this screen, take note of the <em>Client ID</em> and <em>Password</em>, if you forget or lose your device password, don’t worry, just come back to <a href="https://opensensors.io/devices">this page</a>, select your device and click the small padlock icon on the far right next to the bin, this will reset your password.</p>
+
+<p>Now we’ve got that sorted, let’s run OwnTracks on our device. You should see this screen. In the top right we see two buttons, on the left is the Report button, essentially submitting data to our server, and the right, options. Click options and then preferences.</p>
+
+<p><img src="/images/owntracks.png" /> alongside <img src="/images/owntrackspref.png" /></p>
+
+<p>As you can see we’re currently disconnected from any network, let’s change that. Firstly, click <em>Advanced</em> and select <em>Advanced connection preferences</em>. Now go back to preferences menu and click <em>Connection</em> and input the following &ndash; input your own <em>username</em>, <em>Device ID</em> and <em>Device Password</em> as displayed earlier on OpenSensors.io device manager, and type OpenSensors.io as <em>Host</em> and 1883 as <em>Port Number</em>. Change <em>Connection Security</em> to None. These are OSIO’s settings. You can go back to Preferences and change the automatic reporting interval etc.</p>
+
+<p><img src="/images/owntracksconnection.png" /></p>
+
+<p>We’re all set. Now let’s go back to our devices page, and scroll down to the <em>Events</em> box, whereas before it looked this…</p>
+
+<p><img src="/images/events1.jpg" /></p>
+
+<p>We should now be publishing data &ndash; test your new connected device, publishing your location data by pressing the <em>Report</em> button on the OwnTracks main screen. Each time you submit data through the app you should see…</p>
+
+<p><img src="/images/eventssuccess.jpg" /></p>
+
+<p>You’re now publishing Open Data through the OpenSensors.io messaging broker! From this you are able to create smart apps and projects using your data, all we need to do now is have your app and project subscribe to our twitter hashtags of the IoT, topics &ndash; but you’ll have to wait and see until part two of our OwnTrack journey!</p>
+]]></content>
+  </entry>
+  
+</feed>
