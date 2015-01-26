@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2015-01-20T13:24:50+00:00</updated>
+  <updated>2015-01-26T11:13:14+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -47,7 +47,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[installing an arduino wifi shield]]></title>
+    <title type="html"><![CDATA[Installing an Arduino Wifi Shield]]></title>
     <link href="http://blog.opensensors.io/blog/2014/11/19/installing-an-arduino-wifi-shield/"/>
     <updated>2014-11-19T20:07:00+00:00</updated>
     <id>http://blog.opensensors.io/blog/2014/11/19/installing-an-arduino-wifi-shield</id>
@@ -218,7 +218,7 @@ number of devices you run.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Getting started with Arduino on Linux (Ubuntu)]]></title>
+    <title type="html"><![CDATA[Getting Started With Arduino on Linux (Ubuntu)]]></title>
     <link href="http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux/"/>
     <updated>2014-09-13T07:56:00+01:00</updated>
     <id>http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux</id>
@@ -274,7 +274,7 @@ There are other <a href="https://learn.sparkfun.com/tutorials/alternative-arduin
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[IOT in the city]]></title>
+    <title type="html"><![CDATA[IOT in the City]]></title>
     <link href="http://blog.opensensors.io/blog/2014/03/12/iot-in-the-city/"/>
     <updated>2014-03-12T13:41:00+00:00</updated>
     <id>http://blog.opensensors.io/blog/2014/03/12/iot-in-the-city</id>
@@ -368,6 +368,25 @@ height=800px width=900px scrolling = "no"></iframe>
 
 
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Your First Post]]></title>
+    <link href="http://blog.opensensors.io/blog/2013/12/28/lorem/"/>
+    <updated>2013-12-28T15:49:17+00:00</updated>
+    <id>http://blog.opensensors.io/blog/2013/12/28/lorem</id>
+    <content type="html"><![CDATA[<p>This is a lipsum page to demonstrate the theme&rsquo;s typography. Modify this post to your heart&rsquo;s content &ndash; or simply delete it.</p>
+
+<p>Lorem ipsum dolor sit amet, ut brute legimus honestatis cum. Eirmod verear mei ne, id falli conclusionemque est, autem populo duo et. Causae noluisse ex sed. Solet mentitum salutandi ad mei, vis ex esse prima nullam, tation melius aliquid pri ea. Minimum sententiae mei ad, mei et reque novum.</p>
+
+<p>Eu nec eirmod inermis, nominavi deleniti electram ut mei. Veri quidam vivendum sit id, voluptaria percipitur deterruisset an nec. Mei mazim erroribus eu, his in errem nonumy comprehensam. Modo pericula duo id, te vis facete verear. Ex cum volutpat corrumpit aliquando, ad vim assentior argumentum temporibus.</p>
+
+<p>Id est eros justo movet, duo eu alii vitae. Quo altera imperdiet efficiantur in, nec error iudico an. Sed an etiam consul, invenire platonem nam an. Nec an integre splendide, libris oportere duo ei. Has eu solet sententiae, ex nam noster tractatos, sonet patrioque nec ad.</p>
+
+<p>An minim mollis mediocrem est, lucilius atomorum ex eum. Quaeque probatus qui cu, ut mutat dolorem epicurei pro, vel labores delicata rationibus et. Cu eos sumo inermis, viderer molestiae assueverit ius ad. Cum atqui error insolens in. Iuvaret adolescens referrentur cu pri.</p>
+
+<p>Ei putant perfecto atomorum eos, an civibus hendrerit sit. Pri cu probo nominavi, et sea cetero hendrerit incorrupte. Amet unum prompta per at, impedit reprehendunt an cum, vix laudem dolorem at. Suas blandit molestie in eum.</p>
 ]]></content>
   </entry>
   
@@ -573,7 +592,7 @@ you&rsquo;ll see your messages in your browser.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[future cities]]></title>
+    <title type="html"><![CDATA[Future Cities]]></title>
     <link href="http://blog.opensensors.io/blog/2013/10/08/future-cities/"/>
     <updated>2013-10-08T13:07:00+01:00</updated>
     <id>http://blog.opensensors.io/blog/2013/10/08/future-cities</id>
@@ -642,7 +661,7 @@ The full list data sets are below:</p>
 
 <p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
 
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x68;&#101;&#x6c;&#x6c;&#111;&#64;&#111;&#112;&#101;&#x6e;&#115;&#101;&#x6e;&#115;&#x6f;&#114;&#115;&#x2e;&#x69;&#x6f;">&#104;&#101;&#108;&#108;&#111;&#64;&#x6f;&#112;&#x65;&#110;&#x73;&#101;&#110;&#x73;&#111;&#114;&#x73;&#46;&#x69;&#x6f;</a>&rsquo; to join our private beta.</p>
+<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#104;&#101;&#108;&#108;&#x6f;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#115;&#101;&#110;&#x73;&#111;&#114;&#115;&#46;&#105;&#111;">&#x68;&#x65;&#108;&#x6c;&#x6f;&#x40;&#111;&#112;&#101;&#110;&#x73;&#101;&#110;&#x73;&#111;&#x72;&#115;&#46;&#x69;&#x6f;</a>&rsquo; to join our private beta.</p>
 ]]></content>
   </entry>
   

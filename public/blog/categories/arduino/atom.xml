@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Arduino | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/arduino/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2015-01-20T13:24:50+00:00</updated>
+  <updated>2015-01-26T11:13:14+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[installing an arduino wifi shield]]></title>
+    <title type="html"><![CDATA[Installing an Arduino Wifi Shield]]></title>
     <link href="http://blog.opensensors.io/blog/2014/11/19/installing-an-arduino-wifi-shield/"/>
     <updated>2014-11-19T20:07:00+00:00</updated>
     <id>http://blog.opensensors.io/blog/2014/11/19/installing-an-arduino-wifi-shield</id>
