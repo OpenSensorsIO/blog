@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>OwnTracks Journey - Part One - OpenSensors.IO</title>
+  <title>Search Has Landed - OpenSensors.IO</title>
   <meta name="author" content="OpenSensors.IO">
 
   
-  <meta name="description" content="Today we’re going to look at using the OwnTracks app within the OpenSensors platform. &lsquo;OwnTracks&rsquo; (formerly MQTTitude) allows you to keep &hellip;">
+  <meta name="description" content="There’s a lot of data out there. We’re doing our best to help you discover it. With the latest release of OpenSensors, users are now able to search &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.opensensors.io/blog/2015/01/20/owntracks-journey-part-one">
+  <link rel="canonical" href="http://blog.opensensors.io/blog/2015/02/16/search-has-landed">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="OpenSensors.IO" type="application/atom+xml">
@@ -90,7 +90,7 @@
   
   <header>
     
-      <h1 class="entry-title">OwnTracks Journey - Part One</h1>
+      <h1 class="entry-title">Search Has Landed</h1>
     
     
       <p class="meta">
@@ -106,38 +106,27 @@
   
 
 
-<time datetime="2015-01-20T12:56:00+00:00" pubdate data-updated="true">Jan 20<span>th</span>, 2015</time>
+<time datetime="2015-02-16T10:51:00+00:00" pubdate data-updated="true">Feb 16<span>th</span>, 2015</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Today we’re going to look at using the OwnTracks app within the OpenSensors platform. <a href="http://owntracks.org">&lsquo;OwnTracks&rsquo; (formerly MQTTitude)</a> allows you to keep track of your connected devices location. The app is open-source and uses open protocols for secure and private communications. First off we’ll start by installing the OwnTracks app on our device, I’m using a Nexus tablet for this attempt. Also, make sure your device <em>Location Data is enabled</em>. Whilst we’re waiting for that to sort itself out, let’s open up OpenSensors.io.</p>
+<div class="entry-content"><p>There’s a lot of data out there. We’re doing our best to help you discover it. With the latest release of OpenSensors, users are now able to search the OpenSensors database of thousands of real-time public Open Data feeds and subscribe to Topics of interest.</p>
 
-<p>If you haven’t already, create a new account, when you’re in &ndash; select Devices on the nav bar to the left. You should see the interface below.</p>
+<p>To search the OSIO datasets simply type your query into the search box at the top of the site. A search query can relate to any parts of a Topic, name, unit, description, or the user who created the Topic.</p>
 
-<p><img src="/images/createdev.jpg" /></p>
+<p>Once found, you can subscribe to a Topic by clicking on the star icon allowing you to build a library of bookmarked Topics of interest that you can recall at any time in the new Favourite Topics page.</p>
 
-<p>Click <em>Create New Device</em>, give it a name and, optionally, a description (what is your device?). Importantly, choose whether you’d like to publish your data as public Open Data or Private Data. Whilst we’re on this screen, take note of the <em>Client ID</em> and <em>Password</em>, if you forget or lose your device password, don’t worry, just come back to <a href="https://opensensors.io/devices">this page</a>, select your device and click the small padlock icon on the far right next to the bin, this will reset your password.</p>
+<p>The savvy user will note the new Organisation page too. Organisations will enable you to own a topic tree for your business or citizen science group under</p>
 
-<p>Now we’ve got that sorted, let’s run OwnTracks on our device. You should see this screen. In the top right we see two buttons, on the left is the Report button, essentially submitting data to our server, and the right, options. Click options and then preferences.</p>
+<pre><code>/orgs/&lt;business name&gt;/*
+</code></pre>
 
-<p><img src="/images/owntracks.png" /> alongside <img src="/images/owntrackspref.png" /></p>
+<p>but other people such as members of your group or customers can publish to the organisations topic tree, the clearest example of this is Github’s organisations.  Organisations will help you manage your products and assets out in the wild whether in cities or people’s homes.</p>
 
-<p>As you can see we’re currently disconnected from any network, let’s change that. Firstly, click <em>Advanced</em> and select <em>Advanced connection preferences</em>. Now go back to preferences menu and click <em>Connection</em> and input the following &ndash; input your own <em>username</em>, <em>Device ID</em> and <em>Device Password</em> as displayed earlier on OpenSensors.io device manager, and type OpenSensors.io as <em>Host</em> and 1883 as <em>Port Number</em>. Change <em>Connection Security</em> to None. These are OSIO’s settings. You can go back to Preferences and change the automatic reporting interval etc.</p>
-
-<p><img src="/images/owntracksconnection.png" /></p>
-
-<p>We’re all set. Now let’s go back to our devices page, and scroll down to the <em>Events</em> box, whereas before it looked this…</p>
-
-<p><img src="/images/events1.jpg" /></p>
-
-<p>We should now be publishing data &ndash; test your new connected device, publishing your location data by pressing the <em>Report</em> button on the OwnTracks main screen. Each time you submit data through the app you should see…</p>
-
-<p><img src="/images/eventssuccess.jpg" /></p>
-
-<p>You’re now publishing Open Data through the OpenSensors.io messaging broker! From this you are able to create smart apps and projects using your data, all we need to do now is have your app and project subscribe to our twitter hashtags of the IoT, topics &ndash; but you’ll have to wait and see until part two of our OwnTrack journey!</p>
+<p>This is the first, very much alpha, iteration of the seamless connected experiences we are building throughout the next releases over the coming days, along with Featured Feeds and dynamic data feed visualisations.</p>
 </div>
 
 
@@ -145,7 +134,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.opensensors.io/blog/2015/01/20/owntracks-journey-part-one/" data-via="opensensorsio" data-counturl="http://blog.opensensors.io/blog/2015/01/20/owntracks-journey-part-one/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.opensensors.io/blog/2015/02/16/search-has-landed/" data-via="opensensorsio" data-counturl="http://blog.opensensors.io/blog/2015/02/16/search-has-landed/" >Tweet</a>
   
   
   
@@ -163,7 +152,7 @@
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/beginner/'>Beginner</a>, <a class='category' href='/blog/categories/owntracks/'>OwnTracks,</a>
+    <a class='category' href='/blog/categories/features/'>Features,</a>, <a class='category' href='/blog/categories/new/'>New</a>, <a class='category' href='/blog/categories/organisations/'>Organisations</a>, <a class='category' href='/blog/categories/search/'>Search,</a>
   
 </span>
 
@@ -171,10 +160,8 @@
     </p>
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/11/19/installing-an-arduino-wifi-shield/" title="Previous Post: installing an arduino wifi shield">&laquo; installing an arduino wifi shield</a>
+        <a class="basic-alignment left" href="/blog/2015/01/20/owntracks-journey-part-one/" title="Previous Post: OwnTracks Journey - Part One">&laquo; OwnTracks Journey - Part One</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/02/16/search-has-landed/" title="Next Post: Search has Landed">Search has Landed &raquo;</a>
       
     </p>
   </footer>

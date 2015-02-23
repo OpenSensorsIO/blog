@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Search, | OpenSensors.IO]]></title>
+  <link href="http://blog.opensensors.io/blog/categories/search/atom.xml" rel="self"/>
+  <link href="http://blog.opensensors.io/"/>
+  <updated>2015-02-16T11:06:31+00:00</updated>
+  <id>http://blog.opensensors.io/</id>
+  <author>
+    <name><![CDATA[OpenSensors.IO]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Search Has Landed]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/02/16/search-has-landed/"/>
+    <updated>2015-02-16T10:51:00+00:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/02/16/search-has-landed</id>
+    <content type="html"><![CDATA[<p>There’s a lot of data out there. We’re doing our best to help you discover it. With the latest release of OpenSensors, users are now able to search the OpenSensors database of thousands of real-time public Open Data feeds and subscribe to Topics of interest.</p>
+
+<p>To search the OSIO datasets simply type your query into the search box at the top of the site. A search query can relate to any parts of a Topic, name, unit, description, or the user who created the Topic.</p>
+
+<p>Once found, you can subscribe to a Topic by clicking on the star icon allowing you to build a library of bookmarked Topics of interest that you can recall at any time in the new Favourite Topics page.</p>
+
+<p>The savvy user will note the new Organisation page too. Organisations will enable you to own a topic tree for your business or citizen science group under</p>
+
+<pre><code>/orgs/&lt;business name&gt;/*
+</code></pre>
+
+<p>but other people such as members of your group or customers can publish to the organisations topic tree, the clearest example of this is Github’s organisations.  Organisations will help you manage your products and assets out in the wild whether in cities or people’s homes.</p>
+
+<p>This is the first, very much alpha, iteration of the seamless connected experiences we are building throughout the next releases over the coming days, along with Featured Feeds and dynamic data feed visualisations.</p>
+]]></content>
+  </entry>
+  
+</feed>
