@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ODI, | OpenSensors.IO]]></title>
+  <link href="http://blog.opensensors.io/blog/categories/odi/atom.xml" rel="self"/>
+  <link href="http://blog.opensensors.io/"/>
+  <updated>2015-02-23T14:36:44+00:00</updated>
+  <id>http://blog.opensensors.io/</id>
+  <author>
+    <name><![CDATA[OpenSensors.IO]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Measuring Air Quality on Opensensors]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/02/22/measuring-air-quality-on-opensensors/"/>
+    <updated>2015-02-22T22:22:00+00:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/02/22/measuring-air-quality-on-opensensors</id>
+    <content type="html"><![CDATA[<h3><strong>Measuring the air quality of the ODI using an Arduino and a Shinyei PPD-42</strong></h3>
+
+<p>So, whilst thinking of a good demonstration for the Opensensors platform, we thought why not see how polluted our workplace is by hooking up a sensor to publish a continuous data stream to the Opensensors messaging broker.<br/>
+For this we need an easy to pick up and use sensor,  we settled on the Shinyei PPD-42. We&rsquo;ll use this in order to measure the number of potentially hazardous small particulates in the air, with an arduino connected to a linux PC (or Raspberry PI).</p>
+
+<p>To run this mini-project you will need:</p>
+
+<ol>
+<li>Shinyei PPD-42</li>
+<li>Arduino UNO</li>
+<li>Computer with Linux installed (you can use a Raspberry PI)</li>
+</ol>
+
+
+<p>We are basing this run-through on a project called DustDuino that uses the Shinyei PPD-42 sensor with an arduino and a wifi module. Check it out <a href="http://www.mentalmunition.com/2013/10/measure-air-pollution-in-your-home-or.html">here</a>. We used this project as our reference when setting up the sensor and writing the Arduino code.</p>
+
+<p><img src="/images/pic6.jpg" /></p>
+
+<p>Firstly we follow step 2 of the instructions for hooking up the sensor to the Arduino.
+Then we download the code from the projects <a href="https://github.com/NodeJournalism/DustDuino">github repository</a> by opening the link for the code DustDuinoSerial.ino selecting raw and saving that page.</p>
+
+<p><img src="/images/pic1.png" /></p>
+
+<p>Opening this up in the arduino IDE, we now upload it to our Arduino UNO by connecting the Arduino and pressing upload.</p>
+
+<p><img src="/images/pic2.png" /></p>
+
+<p>You can check the data is coming in by using the Arduino IDE’s serial monitor.</p>
+
+<p><img src="/images/pic3.png" /></p>
+
+<p>We then need to figure out how to send the incoming serial message to the Opensensors message broker.</p>
+
+<p>To do this we chose to write a Python script. We used the <a href="https://pypi.python.org/pypi/paho-mqtt">Mosquitto Python module</a>.
+I’m going to assume that you already have Python installed, as it comes pre-packaged on most versions of Linux.
+If you don’t have it already, you&rsquo;ll need to install pip to download and set up the Mosquitto python module. On Ubuntu or Debian this can be done with the following command:</p>
+
+<pre><code>sudo apt-get install python-pip
+</code></pre>
+
+<p>Once pip is installed we can install the Mosquitto python client module using the following command:</p>
+
+<pre><code>sudo pip install paho-mqtt
+</code></pre>
+
+<p>You can find out how to use the python module by having a read through the website which we’ve linked above.
+Writing and compiling python is really easy.</p>
+
+<h3>Hello Python World</h3>
+
+<p>Open up your favorite plaintext editor. Enter the line:</p>
+
+<pre><code>print “Hello World”
+</code></pre>
+
+<p>Save it as hi.py. Then in terminal, navigate to your document and enter the command:</p>
+
+<pre><code>python hi.py
+</code></pre>
+
+<p>You should see your “Hello World” response. It’s that easy.</p>
+
+<h3>Hello Opensensors</h3>
+
+<p>To use the Mosquitto client python module we can run the following code to test out publishing. You’ll need to replace my username “Louis” (keeping the speech marks), and password with your details:</p>
+
+<p>The mosquitto library we need to communicate with the Opensensors message broker:</p>
+
+<pre><code>import paho.mqtt.client as mqtt
+</code></pre>
+
+<p>Initialise the client option with our client ID of our device:</p>
+
+<pre><code>mqttc = mqtt.Client(client_id="939")
+</code></pre>
+
+<p>Set our username and password:</p>
+
+<pre><code>mqttc.username_pw_set("Louis", password="AbcDEFgH")
+</code></pre>
+
+<p>Connect to the Opensensors server:</p>
+
+<pre><code>mqttc.connect("opensensors.io")
+</code></pre>
+
+<p>Publish a message to say hello:</p>
+
+<pre><code>mqttc.publish("/users/Louis/test2", payload="Hello Opensensors!", qos=0, retain=False)
+</code></pre>
+
+<p>Disconnect:</p>
+
+<pre><code>mqttc.disconnect();
+</code></pre>
+
+<p>Success, you should now have a functioning sensor :)</p>
+
+<p><img src="/images/pic4.png" /></p>
+
+<p>Next we need to get the serial working. To find out what your arduino serial port looks like we executed  following command into terminal:</p>
+
+<pre><code>dmesg | grep tty
+</code></pre>
+
+<p>The output was something like this&hellip;</p>
+
+<pre><code>[    0.000000] console [tty0] enabled
+[ 3522.192687] cdc_acm 7-1:1.0: ttyACM0: USB ACM device
+</code></pre>
+
+<p>The second line has details of our Ardiuno. The ttyACM0 is the device name and ‘/dev/ttyACM0’ is the serial port.</p>
+
+<p>To open and read the serial port Python makes it really easy. You can run a little test to check whether it is working by using the following code:</p>
+
+<p>For communication with the Arduino we need to use the serial library:</p>
+
+<pre><code>import serial
+ser = serial.Serial(‘/dev/ttyACM0’) # open first serial port
+while True:
+print ser.readline()        # prints each line it reads from serial
+</code></pre>
+
+<p><img src="/images/pic5.jpg" /></p>
+
+<p>Finally we just need to hack together the two pieces. Here is the code we used:</p>
+
+<pre><code>import serial
+import paho.mqtt.client as mqtt
+import time
+
+mqttc = mqtt.Client(client_id="939")
+mqttc.username_pw_set("Louis", password="AbcDEFgH")
+mqttc.connect("opensensors.io")
+
+ser = serial.Serial('/dev/ttyACM0')  # open first serial port
+while True:
+message= ser.readline()
+print message
+mqttc.publish("/users/Louis/ODI/airquality", payload=message, qos=0, retain=False)
+time.sleep(1);
+</code></pre>
+
+<p>Running this we were publishing our sensor data to Opensensors!</p>
+
+<p>WE recommend adjusting the Arduino code to output the data in JSON format. This will make it easier to read and add functionality.</p>
+
+<p>You can check out the topic producing Open Data we created <a href="https://opensensors.io/users/Louis/ODI/airquality">here</a>!</p>
+]]></content>
+  </entry>
+  
+</feed>
