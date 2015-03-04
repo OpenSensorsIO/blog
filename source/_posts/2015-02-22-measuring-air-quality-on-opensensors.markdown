@@ -125,5 +125,5 @@ Running this we were publishing our sensor data to Opensensors!
 
 WE recommend adjusting the Arduino code to output the data in JSON format. This will make it easier to read and add functionality. 
 
-You can check out the topic producing Open Data we created [here](https://opensensors.io/users/Louis/ODI/airquality)!
+You can check out the topic producing Open Data we created [here](https://opensensors.io/topics/users/Louis/ODI/airquality)!
 
