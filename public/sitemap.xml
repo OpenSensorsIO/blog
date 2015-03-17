@@ -46,11 +46,17 @@
         <loc>
             http://blog.opensensors.io/blog/2015/02/22/measuring-air-quality-on-opensensors/
         </loc>
-        <lastmod>2015-02-23T14:27:34+00:00</lastmod>
+        <lastmod>2015-03-04T11:35:38+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.opensensors.io/blog/2015/03/17/european-parliament-approves-ecall-technology/
+        </loc>
+        <lastmod>2015-03-17T11:30:16+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/</loc>
-        <lastmod>2015-02-23T21:09:39+00:00</lastmod>
+        <lastmod>2015-03-17T11:30:16+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/robots.txt</loc>
@@ -58,7 +64,7 @@
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/archives/</loc>
-        <lastmod>2015-02-23T21:09:39+00:00</lastmod>
+        <lastmod>2015-03-17T11:30:16+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/new-page/</loc>
