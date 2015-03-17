@@ -2,72 +2,72 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://blog.opensensors.io/blog/2013/10/07/hello-world/</loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-01-26T11:13:13+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/2013/10/08/future-cities/</loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-01-26T11:13:13+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/2013/11/25/the-big-red-button/</loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-01-26T11:13:13+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/2013/12/28/lorem/</loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-01-26T11:13:13+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/2014/03/12/iot-in-the-city/</loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-02-16T10:51:54+00:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux/
         </loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-01-26T11:13:13+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/2014/10/30/an-open-data-startup/</loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-01-26T11:13:13+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/2014/11/19/installing-an-arduino-wifi-shield/</loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-01-26T11:13:13+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/2015/01/20/owntracks-journey-part-one/</loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-01-26T11:13:13+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/2015/02/16/search-has-landed/</loc>
-        <lastmod>2015-02-23T21:09:39+00:00</lastmod>
+        <lastmod>2015-02-16T10:57:46+00:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.opensensors.io/blog/2015/02/22/measuring-air-quality-on-opensensors/
         </loc>
-        <lastmod>2015-03-04T11:35:38+00:00</lastmod>
+        <lastmod>2015-03-17T11:35:08+00:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.opensensors.io/blog/2015/03/17/european-parliament-approves-ecall-technology/
         </loc>
-        <lastmod>2015-03-17T11:30:16+00:00</lastmod>
+        <lastmod>2015-03-17T12:30:58+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/</loc>
-        <lastmod>2015-03-17T11:30:16+00:00</lastmod>
-    </url>
-    <url>
-        <loc>http://blog.opensensors.io/robots.txt</loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-03-17T12:30:58+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/blog/archives/</loc>
-        <lastmod>2015-03-17T11:30:16+00:00</lastmod>
+        <lastmod>2015-03-17T12:30:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.opensensors.io/robots.txt</loc>
+        <lastmod>2015-01-26T11:13:13+00:00</lastmod>
     </url>
     <url>
         <loc>http://blog.opensensors.io/new-page/</loc>
-        <lastmod>2015-02-22T21:44:06+00:00</lastmod>
+        <lastmod>2015-01-26T11:13:13+00:00</lastmod>
     </url>
 </urlset>
