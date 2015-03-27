@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Installing an Arduino Wifi Shield - OpenSensors.IO</title>
+  <meta name="author" content="OpenSensors.IO">
+
+  
+  <meta name="description" content="After a few Arduino projects (mainly blinking LEDs and connecting sensors) I tried
+to connect my Arduino to the internet using a Wifi shield! I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.opensensors.io/blog/2014/11/19/installing-an-arduino-wifi-shield">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="OpenSensors.IO" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Germania+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<logo>
+
+<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
+</logo>
+
+
+
+<body >
+  <header role="banner"><hgroup>
+  <h1><a href="/">OpenSensors.IO</a></h1>
+  
+    <h2>News and Updates about OpenSensors.IO</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+<br>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.opensensors.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+-->
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Installing an Arduino Wifi Shield</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-19T20:07:00+00:00" pubdate data-updated="true">Nov 19<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>After a few Arduino projects (mainly blinking LEDs and connecting sensors) I tried
+to connect my Arduino to the internet using a Wifi shield!</p>
+
+<p>I started by looking at Arduino Wifi shield <a href="http://arduino.cc/en/Guide/ArduinoWiFiShield">instructions</a>.</p>
+
+<p>Then I physically connected my Arduino and Wifi shield:</p>
+
+<p><img src="/images/arduino-wifishield.jpg" /></p>
+
+<p>As a test I wanted to scan for available networks using the example code on <a href="http://arduino.cc/en/Guide/ArduinoWiFiShield#toc5">this</a>
+Arduino Wifi shield webpage.</p>
+
+<p>I mentioned in a previous blog <a href="http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux/">post</a>
+I had an issue with the Arduino IDE and now use <a href="http://inotool.org/">inotool</a>.
+It enables to code for Arduino in your text editor/IDE of choice and compile and
+upload code from the command line (but it still needs the Arduino IDE to be installed).</p>
+
+<p>Here&rsquo;s how I start a project with inotool:</p>
+
+<pre><code>~$ mkdir new_project && cd new_project</code>
+<code>~$ ino init</code></pre>
+
+
+<p>Here&rsquo;s the structure of my project afterwards:</p>
+
+<p><img src="/images/directory_structure.png" /></p>
+
+<p>I can then edit the code in src/sketch.ino. In that case I just copied/pasted
+the code from Arduino&rsquo;s example:</p>
+
+<p><img src="/images/Test_wifishield.png" /></p>
+
+<p>I built as usual using this command: <pre><code>~$ ino build</code></pre> &hellip; and got
+the following error:</p>
+
+<p><img src="/images/build_error_wifi.png" /></p>
+
+<p>=> It seemed there was a conflict between the Ethernet and WiFi Libraries.</p>
+
+<p>&hellip; Then I kind of lost it (O_O) and tried all those things:</p>
+
+<ul>
+<li>bypassing both Arduino IDE and inotool by using a Makefile for compiling Arduino (<a href="http://hardwarefun.com/tutorials/compiling-arduino-sketches-using-makefile">http://hardwarefun.com/tutorials/compiling-arduino-sketches-using-makefile</a>)
+   => and I got lost down makefile rabbit hole&hellip;</li>
+<li>updating (or trying to update) the wifi shield firmware using Arduino&rsquo;s <a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading">instructions</a> and blog posts.
+  => when I finally managed it, it didn&rsquo;t have any effect&hellip;</li>
+<li>downgrading from Arduino IDE version 1.0.5 to 1.0.2 (older versions are found <a href="http://arduino.cc/en/Main/OldSoftwareReleases">here</a>).
+  => no improvement really&hellip;</li>
+</ul>
+
+
+<p>I went back and forth between those solutions and at best I could compile the sketch but my MAC address was 0.0.0.0 (same for my IP address)!</p>
+
+<p><strong>Here&rsquo;s how it finally worked for me:</strong></p>
+
+<ul>
+<li>I downgraded to Arduino IDE version 1.0.1.</li>
+<li>Copied &ldquo;arduino-1.0.1&rdquo; in usr/share/ and renamed it to &ldquo;arduino&rdquo; so that the path to the IDE was /usr/share/arduino/.</li>
+<li>I added wifishield/ folder from <a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield">https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield</a> to /usr/share/arduino/hardware/arduino/firmwares/.</li>
+<li>I added the WiFi library from <a href="https://github.com/arduino/Arduino/tree/master/libraries/WiFi">https://github.com/arduino/Arduino/tree/master/libraries/WiFi</a> to /usr/share/arduino.</li>
+<li>I upgraded the firmware (not sure if necessary) => <em>Note</em> : you need a USB 2.0 Mini B cable to link the wifi shield directly to your computer!
+
+<ul>
+<li> here are the instructions to install dfu-programmer: <a href="https://github.com/dfu-programmer/dfu-programmer">https://github.com/dfu-programmer/dfu-programmer</a></li>
+<li> and you can get the latest wifi shield scripts from <a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield/scripts">https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield/scripts</a></li>
+<li> replace your scripts in /usr/share/arduino/hardware/arduino/firmwares/wifishield/scripts/ with the ones from Arduino Github repo.</li>
+<li> close the J3 jumper on the shield (***),
+   then run:
+   <pre><code>~$ sudo ./ArduinoWifiShield_upgrade.sh -a /usr/share/arduino -f all</code></pre></li>
+</ul>
+</li>
+</ul>
+
+
+<p>Yay! (^o^) You can now try new projects like creating a <a href="http://arduino.cc/en/Tutorial/WiFiWebServer">webserver</a> or sending sensor data via internet!</p>
+
+<br>
+
+
+<p>(***) In case you wonder what a <strong>J3 jumper</strong> looks like,
+those pictures could be useful to you:</p>
+
+<ul>
+<li>Here the J3 jumper is open (for when the shield communicate with the Arduino):</li>
+</ul>
+
+
+<p><img src="/images/j3_opened.jpg" /></p>
+
+<ul>
+<li>Here the J3 jumper is closed (or in programming mode, to update the firmware):</li>
+</ul>
+
+
+<p><img src="/images/j3_closed.jpg" /></p>
+</div>
+
+
+  <footer>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.opensensors.io/blog/2014/11/19/installing-an-arduino-wifi-shield/" data-via="opensensorsio" data-counturl="http://blog.opensensors.io/blog/2014/11/19/installing-an-arduino-wifi-shield/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Text authored by <span class="fn">Eleonore Mayola</span></span>
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arduino/'>Arduino</a>, <a class='category' href='/blog/categories/beginner/'>Beginner</a>
+  
+</span>
+
+
+    </p>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/10/30/an-open-data-startup/" title="Previous Post: An Open Data Startup">&laquo; An Open Data Startup</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/01/20/owntracks-journey-part-one/" title="Next Post: OwnTracks Journey - Part One">OwnTracks Journey - Part One &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Website copyright &copy; 2015 - OpenSensors.IO |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>.
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
