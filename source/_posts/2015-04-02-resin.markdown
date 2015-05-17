@@ -1,0 +1,57 @@
+---
+layout: post
+title: "Resin.io"
+date: 2015-04-02 08:38
+comments: true
+author: Louis Schamroth Green
+categories: Resin.io
+---
+
+When you are working with many connected devices updating the software on them can be tedious. Sometimes sensors are in hard to reach locations and having to get to all of them to update a little bit of code can be a nightmare. Resin.io has a solutions for this. They have made it quick and easy to update the code running on all your connected linux devices. This is very useful for Raspberry Pi based sensors. 
+
+Here we’ll explain how we used Resin.io to get code running on our devices publishes to our OpenSensors topic. 
+
+## Getting Started
+
+Firstly we checked out the Resin getting started guide found here:
+
+http://docs.resin.io/#/pages/gettingStarted.md
+
+We needed to reformat the SD before we got it to boot properly.
+
+Following the instructions on the getting started guide we pushed the node.js text2speech project they suggested. We were surprised at how easy it made getting code running on your PI.
+
+The next step was to push some python code and get it running. We used a barebones hello world python script with the required docker file which we found here:
+
+https://github.com/alexandrosm/hello-python
+
+That too was easy to get working. 
+
+
+## Communicating with OpenSensors
+
+To get the extra packages needed to communicate with OpenSensors we added some lines to the docker file:
+
+RUN apt-get install -y python-pip
+RUN pip install paho-mqtt
+
+the -y was needed to select the yes option on the pip install. 
+
+Then we added some code that uses the paho-mqtt library in the python script
+
+You can check it out here
+
+https://github.com/louischaman/Resin_HelloOSIO
+
+You’ll have to change the username and device ID and password to get it working. 
+
+It created the image uploaded it and started running without a
+hitch. We could see that it was working because the messages were
+appearing on the OpenSensors online dashboard for my topic. Resin.io
+is a great product that solves a very real problem in a clever way, I
+will be adding it to my toolkit.
+
+Does this help you solve a problem you’ve been having with your
+connected sensors? If so get contact and let us know what you are up
+to on hello@opensensors.io
+

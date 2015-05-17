@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2015-03-27T01:07:40+00:00</updated>
+  <updated>2015-05-17T13:13:42+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,6 +12,170 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[You Use Open Data Every Day]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/05/17/you-use-open-data-every-day/"/>
+    <updated>2015-05-17T13:11:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/05/17/you-use-open-data-every-day</id>
+    <content type="html"><![CDATA[<p>You&rsquo;ve done your hair, you&rsquo;ve picked out the perfect outfit and you&rsquo;re set  on making a great first impression. How long have I got? What tube should I get? How soon is the next bus? You check the <a href="http://www.techworld.com/news/startups/londons-citymapper-capitalises-on-decade-of-data-3467301/">CityMapper app</a> &ndash; you find a route and within seconds know exactly how long it will take to get to your hot date. You may not know it, but open data has just made your trip a lot easier.</p>
+
+<p>Transport for London, OpenStreetMaps, Foursquare, Google Maps, Apple Maps and Cyclestreets all provide access to <a href="http://theodi.org/what-is-open-data">open data</a> for others to use. In this case, CityMapper ingests the real-time open data produced by Transport for London, remixes it with freely available open mapping data, adds a touch of their own special sauce, real-time usage and congestion data from CityMapper users, and finally curates this brew in an accessible form for the user, waiting at the bus stop. In short, the CityMapper team takes the available open data, adds value to it and provides that as a service.</p>
+
+<p>It is not an exaggeration to claim the future development of the city is <a href="http://theodi.org/research-afternoons/show-me-the-future-of-the-built-environment-and-open-data">intertwined</a> with open data. From transport data to air quality data to real time high-street footfall, as cities become leaner, genuinely smarter and more efficient the availability of reliable high quality data will become more important than ever. Generating open data from our surroundings is unlocking value and insight from our environment, information that is all around us, for the researcher, for the app developer, for the tinkerer, for the activist.</p>
+
+<p>For cities to succeed in building resilient systems and networks, the emerging data ecosystem in the city can&rsquo;t rely on closed data, closed systems. Devices and sensors in the city won&rsquo;t function as JawBone and FitBit do, two closed devices whose real-time data I couldn&rsquo;t access and share even if I wanted to. Open data is disrupting the digital landscape, former data-as-commodity brokers, such as <a href="http://www.landmark.co.uk/">Landmark</a>, have since fundamentally reshaped the way in which they do business, focusing on curating available data.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Make a Battery Last Forever…]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/05/12/how-to-make-a-battery-last-forever-dot-dot-dot/"/>
+    <updated>2015-05-12T10:42:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/05/12/how-to-make-a-battery-last-forever-dot-dot-dot</id>
+    <content type="html"><![CDATA[<p>Many devices in the IoT won’t be mains powered, but require some sort of supply with limited capacity: be it common batteries or rechargeable cells, energy management is a key challenge for the development of IoT products.</p>
+
+<h2>Background</h2>
+
+<p>The basic anatomy of a program on a microcontroller (the little green boards that run the logic of many digital devices) is an infinite loop: as long as you’re powered, do…</p>
+
+<p>Unfortunately, even “doing nothing” costs energy. While a processor is powered, it’s always going to draw some current for the most basic housekeeping. And it’s not just the processor: voltage regulators, interfaces, nearly everything that is connected to a circuit eats up electricity, and most of it is lost in the form of heat.</p>
+
+<p>The data in this section primarily comes from a very good blog post on <a href="http://www.gammon.com.au/power">Power saving techniques for microprocessors</a> by Nick Gammon. Let’s look at an example: Just running an empty loop on the Ardunio Uno (a commonly used microcontroller for hobbyists) draws about 50 mA. That is, with a standard 9V block (supplying 500 mAh), that Arduino can run just about 10 hours from a battery. Clearly not long enough for a hardware product that’s aimed to participate in the IoT.</p>
+
+<p>Processor manufacturers are well aware of this issue and most platforms support a sleep mode. In case of the Arduino Uno, adding just four lines of code reduces the cost of the empty loop to 35 mA. This is still significant, but mostly owed to all the other components on the microcontroller (including a cheerfully blinking light and a wasteful voltage regulator that takes the 9V of the battery and supplies 5V to the board).</p>
+
+<p>Fortunately, ‘real products’ don’t require all the baggage that the Arduino Uno is carrying around. The processor, the Atmel Atmega328, really just draws 0.35 mA in its most optimal sleep mode. If we don’t require particular features of the processor, this can further be reduced to less than 0.5 uA. (Note that this would allow a 500 mAh battery to drive the processor for 10 years – unfortunately, doing absolutely nothing!).</p>
+
+<p>“But IoT devices are supposed to do things!”, I hear you say. Even more so, the hardware to send information into the Internet can be quite energy hungry – remember the times when it was recommended to switch Wifi off while you were on the road with your laptop? Now, many IoT devices, sensors in particular, only need to work in bursts.</p>
+
+<p>Let’s take a look at one of our favourite core components in connected products: <a href="https://www.wirelessthings.net/rf-328-arduino-atmega-328-compatible-radio-transceiver-rfu-328">The RFu328 from Wireless Things</a>. It combines a barebones Atmega328 with a transceiver that can send and receive radio messages to and from an Internet-connected hub device. The processor and the radio can be sent into a deep sleep, drawing 0.5 uA. However, there’s a timer inside the radio that can trigger the Atmega328 chip and wake the entire system, ready to send or receive data at about 30 mA. We may even have to supply electric current to external sensor hardware and increase our need to more than 50 mA for a second, but for our overall energy budget that’s rather marginal – most of the time, our device will be asleep for minutes if not hours.</p>
+
+<h2>Implementation</h2>
+
+<p>For the standard Atmega sleep modes, consult <a href="http://www.gammon.com.au/power">Power saving techniques for microprocessors</a>.</p>
+
+<p>The sleep modes of the RFu328 depend on a simple modification to the hardware as well as a <a href="https://github.com/CisecoPlc/LLAPSerial">library from Wireless Things</a>. In the absence of in-depth documentation, we learned a lot from PCB designs and software examples from the <a href="https://github.com/oxfloodnet">Oxford Flood Network</a>.</p>
+
+<p>In short, the RFu328 can configure the radio to go into the extended sleep mode by sending the ATSM3 AT command. The Wireless Things library handles a lot of the high-level “+++” string handling to communicate with the SRF radio.</p>
+
+<p>Most of the setup magic happens here:</p>
+
+<pre><code>uint8_t setupSRF(char* sleepString) { // set Sleep mode 2
+ if (!enterCommandMode()) { // if failed once then try again
+ if (!enterCommandMode()) return 1;
+ } 
+ if (!sendCommand(sleepString)) return 2;
+ if (!sendCommand("ATSM3")) return 3;
+ if (!sendCommand("ATDN")) return 4;
+ return 5;
+ }
+</code></pre>
+
+<p>and sleepString is a combination of a configuration suffix and the millisecond sleep duration in hexadecimal notation: ATSD1388 – 5 sec; ATSD4E20 – 20 sec; ATSDEA60 – 1 min; ATSD493E0 – 5 min; ATSD1B7740 – 30 min; ATSD36EE80 – 60 min</p>
+
+<p>Everytime the radio wakes up from this sleep, it triggers a pin of the Atmega328, and having</p>
+
+<pre><code>LLAP.sleep(WAKE_PIN, RISING, false); // sleep until woken
+</code></pre>
+
+<p>as part of your loop() takes care of listening to that signal.</p>
+
+<h2>Hardware</h2>
+
+<p>So how does the WAKE_PIN (either D2 or D3) get its signal from the SRF? Via a bridge from D11. (A simple wire.) If you have a newer model of the RFu328, there’s a small field labelled ATSM3. This allows you to create a direct solder bridge to D2 or D3 without the need for the wire.</p>
+
+<p>What other hardware modifications may be necessary? Well, most sensors have a quiescent current draw even when they’re not active. Would it not be nice to have them seperated from the battery until they’re really required? That’s exactly what we’re going to do. Transistors can be used to interrupt the flow of current until triggered, and the RFu328 has a sufficient number of pins remaining that allow for controlling (gating) as MOSFET.</p>
+
+<p>An <a href="https://github.com/badryan/arduino/blob/master/ultrasonic_desk_sensor.ino">OpenSensors example</a> on GitHub.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Closing the Loop Between Maker &amp; Customer for Connected Devices]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/04/08/closing-the-loop-between-maker-and-customer/"/>
+    <updated>2015-04-08T21:49:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/04/08/closing-the-loop-between-maker-and-customer</id>
+    <content type="html"><![CDATA[<h2>Onboard IoT hardware as easy as Kindle, at a fraction of the cost.</h2>
+
+<p>Last month we released OpenSensors’ Search and Subscribe features. This IoT Day we’re pushing our latest development, Organisations, or Orgs for short.</p>
+
+<p>Orgs is a new feature focused on streamlining hardware  production workflows and managing large numbers of devices.</p>
+
+<p>With OpenSensors’ Orgs, you are able to manage all of your devices and data in one place with and pretty soon you will get an at-a-glance easy device health monitoring &ndash; giving your customers a seamless user experience equivalent of the Kindle but without Amazon’s budget.  Those of you managing 1000s of devices in the wild are only too aware of how hard it is to manage the workflow between factory and individual devices all over the world.</p>
+
+<p>We’re trying to make IoT onboarding easier for Hardware startups and connected device manufacturers. That’s why we’ve designed a production to customer workflow, think Kindle for IoT.</p>
+
+<p><img src="http://blog.opensensors.io/images/adddevice.png" /></p>
+
+<p>People managing organisations can now batch provision and manage their new devices.  Devices can be searched for and ‘claimed’ by your customers via the UI or API adding relevant meta-data such as location information to help you keep track of your devices and new customers once your connected devices are out in the wild.</p>
+
+<p>It’s an exciting feature, and we hope you’re just as excited as we are.  We want to save you time and effort and also enable you to get your connected devices to market quicker and cheaper.</p>
+
+<p>As some of you may have noticed, we released a stripped down Alpha version of Orgs in our last release. We’ve learned from your feedback.</p>
+
+<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x68;&#x65;&#108;&#108;&#111;&#64;&#111;&#x70;&#x65;&#x6e;&#x73;&#x65;&#110;&#115;&#111;&#x72;&#115;&#x2e;&#105;&#111;">&#x68;&#x65;&#x6c;&#x6c;&#111;&#64;&#x6f;&#112;&#101;&#x6e;&#115;&#x65;&#110;&#115;&#x6f;&#x72;&#115;&#x2e;&#105;&#111;</a> for a voucher.</p>
+
+<p>For more details about Organisations and how to use them check out our
+<a href="https://opensensors.io/help/">help pages</a></p>
+
+<p>Happy IoT Day!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Resin.io]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/04/02/resin/"/>
+    <updated>2015-04-02T08:38:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/04/02/resin</id>
+    <content type="html"><![CDATA[<p>When you are working with many connected devices updating the software on them can be tedious. Sometimes sensors are in hard to reach locations and having to get to all of them to update a little bit of code can be a nightmare. Resin.io has a solutions for this. They have made it quick and easy to update the code running on all your connected linux devices. This is very useful for Raspberry Pi based sensors.</p>
+
+<p>Here we’ll explain how we used Resin.io to get code running on our devices publishes to our OpenSensors topic.</p>
+
+<h2>Getting Started</h2>
+
+<p>Firstly we checked out the Resin getting started guide found here:</p>
+
+<p><a href="http://docs.resin.io/#/pages/gettingStarted.md">http://docs.resin.io/#/pages/gettingStarted.md</a></p>
+
+<p>We needed to reformat the SD before we got it to boot properly.</p>
+
+<p>Following the instructions on the getting started guide we pushed the node.js text2speech project they suggested. We were surprised at how easy it made getting code running on your PI.</p>
+
+<p>The next step was to push some python code and get it running. We used a barebones hello world python script with the required docker file which we found here:</p>
+
+<p><a href="https://github.com/alexandrosm/hello-python">https://github.com/alexandrosm/hello-python</a></p>
+
+<p>That too was easy to get working.</p>
+
+<h2>Communicating with OpenSensors</h2>
+
+<p>To get the extra packages needed to communicate with OpenSensors we added some lines to the docker file:</p>
+
+<p>RUN apt-get install -y python-pip
+RUN pip install paho-mqtt</p>
+
+<p>the -y was needed to select the yes option on the pip install.</p>
+
+<p>Then we added some code that uses the paho-mqtt library in the python script</p>
+
+<p>You can check it out here</p>
+
+<p><a href="https://github.com/louischaman/Resin_HelloOSIO">https://github.com/louischaman/Resin_HelloOSIO</a></p>
+
+<p>You’ll have to change the username and device ID and password to get it working.</p>
+
+<p>It created the image uploaded it and started running without a
+hitch. We could see that it was working because the messages were
+appearing on the OpenSensors online dashboard for my topic. Resin.io
+is a great product that solves a very real problem in a clever way, I
+will be adding it to my toolkit.</p>
+
+<p>Does this help you solve a problem you’ve been having with your
+connected sensors? If so get contact and let us know what you are up
+to on <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#x68;&#x65;&#x6c;&#x6c;&#x6f;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#115;&#101;&#110;&#115;&#111;&#x72;&#x73;&#46;&#105;&#x6f;">&#x68;&#101;&#x6c;&#x6c;&#x6f;&#x40;&#x6f;&#x70;&#101;&#x6e;&#x73;&#x65;&#110;&#x73;&#111;&#x72;&#115;&#x2e;&#x69;&#x6f;</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Open and Transparent]]></title>
@@ -22,20 +186,21 @@
 
 <p>It’s been an interesting few days in OpenSensors HQ. My fairly harmless comment about privacy and security for the Internet of things on Twitter turned into a fracas.  A fairly prominent blogger and activist, Aral Balkan, took issue with our use of the word Open in our company name.  Twitter is not the best medium for nuanced debate so I wanted to address the points raised.</p>
 
-<p>The central point of Aral’s ire seems to be summed up by his tweet
+<p>The central point of Aral’s comments can be summed up by his tweet
 <em>If you have a closed platform, don’t call it open. Is that too much to ask for?</em></p>
 
 <p>For clarity, here is why we are proud to call ourselves <strong>Open</strong>Sensors.</p>
 
 <h2>Who we are</h2>
 
-<p>We are an Open Data startup incubated in the Open Data Institute,
-founded by our hero Sir Tim Berners Lee.  If you have never come
+<p>We are an Open Data and Internet of Things startup incubated in the
+Open Data Institute, founded by our hero Sir Tim Berners Lee.  If you have never come
 across open data please check out his
 <a href="http://www.ted.com/talks/tim_berners_lee_on_the_next_web?language=en">great talk</a>
 about what it is and also see the great <a href="https://okfn.org/opendata/">Open Knowledge Foundation&rsquo;s write up</a>.</p>
 
-<p>In the IoT world open refers to Open Source Software (OSS), Open Data, Open Hardware, Open Protocols and the Open Web. The common thread that holds these ideals together is that accessibility is key to creating value and benefit.</p>
+<p>The <a href="http://en.wikipedia.org/wiki/Internet_of_Things">Internet of Things (IoT)</a> is a very broad term for
+connecting day to day objects and sensors to the internet. In the IoT world open refers to Open Source Software (OSS), Open Data, Open Hardware, Open Protocols and the Open Web. The common thread that holds these ideals together is that accessibility is key to creating value and benefit.</p>
 
 <p>We strongly believe in all of these ideals. We write open source code and we develop firmware for Open Hardware devices and our guiding principle is to support Open Internet of Things and Web protocols.</p>
 
@@ -45,17 +210,27 @@ about what it is and also see the great <a href="https://okfn.org/opendata/">Ope
 
 <h2>Will all our code be Open?</h2>
 
-<p>We will develop open source software (including our core azondi).  We will also contribute back in some way to the huge amount of open source software we use such as Cassandra, Elastic Search, Postgres, Netty, a ton of clojurewerkz projects and have incubated Cylon, a security library, from Alpha.  We have plans to release a ton of other OSS projects for things that we needed to scratch our itch.  We recognise that we stand on shoulders of giants that are the amazing computer scientists.</p>
+<p>We will develop open source software (including our core azondi). We
+will also contribute back in some way to the huge amount of open source software we use such as Cassandra, Elastic Search, Postgres,
+Netty, a ton of <a href="http://clojurewerkz.org/">clojurewerkz projects</a> and
+have incubated <a href="https://github.com/juxt/cylon">Cylon</a>, a security
+library, from Alpha.  We have plans to release a ton of other OSS
+projects for things that we needed to scratch our itch.  We recognise
+that we stand on shoulders of the giants of the computer science world.</p>
 
-<p>All that being said please be aware that we are not a social enterprise and there will be parts of our code base that will be private. We are ultimately a technology company and our aim is to create a sustainable business model for an engineering led company that will thrive.</p>
+<p>All that being said please be aware that we are not a social
+enterprise and there will be parts of our code base that will be
+private. We are ultimately a for profit company and our aim is to
+create a sustainable business model for an engineering led business to
+thrive.</p>
 
 <ul>
 <li>We want to hire amazing developers to solve hard problems, enable them to unleash their creative energies and love the product.</li>
 <li>We pay everyone from interns upwards a sustainable wage.</li>
 <li>We value diversity and spend time and money organising community groups for free to give back.</li>
 <li>We do not charge to speak at or to arrange community events.</li>
-<li>We run paid training events where at least 30% of attendees will be
-held for those that don&rsquo;t have the means to pay the full price.</li>
+<li>We run paid training events where at least 30% of attendees places
+will fully or in part covered by Open Sensors for those that don&rsquo;t have the means to pay the full price.</li>
 <li>We do not depend on government funding and our pricing structure is very clear <a href="https://opensensors.io/pricing.">https://opensensors.io/pricing.</a></li>
 </ul>
 
@@ -633,25 +808,6 @@ height=800px width=900px scrolling = "no"></iframe>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Your First Post]]></title>
-    <link href="http://blog.opensensors.io/blog/2013/12/28/lorem/"/>
-    <updated>2013-12-28T15:49:17+00:00</updated>
-    <id>http://blog.opensensors.io/blog/2013/12/28/lorem</id>
-    <content type="html"><![CDATA[<p>This is a lipsum page to demonstrate the theme&rsquo;s typography. Modify this post to your heart&rsquo;s content &ndash; or simply delete it.</p>
-
-<p>Lorem ipsum dolor sit amet, ut brute legimus honestatis cum. Eirmod verear mei ne, id falli conclusionemque est, autem populo duo et. Causae noluisse ex sed. Solet mentitum salutandi ad mei, vis ex esse prima nullam, tation melius aliquid pri ea. Minimum sententiae mei ad, mei et reque novum.</p>
-
-<p>Eu nec eirmod inermis, nominavi deleniti electram ut mei. Veri quidam vivendum sit id, voluptaria percipitur deterruisset an nec. Mei mazim erroribus eu, his in errem nonumy comprehensam. Modo pericula duo id, te vis facete verear. Ex cum volutpat corrumpit aliquando, ad vim assentior argumentum temporibus.</p>
-
-<p>Id est eros justo movet, duo eu alii vitae. Quo altera imperdiet efficiantur in, nec error iudico an. Sed an etiam consul, invenire platonem nam an. Nec an integre splendide, libris oportere duo ei. Has eu solet sententiae, ex nam noster tractatos, sonet patrioque nec ad.</p>
-
-<p>An minim mollis mediocrem est, lucilius atomorum ex eum. Quaeque probatus qui cu, ut mutat dolorem epicurei pro, vel labores delicata rationibus et. Cu eos sumo inermis, viderer molestiae assueverit ius ad. Cum atqui error insolens in. Iuvaret adolescens referrentur cu pri.</p>
-
-<p>Ei putant perfecto atomorum eos, an civibus hendrerit sit. Pri cu probo nominavi, et sea cetero hendrerit incorrupte. Amet unum prompta per at, impedit reprehendunt an cum, vix laudem dolorem at. Suas blandit molestie in eum.</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[The Big Red Button]]></title>
     <link href="http://blog.opensensors.io/blog/2013/11/25/the-big-red-button/"/>
     <updated>2013-11-25T23:48:00+00:00</updated>
@@ -922,7 +1078,7 @@ The full list data sets are below:</p>
 
 <p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
 
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x68;&#x65;&#108;&#108;&#x6f;&#64;&#111;&#x70;&#x65;&#x6e;&#x73;&#101;&#x6e;&#115;&#x6f;&#x72;&#x73;&#46;&#x69;&#x6f;">&#104;&#101;&#x6c;&#108;&#111;&#x40;&#111;&#x70;&#101;&#110;&#x73;&#x65;&#x6e;&#x73;&#111;&#114;&#x73;&#46;&#x69;&#x6f;</a>&rsquo; to join our private beta.</p>
+<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#104;&#101;&#108;&#x6c;&#111;&#x40;&#x6f;&#112;&#101;&#x6e;&#115;&#x65;&#110;&#x73;&#x6f;&#114;&#115;&#46;&#x69;&#111;">&#x68;&#x65;&#108;&#108;&#111;&#64;&#x6f;&#x70;&#x65;&#x6e;&#115;&#x65;&#x6e;&#115;&#111;&#114;&#x73;&#46;&#105;&#x6f;</a>&rsquo; to join our private beta.</p>
 ]]></content>
   </entry>
   

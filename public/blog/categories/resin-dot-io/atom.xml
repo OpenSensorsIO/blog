@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Resin.io | OpenSensors.IO]]></title>
+  <link href="http://blog.opensensors.io/blog/categories/resin-dot-io/atom.xml" rel="self"/>
+  <link href="http://blog.opensensors.io/"/>
+  <updated>2015-05-17T13:13:42+01:00</updated>
+  <id>http://blog.opensensors.io/</id>
+  <author>
+    <name><![CDATA[OpenSensors.IO]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Resin.io]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/04/02/resin/"/>
+    <updated>2015-04-02T08:38:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/04/02/resin</id>
+    <content type="html"><![CDATA[<p>When you are working with many connected devices updating the software on them can be tedious. Sometimes sensors are in hard to reach locations and having to get to all of them to update a little bit of code can be a nightmare. Resin.io has a solutions for this. They have made it quick and easy to update the code running on all your connected linux devices. This is very useful for Raspberry Pi based sensors.</p>
+
+<p>Here we’ll explain how we used Resin.io to get code running on our devices publishes to our OpenSensors topic.</p>
+
+<h2>Getting Started</h2>
+
+<p>Firstly we checked out the Resin getting started guide found here:</p>
+
+<p><a href="http://docs.resin.io/#/pages/gettingStarted.md">http://docs.resin.io/#/pages/gettingStarted.md</a></p>
+
+<p>We needed to reformat the SD before we got it to boot properly.</p>
+
+<p>Following the instructions on the getting started guide we pushed the node.js text2speech project they suggested. We were surprised at how easy it made getting code running on your PI.</p>
+
+<p>The next step was to push some python code and get it running. We used a barebones hello world python script with the required docker file which we found here:</p>
+
+<p><a href="https://github.com/alexandrosm/hello-python">https://github.com/alexandrosm/hello-python</a></p>
+
+<p>That too was easy to get working.</p>
+
+<h2>Communicating with OpenSensors</h2>
+
+<p>To get the extra packages needed to communicate with OpenSensors we added some lines to the docker file:</p>
+
+<p>RUN apt-get install -y python-pip
+RUN pip install paho-mqtt</p>
+
+<p>the -y was needed to select the yes option on the pip install.</p>
+
+<p>Then we added some code that uses the paho-mqtt library in the python script</p>
+
+<p>You can check it out here</p>
+
+<p><a href="https://github.com/louischaman/Resin_HelloOSIO">https://github.com/louischaman/Resin_HelloOSIO</a></p>
+
+<p>You’ll have to change the username and device ID and password to get it working.</p>
+
+<p>It created the image uploaded it and started running without a
+hitch. We could see that it was working because the messages were
+appearing on the OpenSensors online dashboard for my topic. Resin.io
+is a great product that solves a very real problem in a clever way, I
+will be adding it to my toolkit.</p>
+
+<p>Does this help you solve a problem you’ve been having with your
+connected sensors? If so get contact and let us know what you are up
+to on <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#104;&#x65;&#x6c;&#x6c;&#111;&#x40;&#x6f;&#x70;&#101;&#110;&#x73;&#x65;&#110;&#x73;&#111;&#114;&#x73;&#x2e;&#x69;&#x6f;">&#x68;&#x65;&#108;&#x6c;&#x6f;&#64;&#111;&#112;&#101;&#x6e;&#115;&#x65;&#110;&#x73;&#111;&#x72;&#x73;&#46;&#105;&#x6f;</a></p>
+]]></content>
+  </entry>
+  
+</feed>

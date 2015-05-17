@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Make a Battery Last Forever… - OpenSensors.IO</title>
+  <meta name="author" content="OpenSensors.IO">
+
+  
+  <meta name="description" content="Many devices in the IoT won’t be mains powered, but require some sort of supply with limited capacity: be it common batteries or rechargeable cells, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.opensensors.io/blog/2015/05/12/how-to-make-a-battery-last-forever-dot-dot-dot">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="OpenSensors.IO" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Germania+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<logo>
+
+<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
+</logo>
+
+
+
+<body >
+  <header role="banner"><hgroup>
+  <h1><a href="/">OpenSensors.IO</a></h1>
+  
+    <h2>News and Updates about OpenSensors.IO</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+<br>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.opensensors.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+-->
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Make a Battery Last Forever…</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-12T10:42:00+01:00" pubdate data-updated="true">May 12<span>th</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Many devices in the IoT won’t be mains powered, but require some sort of supply with limited capacity: be it common batteries or rechargeable cells, energy management is a key challenge for the development of IoT products.</p>
+
+<h2>Background</h2>
+
+<p>The basic anatomy of a program on a microcontroller (the little green boards that run the logic of many digital devices) is an infinite loop: as long as you’re powered, do…</p>
+
+<p>Unfortunately, even “doing nothing” costs energy. While a processor is powered, it’s always going to draw some current for the most basic housekeeping. And it’s not just the processor: voltage regulators, interfaces, nearly everything that is connected to a circuit eats up electricity, and most of it is lost in the form of heat.</p>
+
+<p>The data in this section primarily comes from a very good blog post on <a href="http://www.gammon.com.au/power">Power saving techniques for microprocessors</a> by Nick Gammon. Let’s look at an example: Just running an empty loop on the Ardunio Uno (a commonly used microcontroller for hobbyists) draws about 50 mA. That is, with a standard 9V block (supplying 500 mAh), that Arduino can run just about 10 hours from a battery. Clearly not long enough for a hardware product that’s aimed to participate in the IoT.</p>
+
+<p>Processor manufacturers are well aware of this issue and most platforms support a sleep mode. In case of the Arduino Uno, adding just four lines of code reduces the cost of the empty loop to 35 mA. This is still significant, but mostly owed to all the other components on the microcontroller (including a cheerfully blinking light and a wasteful voltage regulator that takes the 9V of the battery and supplies 5V to the board).</p>
+
+<p>Fortunately, ‘real products’ don’t require all the baggage that the Arduino Uno is carrying around. The processor, the Atmel Atmega328, really just draws 0.35 mA in its most optimal sleep mode. If we don’t require particular features of the processor, this can further be reduced to less than 0.5 uA. (Note that this would allow a 500 mAh battery to drive the processor for 10 years – unfortunately, doing absolutely nothing!).</p>
+
+<p>“But IoT devices are supposed to do things!”, I hear you say. Even more so, the hardware to send information into the Internet can be quite energy hungry – remember the times when it was recommended to switch Wifi off while you were on the road with your laptop? Now, many IoT devices, sensors in particular, only need to work in bursts.</p>
+
+<p>Let’s take a look at one of our favourite core components in connected products: <a href="https://www.wirelessthings.net/rf-328-arduino-atmega-328-compatible-radio-transceiver-rfu-328">The RFu328 from Wireless Things</a>. It combines a barebones Atmega328 with a transceiver that can send and receive radio messages to and from an Internet-connected hub device. The processor and the radio can be sent into a deep sleep, drawing 0.5 uA. However, there’s a timer inside the radio that can trigger the Atmega328 chip and wake the entire system, ready to send or receive data at about 30 mA. We may even have to supply electric current to external sensor hardware and increase our need to more than 50 mA for a second, but for our overall energy budget that’s rather marginal – most of the time, our device will be asleep for minutes if not hours.</p>
+
+<h2>Implementation</h2>
+
+<p>For the standard Atmega sleep modes, consult <a href="http://www.gammon.com.au/power">Power saving techniques for microprocessors</a>.</p>
+
+<p>The sleep modes of the RFu328 depend on a simple modification to the hardware as well as a <a href="https://github.com/CisecoPlc/LLAPSerial">library from Wireless Things</a>. In the absence of in-depth documentation, we learned a lot from PCB designs and software examples from the <a href="https://github.com/oxfloodnet">Oxford Flood Network</a>.</p>
+
+<p>In short, the RFu328 can configure the radio to go into the extended sleep mode by sending the ATSM3 AT command. The Wireless Things library handles a lot of the high-level “+++” string handling to communicate with the SRF radio.</p>
+
+<p>Most of the setup magic happens here:</p>
+
+<pre><code>uint8_t setupSRF(char* sleepString) { // set Sleep mode 2
+ if (!enterCommandMode()) { // if failed once then try again
+ if (!enterCommandMode()) return 1;
+ } 
+ if (!sendCommand(sleepString)) return 2;
+ if (!sendCommand("ATSM3")) return 3;
+ if (!sendCommand("ATDN")) return 4;
+ return 5;
+ }
+</code></pre>
+
+<p>and sleepString is a combination of a configuration suffix and the millisecond sleep duration in hexadecimal notation: ATSD1388 – 5 sec; ATSD4E20 – 20 sec; ATSDEA60 – 1 min; ATSD493E0 – 5 min; ATSD1B7740 – 30 min; ATSD36EE80 – 60 min</p>
+
+<p>Everytime the radio wakes up from this sleep, it triggers a pin of the Atmega328, and having</p>
+
+<pre><code>LLAP.sleep(WAKE_PIN, RISING, false); // sleep until woken
+</code></pre>
+
+<p>as part of your loop() takes care of listening to that signal.</p>
+
+<h2>Hardware</h2>
+
+<p>So how does the WAKE_PIN (either D2 or D3) get its signal from the SRF? Via a bridge from D11. (A simple wire.) If you have a newer model of the RFu328, there’s a small field labelled ATSM3. This allows you to create a direct solder bridge to D2 or D3 without the need for the wire.</p>
+
+<p>What other hardware modifications may be necessary? Well, most sensors have a quiescent current draw even when they’re not active. Would it not be nice to have them seperated from the battery until they’re really required? That’s exactly what we’re going to do. Transistors can be used to interrupt the flow of current until triggered, and the RFu328 has a sufficient number of pins remaining that allow for controlling (gating) as MOSFET.</p>
+
+<p>An <a href="https://github.com/badryan/arduino/blob/master/ultrasonic_desk_sensor.ino">OpenSensors example</a> on GitHub.</p>
+</div>
+
+
+  <footer>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.opensensors.io/blog/2015/05/12/how-to-make-a-battery-last-forever-dot-dot-dot/" data-via="opensensorsio" data-counturl="http://blog.opensensors.io/blog/2015/05/12/how-to-make-a-battery-last-forever-dot-dot-dot/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Text authored by <span class="fn">Boris Adryan</span></span>
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/hardware/'>Hardware,</a>, <a class='category' href='/blog/categories/power/'>Power,</a>, <a class='category' href='/blog/categories/things/'>Things,</a>, <a class='category' href='/blog/categories/wireless/'>Wireless</a>, <a class='category' href='/blog/categories/advanced/'>advanced</a>
+  
+</span>
+
+
+    </p>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/04/08/closing-the-loop-between-maker-and-customer/" title="Previous Post: Closing the Loop Between Maker &amp; Customer for Connected Devices">&laquo; Closing the Loop Between Maker &amp; Customer for Connected Devices</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/05/17/you-use-open-data-every-day/" title="Next Post: You Use Open Data Every Day">You Use Open Data Every Day &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Website copyright &copy; 2015 - OpenSensors.IO |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>.
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
