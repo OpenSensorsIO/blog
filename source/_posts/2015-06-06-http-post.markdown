@@ -1,0 +1,26 @@
+---
+layout: post
+title: "HTTP Post"
+date: 2015-06-06 11:41
+comments: true
+categories: HTTP
+author: "Yodit Stanton"
+---
+Here at OpenSensors we are committed to making it as easy as possible
+to get started with your IOT projects. You can now have the ability to
+post messages through OpenSensors using HTTP-POST as well as MQTT. 
+
+To post a message to a topic simply use this URL:
+https://opensensors.io/topics/TopicID and adding the client-id and
+password of your device as well as your username in the header
+
+An example command using Curl is: 
+
+    curl -X POST -H 'client-id: XX' -H 'password: XXXXXXX' -H 'username: yods' https:opensensors.io/topics/users/yods/foo -d '{"value": 1}'
+
+Next up is support for another great IOT protocol, CoAP!! My policy is
+that we will support any open standard and protocol so if there is a
+particular protocol you love feel free to send us an [email](hello@opensensors.io). 
+
+
+

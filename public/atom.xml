@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2015-05-17T13:13:42+01:00</updated>
+  <updated>2015-06-06T11:50:53+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[HTTP Post]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/06/06/http-post/"/>
+    <updated>2015-06-06T11:41:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/06/06/http-post</id>
+    <content type="html"><![CDATA[<p>Here at OpenSensors we are committed to making it as easy as possible
+to get started with your IOT projects. You can now have the ability to
+post messages through OpenSensors using HTTP-POST as well as MQTT.</p>
+
+<p>To post a message to a topic simply use this URL:
+<a href="https://opensensors.io/topics/TopicID">https://opensensors.io/topics/TopicID</a> and adding the client-id and
+password of your device as well as your username in the header</p>
+
+<p>An example command using Curl is:</p>
+
+<pre><code>curl -X POST -H 'client-id: XX' -H 'password: XXXXXXX' -H 'username: yods' https:opensensors.io/topics/users/yods/foo -d '{"value": 1}'
+</code></pre>
+
+<p>Next up is support for another great IOT protocol, CoAP!! My policy is
+that we will support any open standard and protocol so if there is a
+particular protocol you love feel free to send us an <a href="hello@opensensors.io">email</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[You Use Open Data Every Day]]></title>
@@ -114,7 +138,7 @@
 
 <p>As some of you may have noticed, we released a stripped down Alpha version of Orgs in our last release. We’ve learned from your feedback.</p>
 
-<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x68;&#x65;&#108;&#108;&#111;&#64;&#111;&#x70;&#x65;&#x6e;&#x73;&#x65;&#110;&#115;&#111;&#x72;&#115;&#x2e;&#105;&#111;">&#x68;&#x65;&#x6c;&#x6c;&#111;&#64;&#x6f;&#112;&#101;&#x6e;&#115;&#x65;&#110;&#115;&#x6f;&#x72;&#115;&#x2e;&#105;&#111;</a> for a voucher.</p>
+<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#104;&#101;&#x6c;&#x6c;&#111;&#64;&#x6f;&#x70;&#101;&#110;&#x73;&#101;&#x6e;&#x73;&#x6f;&#114;&#115;&#x2e;&#105;&#111;">&#x68;&#x65;&#108;&#108;&#x6f;&#64;&#111;&#112;&#x65;&#110;&#115;&#x65;&#110;&#x73;&#x6f;&#x72;&#115;&#46;&#105;&#111;</a> for a voucher.</p>
 
 <p>For more details about Organisations and how to use them check out our
 <a href="https://opensensors.io/help/">help pages</a></p>
@@ -173,7 +197,7 @@ will be adding it to my toolkit.</p>
 
 <p>Does this help you solve a problem you’ve been having with your
 connected sensors? If so get contact and let us know what you are up
-to on <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#x68;&#x65;&#x6c;&#x6c;&#x6f;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#115;&#101;&#110;&#115;&#111;&#x72;&#x73;&#46;&#105;&#x6f;">&#x68;&#101;&#x6c;&#x6c;&#x6f;&#x40;&#x6f;&#x70;&#101;&#x6e;&#x73;&#x65;&#110;&#x73;&#111;&#x72;&#115;&#x2e;&#x69;&#x6f;</a></p>
+to on <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#x68;&#101;&#108;&#108;&#111;&#64;&#x6f;&#x70;&#x65;&#x6e;&#x73;&#x65;&#x6e;&#115;&#111;&#x72;&#115;&#x2e;&#105;&#x6f;">&#104;&#x65;&#108;&#108;&#111;&#64;&#111;&#x70;&#x65;&#110;&#x73;&#x65;&#x6e;&#x73;&#x6f;&#x72;&#115;&#x2e;&#105;&#x6f;</a></p>
 ]]></content>
   </entry>
   
@@ -1078,7 +1102,7 @@ The full list data sets are below:</p>
 
 <p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
 
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#104;&#101;&#108;&#x6c;&#111;&#x40;&#x6f;&#112;&#101;&#x6e;&#115;&#x65;&#110;&#x73;&#x6f;&#114;&#115;&#46;&#x69;&#111;">&#x68;&#x65;&#108;&#108;&#111;&#64;&#x6f;&#x70;&#x65;&#x6e;&#115;&#x65;&#x6e;&#115;&#111;&#114;&#x73;&#46;&#105;&#x6f;</a>&rsquo; to join our private beta.</p>
+<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#104;&#x65;&#x6c;&#108;&#111;&#64;&#111;&#x70;&#x65;&#x6e;&#115;&#x65;&#x6e;&#115;&#x6f;&#114;&#115;&#46;&#105;&#x6f;">&#104;&#101;&#x6c;&#108;&#111;&#x40;&#111;&#112;&#101;&#x6e;&#x73;&#101;&#110;&#x73;&#x6f;&#x72;&#x73;&#x2e;&#105;&#111;</a>&rsquo; to join our private beta.</p>
 ]]></content>
   </entry>
   

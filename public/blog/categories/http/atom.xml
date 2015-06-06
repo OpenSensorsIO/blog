@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: HTTP | OpenSensors.IO]]></title>
+  <link href="http://blog.opensensors.io/blog/categories/http/atom.xml" rel="self"/>
+  <link href="http://blog.opensensors.io/"/>
+  <updated>2015-06-06T11:50:53+01:00</updated>
+  <id>http://blog.opensensors.io/</id>
+  <author>
+    <name><![CDATA[OpenSensors.IO]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HTTP Post]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/06/06/http-post/"/>
+    <updated>2015-06-06T11:41:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/06/06/http-post</id>
+    <content type="html"><![CDATA[<p>Here at OpenSensors we are committed to making it as easy as possible
+to get started with your IOT projects. You can now have the ability to
+post messages through OpenSensors using HTTP-POST as well as MQTT.</p>
+
+<p>To post a message to a topic simply use this URL:
+<a href="https://opensensors.io/topics/TopicID">https://opensensors.io/topics/TopicID</a> and adding the client-id and
+password of your device as well as your username in the header</p>
+
+<p>An example command using Curl is:</p>
+
+<pre><code>curl -X POST -H 'client-id: XX' -H 'password: XXXXXXX' -H 'username: yods' https:opensensors.io/topics/users/yods/foo -d '{"value": 1}'
+</code></pre>
+
+<p>Next up is support for another great IOT protocol, CoAP!! My policy is
+that we will support any open standard and protocol so if there is a
+particular protocol you love feel free to send us an <a href="hello@opensensors.io">email</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
