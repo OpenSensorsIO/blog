@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2015-06-06T11:50:53+01:00</updated>
+  <updated>2015-07-07T10:27:23+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[When Sensors and Open Data Collide]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/07/07/when-sensors-and-open-data-collide/"/>
+    <updated>2015-07-07T10:23:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/07/07/when-sensors-and-open-data-collide</id>
+    <content type="html"><![CDATA[<p>So I’m new to IoT having spent my career trying to find meaning in econometric data (ouch). Given I started life as a structural engineer I’m pretty excited to be working on data products with opensensors.io, feels like I’m back home again. So what’s exciting me today about where IoT and data science collide?</p>
+
+<p>As data scientists we’re always looking at new models, new ways of shaping our view on a given data set to eek out some kind of edge. But at some point it feels like we’re chasing our tails with little hope of finding new factors to make our science better. Without new data, or at least the same data in a more granular or timely form, we’re just rehashing the same functional forms over the same content.</p>
+
+<p>Fortunately life is about to get a whole lot more interesting as more connected devices come on line. We’re experiencing tangible innovation in IoT, we’re not talking hand wavy stuff; at opensensors.io we see hackers, hobbyists and enterprises building the next generation of smart cities with real velocity.</p>
+
+<p>We’re also fired up since we see pretty much everyone embracing openness in their data. Exactly what open data means remains up for debate, but most agree that some flavour of open data is a prerequisite for successful smart cities.</p>
+
+<p>It would be a pretty dumb city where you could only use the data in your own location.  So it makes sense to open pathways for data to be exchanged allowing us all to benefit from advances in technology, without a cost to our built environment. The alternative is a proliferation of street clutter used to deliver data already gathered in our smart buildings. Paradoxically not smart!  Having delivered connected buildings, transport and personal devices can expect a wave of innovation in apps and data science. So what’s would help to make this happen?</p>
+
+<p>Communities &ndash; Architects, hackers and makers provide the crucible of IoT innovation but need support for their creative process. Helping to gong the technical pain points is great, even better is curating communities to support and challenge. Our mission is to build best of breed engineering whilst retaining our community roots leveraging platforms like github and hackster.</p>
+
+<p>Connect existing things – Increasingly we see opensensors.io used to unlock value in existing device estates. For many enterprises it’s the ‘I’ in IoT that is new, to deliver the ‘I’ they need open, available, performant, secure and low cost messaging and data persistence.</p>
+
+<p>Put open data to work – ‘I can’t define it, but I know it when I see it’, to paraphrase Justice Potter Stewart. The debate about what is open data will remain, what is rightly or wrongly tagged as such. But expect innovation in business models firmly founded on principles of open data. ‘Open’ may mean sharing data with your neighbour, your street, your city. Most importantly make it economically attractive for all enterprises to make data available in some form, even if it’s not ‘open’ in the purest sense.</p>
+
+<p>We have an exciting journey ahead delivering significant change to our urban environment. Over a century ago ‘The league of American Wheelman’ catalysed improvements to America’s transport infrastructure; open data movement can deliver similar disruptive change to our urban environment. I hope open data becomes as ubiquitous as our transport network is today; in future no one will recall activists like the ODI and opensensors.io, but that would be a sign of open data’s success.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HTTP Post]]></title>
@@ -138,7 +163,7 @@ particular protocol you love feel free to send us an <a href="hello@opensensors.
 
 <p>As some of you may have noticed, we released a stripped down Alpha version of Orgs in our last release. We’ve learned from your feedback.</p>
 
-<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#104;&#101;&#x6c;&#x6c;&#111;&#64;&#x6f;&#x70;&#101;&#110;&#x73;&#101;&#x6e;&#x73;&#x6f;&#114;&#115;&#x2e;&#105;&#111;">&#x68;&#x65;&#108;&#108;&#x6f;&#64;&#111;&#112;&#x65;&#110;&#115;&#x65;&#110;&#x73;&#x6f;&#x72;&#115;&#46;&#105;&#111;</a> for a voucher.</p>
+<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#104;&#x65;&#x6c;&#x6c;&#111;&#64;&#111;&#112;&#x65;&#110;&#115;&#x65;&#x6e;&#x73;&#111;&#x72;&#x73;&#46;&#x69;&#111;">&#x68;&#101;&#x6c;&#108;&#111;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#x73;&#x65;&#110;&#115;&#x6f;&#114;&#x73;&#x2e;&#105;&#111;</a> for a voucher.</p>
 
 <p>For more details about Organisations and how to use them check out our
 <a href="https://opensensors.io/help/">help pages</a></p>
@@ -197,7 +222,7 @@ will be adding it to my toolkit.</p>
 
 <p>Does this help you solve a problem you’ve been having with your
 connected sensors? If so get contact and let us know what you are up
-to on <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#x68;&#101;&#108;&#108;&#111;&#64;&#x6f;&#x70;&#x65;&#x6e;&#x73;&#x65;&#x6e;&#115;&#111;&#x72;&#115;&#x2e;&#105;&#x6f;">&#104;&#x65;&#108;&#108;&#111;&#64;&#111;&#x70;&#x65;&#110;&#x73;&#x65;&#x6e;&#x73;&#x6f;&#x72;&#115;&#x2e;&#105;&#x6f;</a></p>
+to on <a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x68;&#x65;&#x6c;&#108;&#111;&#x40;&#x6f;&#112;&#101;&#x6e;&#x73;&#101;&#110;&#115;&#111;&#x72;&#115;&#x2e;&#x69;&#x6f;">&#x68;&#x65;&#108;&#x6c;&#x6f;&#64;&#111;&#x70;&#x65;&#x6e;&#x73;&#101;&#110;&#115;&#111;&#114;&#x73;&#x2e;&#x69;&#x6f;</a></p>
 ]]></content>
   </entry>
   
@@ -832,6 +857,25 @@ height=800px width=900px scrolling = "no"></iframe>
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Your First Post]]></title>
+    <link href="http://blog.opensensors.io/blog/2013/12/28/lorem/"/>
+    <updated>2013-12-28T15:49:17+00:00</updated>
+    <id>http://blog.opensensors.io/blog/2013/12/28/lorem</id>
+    <content type="html"><![CDATA[<p>This is a lipsum page to demonstrate the theme&rsquo;s typography. Modify this post to your heart&rsquo;s content &ndash; or simply delete it.</p>
+
+<p>Lorem ipsum dolor sit amet, ut brute legimus honestatis cum. Eirmod verear mei ne, id falli conclusionemque est, autem populo duo et. Causae noluisse ex sed. Solet mentitum salutandi ad mei, vis ex esse prima nullam, tation melius aliquid pri ea. Minimum sententiae mei ad, mei et reque novum.</p>
+
+<p>Eu nec eirmod inermis, nominavi deleniti electram ut mei. Veri quidam vivendum sit id, voluptaria percipitur deterruisset an nec. Mei mazim erroribus eu, his in errem nonumy comprehensam. Modo pericula duo id, te vis facete verear. Ex cum volutpat corrumpit aliquando, ad vim assentior argumentum temporibus.</p>
+
+<p>Id est eros justo movet, duo eu alii vitae. Quo altera imperdiet efficiantur in, nec error iudico an. Sed an etiam consul, invenire platonem nam an. Nec an integre splendide, libris oportere duo ei. Has eu solet sententiae, ex nam noster tractatos, sonet patrioque nec ad.</p>
+
+<p>An minim mollis mediocrem est, lucilius atomorum ex eum. Quaeque probatus qui cu, ut mutat dolorem epicurei pro, vel labores delicata rationibus et. Cu eos sumo inermis, viderer molestiae assueverit ius ad. Cum atqui error insolens in. Iuvaret adolescens referrentur cu pri.</p>
+
+<p>Ei putant perfecto atomorum eos, an civibus hendrerit sit. Pri cu probo nominavi, et sea cetero hendrerit incorrupte. Amet unum prompta per at, impedit reprehendunt an cum, vix laudem dolorem at. Suas blandit molestie in eum.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[The Big Red Button]]></title>
     <link href="http://blog.opensensors.io/blog/2013/11/25/the-big-red-button/"/>
     <updated>2013-11-25T23:48:00+00:00</updated>
@@ -1102,7 +1146,7 @@ The full list data sets are below:</p>
 
 <p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
 
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#104;&#x65;&#x6c;&#108;&#111;&#64;&#111;&#x70;&#x65;&#x6e;&#115;&#x65;&#x6e;&#115;&#x6f;&#114;&#115;&#46;&#105;&#x6f;">&#104;&#101;&#x6c;&#108;&#111;&#x40;&#111;&#112;&#101;&#x6e;&#x73;&#101;&#110;&#x73;&#x6f;&#x72;&#x73;&#x2e;&#105;&#111;</a>&rsquo; to join our private beta.</p>
+<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x68;&#x65;&#108;&#x6c;&#111;&#64;&#x6f;&#x70;&#101;&#110;&#115;&#101;&#110;&#115;&#111;&#x72;&#115;&#46;&#x69;&#x6f;">&#104;&#101;&#x6c;&#108;&#x6f;&#64;&#111;&#112;&#x65;&#x6e;&#x73;&#x65;&#110;&#x73;&#111;&#114;&#115;&#x2e;&#x69;&#111;</a>&rsquo; to join our private beta.</p>
 ]]></content>
   </entry>
   

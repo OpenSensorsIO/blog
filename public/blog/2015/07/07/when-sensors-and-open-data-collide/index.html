@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>When Sensors and Open Data Collide - OpenSensors.IO</title>
+  <meta name="author" content="OpenSensors.IO">
+
+  
+  <meta name="description" content="So I’m new to IoT having spent my career trying to find meaning in econometric data (ouch). Given I started life as a structural engineer I’m pretty &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.opensensors.io/blog/2015/07/07/when-sensors-and-open-data-collide">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="OpenSensors.IO" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Germania+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<logo>
+
+<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
+</logo>
+
+
+
+<body >
+  <header role="banner"><hgroup>
+  <h1><a href="/">OpenSensors.IO</a></h1>
+  
+    <h2>News and Updates about OpenSensors.IO</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+<br>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.opensensors.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+-->
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">When Sensors and Open Data Collide</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-07-07T10:23:00+01:00" pubdate data-updated="true">Jul 7<span>th</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>So I’m new to IoT having spent my career trying to find meaning in econometric data (ouch). Given I started life as a structural engineer I’m pretty excited to be working on data products with opensensors.io, feels like I’m back home again. So what’s exciting me today about where IoT and data science collide?</p>
+
+<p>As data scientists we’re always looking at new models, new ways of shaping our view on a given data set to eek out some kind of edge. But at some point it feels like we’re chasing our tails with little hope of finding new factors to make our science better. Without new data, or at least the same data in a more granular or timely form, we’re just rehashing the same functional forms over the same content.</p>
+
+<p>Fortunately life is about to get a whole lot more interesting as more connected devices come on line. We’re experiencing tangible innovation in IoT, we’re not talking hand wavy stuff; at opensensors.io we see hackers, hobbyists and enterprises building the next generation of smart cities with real velocity.</p>
+
+<p>We’re also fired up since we see pretty much everyone embracing openness in their data. Exactly what open data means remains up for debate, but most agree that some flavour of open data is a prerequisite for successful smart cities.</p>
+
+<p>It would be a pretty dumb city where you could only use the data in your own location.  So it makes sense to open pathways for data to be exchanged allowing us all to benefit from advances in technology, without a cost to our built environment. The alternative is a proliferation of street clutter used to deliver data already gathered in our smart buildings. Paradoxically not smart!  Having delivered connected buildings, transport and personal devices can expect a wave of innovation in apps and data science. So what’s would help to make this happen?</p>
+
+<p>Communities &ndash; Architects, hackers and makers provide the crucible of IoT innovation but need support for their creative process. Helping to gong the technical pain points is great, even better is curating communities to support and challenge. Our mission is to build best of breed engineering whilst retaining our community roots leveraging platforms like github and hackster.</p>
+
+<p>Connect existing things – Increasingly we see opensensors.io used to unlock value in existing device estates. For many enterprises it’s the ‘I’ in IoT that is new, to deliver the ‘I’ they need open, available, performant, secure and low cost messaging and data persistence.</p>
+
+<p>Put open data to work – ‘I can’t define it, but I know it when I see it’, to paraphrase Justice Potter Stewart. The debate about what is open data will remain, what is rightly or wrongly tagged as such. But expect innovation in business models firmly founded on principles of open data. ‘Open’ may mean sharing data with your neighbour, your street, your city. Most importantly make it economically attractive for all enterprises to make data available in some form, even if it’s not ‘open’ in the purest sense.</p>
+
+<p>We have an exciting journey ahead delivering significant change to our urban environment. Over a century ago ‘The league of American Wheelman’ catalysed improvements to America’s transport infrastructure; open data movement can deliver similar disruptive change to our urban environment. I hope open data becomes as ubiquitous as our transport network is today; in future no one will recall activists like the ODI and opensensors.io, but that would be a sign of open data’s success.</p>
+</div>
+
+
+  <footer>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.opensensors.io/blog/2015/07/07/when-sensors-and-open-data-collide/" data-via="opensensorsio" data-counturl="http://blog.opensensors.io/blog/2015/07/07/when-sensors-and-open-data-collide/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Text authored by <span class="fn">Simon Troup</span></span>
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/data/'>Data</a>, <a class='category' href='/blog/categories/open/'>Open</a>
+  
+</span>
+
+
+    </p>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/06/06/http-post/" title="Previous Post: HTTP Post">&laquo; HTTP Post</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Website copyright &copy; 2015 - OpenSensors.IO |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>.
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
