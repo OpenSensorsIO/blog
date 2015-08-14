@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Monitoring for Earthquakes With Node-red - OpenSensors.IO</title>
+  <meta name="author" content="OpenSensors.IO">
+
+  
+  <meta name="description" content="OpenSensors now capture seismic data from the Euro-Med Seismic Centre (EMSC) and the United States Geological Survey (USGS). Every ten minutes we are &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.opensensors.io/blog/2015/08/14/monitoring-for-earthquakes-with-node-red">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="OpenSensors.IO" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Germania+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<logo>
+
+<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
+</logo>
+
+
+
+<body >
+  <header role="banner"><hgroup>
+  <h1><a href="/">OpenSensors.IO</a></h1>
+  
+    <h2>News and Updates about OpenSensors.IO</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+<br>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.opensensors.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+-->
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Monitoring for Earthquakes With Node-red</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-14T15:07:00+01:00" pubdate data-updated="true">Aug 14<span>th</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>OpenSensors now capture seismic data from the Euro-Med Seismic Centre (EMSC) and the United States Geological Survey (USGS). Every ten minutes we are polling the latest information of major and minor earthquakes around the globe and make this information available via our programming interface (API) or as MQTT feed.
+In this short tutorial, we’re showing you how to use OpenSensors together with Node-RED to receive email alerts whenever there’s a major incident in a region of interest. You can use this guide as starting point for further experiments with Node-RED and develop your own earthquake-triggered workflows. Let’s shake it.</p>
+
+<h2>On OpenSensors</h2>
+
+<ul>
+<li><p>First, you need to login to your account on OpenSensor or sign up for one if you haven’t done so already at <a href="https://opensensors.io.">https://opensensors.io.</a></p></li>
+<li><p>Next, it’s good practice to have a new ‘device’ for this application, i.e. a dedicated set of credentials you’re going to use to log in to OpenSensors for this particular set of MQTT feeds.</p>
+
+<ul>
+<li>In the panel on the left, click My Devices in the Devices menu.</li>
+<li>Click the yellow Create New Device button at the top of the page.</li>
+<li>Optional: Add some optional descriptions and press the disk icon to save your new device.</li>
+<li>Take a note of your ‘Client id’ and ‘Password’ as you’re going to need them in your Node-RED workflow.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><img src="/images/quakelistener.png" /></p>
+
+<h2>For Node-RED</h2>
+
+<p>Install node.js and Node-RED on your system. There’s a very good guide for this on the <a href="http://nodered.org/docs/getting-started/installation.html">Node-RED website</a>. Follow the instructions, including the separate section on Running Node-RED.</p>
+
+<p>Once you’re ready, open a web browser and direct it to localhost:1880, the default address and port of the Node-RED GUI on your system.</p>
+
+<p><img src="/images/noderedquake.png" /></p>
+
+<p>(A very basic description of the Node-RED vocabulary can also be found at <a href="http://www.slideshare.net/BorisAdryan/node-red-workflowcoursetoulouse">SlideShare</a>.</p>
+
+<h2>Developing a workflow</h2>
+
+<ul>
+<li><p>From the input panel of your nodes library on the left side, drag and drop a pink mqtt input node into the work area named Sheet  1.</p></li>
+<li><p>Double-click the mqtt node. A window with configuration details opens.</p>
+
+<ul>
+<li>Click the pen symbol next to ‘Add new mqtt-broker&hellip;’. Your Broker is opensensors.io, your Client ID and Password those you generated in the previous step on the OpenSensors website, and User is your OpenSensor user name.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><img src="/images/noderedmqtt.png" /></p>
+
+<pre><code>- Once the Broker is defined, enter /orgs/EMSC/+ into the Topic field. This is going to instruct Node-RED to subscribe to all MQTT topics generated by the EMSC.    
+- Optional: Set the Name of this node to ‘EMSC’.
+</code></pre>
+
+<ul>
+<li><p>Drag and drop a second mqtt input node. When you double-click the node, you will realise that the Broker settings default to the ones you previously entered.</p>
+
+<ul>
+<li>Enter /orgs/USGS/+ in the Topics field and ‘USGS’ as optional Name.</li>
+</ul>
+</li>
+<li><p>Drag and drop a dark green debug node from the output panel on the left. While debugging has the connotation of fixing a problem, in Node-RED it’s the default way of directly communicating messages to the user.</p></li>
+<li><p>Draw connection lines (“pipes”) from both mqtt nodes to the debug node.</p></li>
+</ul>
+
+
+<p><img src="/images/noderedflow.png" /></p>
+
+<ul>
+<li>Press the red Deploy button in the upper right corner. This starts your Node-RED flow. If everything worked, you should see ‘connected’ underneath the mqtt nodes and your debug panel (on the right) should soon produce the following JSON-formatted output if there’s an event (which may take a while!):</li>
+</ul>
+
+
+<p><img src="/images/nddebugger.png" /></p>
+
+<p>While it is pleasing to be informed about every time the earth shakes, it soon becomes tedious staring at the debug panel in expectation of an earthquake. Also, you may not be interested in events in remote areas of the world, or exactly in those &ndash; whatever interests you.</p>
+
+<p>We are going to extend our flow with some decision making:</p>
+
+<p>First, we need to parse the information from the EMSC and USGS. For this example, we’re going to be particularly interested in the fields region and magnitude. There are plenty more fields in their records, and you may want to adjust this flow to your needs.</p>
+
+<ul>
+<li><p>Drag and drop a pale orange function node from the functions panel into your flow. Connect both mqtt nodes to the input side (the left side) of your function node. Function nodes allow you directly interact with your data using JavaScript.</p></li>
+<li><p>Enter the following code (or download the OpenSensors workflow).</p></li>
+</ul>
+
+
+<p><img src="/images/nseditor.png" /></p>
+
+<p>Here be a JavaScript course… :&ndash;) In a nutshell, this code takes data from the ‘payload’ of the incoming message (read up on the topic and payload concept of Node-RED in the SlideShare article suggested earlier). The payload is then parsed for the region and magnitude fields using standard regular expressions. If we can successfully extract information (in this case: the region containing ‘ia’ somewhere in it’s name), we’re going to set the outgoing message’s payload to the magnitude, its topic to ‘EVENT in ‘ plus the name of the region and pass it on (‘return msg’) to the next node.</p>
+
+<ul>
+<li>Drag and drop a lime green switch node from the function panel into your workflow. Connect the output of the function node to the input of the switch node. Configure (by double-clicking) the switch node to assert if the payload (being the magnitude of the earthquake) is greater than 2. Only then the message is going to be passed on.</li>
+</ul>
+
+
+<p><img src="/images/editswitch.png" /></p>
+
+<ul>
+<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#111;&#104;&#109;&#x79;&#103;&#x6f;&#100;&#x69;&#x74;&#x68;&#x61;&#x70;&#x70;&#x65;&#110;&#x64;&#64;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;&#x2e;">&#x6f;&#x68;&#109;&#x79;&#x67;&#x6f;&#x64;&#105;&#x74;&#104;&#97;&#112;&#x70;&#x65;&#110;&#100;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;&#46;</a></li>
+</ul>
+
+
+<p><img src="/images/nseditemail.png" /></p>
+
+<ul>
+<li><p>Connect the output of the switch node to our debug node, as well as to the outgoing e-mail node.</p></li>
+<li><p>We can then deploy the new workflow and should see something like this after a while:</p></li>
+</ul>
+
+
+<p><img src="/images/newflow.png" /></p>
+
+<p>In this case, an event was detected ‘off the coast of Northern California’ with a magnitude of 4.4 and at the same time, you should receive an e-mail with the region as subject and the magnitude in the body of the e-mail.</p>
+
+<p>We hope that this flow is getting you started! Remember that Node-RED is superbly suited to interact with hardware… &hellip;imagine LEDs and buzzers indicating an earthquake.</p>
+
+<p>The flow JSON:
+[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x6f;&#104;&#109;&#121;&#103;&#111;&#100;&#105;&#116;&#x68;&#97;&#112;&#x70;&#x65;&#110;&#101;&#x64;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;">&#111;&#104;&#109;&#x79;&#x67;&#111;&#100;&#x69;&#x74;&#104;&#x61;&#x70;&#112;&#101;&#x6e;&#x65;&#x64;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
+</div>
+
+
+  <footer>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.opensensors.io/blog/2015/08/14/monitoring-for-earthquakes-with-node-red/" data-via="opensensorsio" data-counturl="http://blog.opensensors.io/blog/2015/08/14/monitoring-for-earthquakes-with-node-red/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Text authored by <span class="fn">Boris Adryan</span></span>
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/data/'>Data,</a>, <a class='category' href='/blog/categories/open/'>Open</a>, <a class='category' href='/blog/categories/earthquakes/'>earthquakes</a>
+  
+</span>
+
+
+    </p>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/08/06/first-things-first/" title="Previous Post: First 'Things' First">&laquo; First 'Things' First</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Website copyright &copy; 2015 - OpenSensors.IO |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>.
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
