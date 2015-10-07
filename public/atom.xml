@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2015-08-14T15:56:44+01:00</updated>
+  <updated>2015-08-24T13:23:55+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Don't Make Me Think]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/08/24/dont-make-me-think/"/>
+    <updated>2015-08-24T13:18:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/08/24/dont-make-me-think</id>
+    <content type="html"><![CDATA[<p>Expect the early adopters of ‘enchanted’ buildings to be our employers, the world green building council estimate we spend 10% of our costs on facilities management, 90% is the expense of executing our business. You don’t have to be an accountant to realise a 1% improvement in productivity trumps a 1% saving facilities costs by 9 to 1!  So how might smart buildings deliver productivity and improved user experience (UX)?</p>
+
+<p>Great UX should be pain free,”Don’t make me think” (Steve Krug). Whilst smart phones offer a means of logging in to a workplace, it’s a bind to install the app, to login, to connect and privacy and indoor location services are a challenge. IoT tech such as OpenSensors, beacons, noise and air quality sensors, coupled with responsible anonymisation can deliver on productivity because improved building and personal wellness simply means we get more done. But how might this work?</p>
+
+<p>Aarron Walter said “Designers shooting for usable is like a chef shooting for edible.”, as techies we can apply these ideas to civic interactions. Take a large office space, I arrive from out of town, I’m visiting for a meeting with my project team. I register, head off to the flexible space and grab a desk, perhaps wasting time trying to find my guys. Each of the team then arrive, some may co-locate, others disperse, there’s no convenient breakout space; the collaboration is diluted and we’re disturbing others. We ate but it wasn’t a great meal.</p>
+
+<p>The lack of an inexpensive, robust, secure and open tech stack rendered us powerless, we have been consuming ‘edible’ tenant experiences rather than a delightful meal. But tech is moving fast; expect new digital services enabled by advances in IoT hardware and data software to shake down the industry. Organisations ready to invest and experiment will move ahead, they’ll develop an ‘edge’ that will define their services and branding for years to come.</p>
+
+<p><strong>Digital concierge</strong> &ndash; expect to sign in digitally on a device that will bind you, your calendar, your co-workers and your building. Through data expect intelligent routing to the best work space for your or your groups needs.</p>
+
+<p><strong>Location based services</strong> &ndash; sensors enable ‘just in time’ cleaning services that clear flexible working space when meetings conclude, or sweep loitering coffee cups and deliver fresh coffee during breaks in longer workshops.</p>
+
+<p><strong>Environmental factors</strong> &ndash; expect IoT to bubble up environmental data such as air quality, temperature, humidity, light and noise that can be used to adjust HVAC systems in real time, or to aide interior designers in improving the workplace.</p>
+
+<p><strong>Smart facilities management</strong> &ndash; location based services coupled with smart energy grid technology will allow fine tuning of energy supply reacting to changes in demand and national grid status (smart grid frequency response).</p>
+
+<p><strong>Data science</strong> &ndash; each of the above services a specific need whilst wrangling data sets into an ordered store. Technology like opensensors can then add further value through real time dashboarding for health and safety or real time productivity management. Furthermore, once data is captured we can apply machine learning to deeper understand the interactions of our human resources and physical assets through A/B testing or other data science.</p>
+
+<p>Unlocking great UX in buildings boils down to data; capturing it, wrangling it, applying science and iterating to make things better. First we must gather the data from the systems in place (see First ‘Things’ First) whilst supplementing from new devices such as air quality, occupancy through sensors or beacons. Having provided a robust data fabric tenants need to become active rather than passive, agile rather than rigid in their approach to managing their assets. IoT devices and data services will deliver an edge for delivering the best of breed user experience that tenants value so highly.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Monitoring for Earthquakes With Node-red]]></title>
@@ -111,7 +138,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p><img src="http://blog.opensensors.io/images/editswitch.png" /></p>
 
 <ul>
-<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#111;&#x68;&#x6d;&#x79;&#x67;&#111;&#100;&#105;&#116;&#x68;&#97;&#112;&#x70;&#x65;&#x6e;&#100;&#64;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;&#x2e;">&#x6f;&#x68;&#109;&#121;&#x67;&#x6f;&#x64;&#105;&#116;&#104;&#x61;&#112;&#112;&#101;&#110;&#x64;&#64;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;&#x2e;</a></li>
+<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#x6f;&#x68;&#x6d;&#x79;&#x67;&#x6f;&#100;&#x69;&#116;&#104;&#x61;&#x70;&#112;&#x65;&#x6e;&#100;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;&#x2e;">&#111;&#x68;&#x6d;&#121;&#103;&#111;&#x64;&#x69;&#x74;&#x68;&#x61;&#112;&#x70;&#x65;&#110;&#x64;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;&#x2e;</a></li>
 </ul>
 
 
@@ -130,7 +157,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p>We hope that this flow is getting you started! Remember that Node-RED is superbly suited to interact with hardware… &hellip;imagine LEDs and buzzers indicating an earthquake.</p>
 
 <p>The flow JSON:
-[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#58;&#111;&#104;&#109;&#121;&#103;&#111;&#100;&#x69;&#x74;&#104;&#97;&#x70;&#x70;&#101;&#x6e;&#101;&#100;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;">&#111;&#104;&#109;&#121;&#103;&#111;&#100;&#105;&#x74;&#x68;&#97;&#112;&#112;&#x65;&#110;&#x65;&#100;&#64;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#x6d;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
+[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#x6f;&#x68;&#109;&#121;&#x67;&#111;&#x64;&#105;&#116;&#x68;&#97;&#112;&#112;&#x65;&#x6e;&#101;&#x64;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;">&#x6f;&#x68;&#109;&#121;&#103;&#x6f;&#100;&#x69;&#116;&#104;&#97;&#x70;&#x70;&#x65;&#x6e;&#x65;&#x64;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
 ]]></content>
   </entry>
   
@@ -311,7 +338,7 @@ particular protocol you love feel free to send us an <a href="hello@opensensors.
 
 <p>As some of you may have noticed, we released a stripped down Alpha version of Orgs in our last release. We’ve learned from your feedback.</p>
 
-<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x68;&#101;&#x6c;&#x6c;&#111;&#64;&#111;&#x70;&#x65;&#x6e;&#x73;&#101;&#110;&#115;&#x6f;&#114;&#x73;&#46;&#x69;&#111;">&#x68;&#x65;&#x6c;&#x6c;&#111;&#x40;&#111;&#112;&#101;&#x6e;&#x73;&#x65;&#x6e;&#115;&#111;&#x72;&#115;&#46;&#105;&#x6f;</a> for a voucher.</p>
+<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#104;&#x65;&#108;&#x6c;&#111;&#x40;&#x6f;&#x70;&#x65;&#110;&#115;&#x65;&#x6e;&#115;&#111;&#x72;&#x73;&#x2e;&#x69;&#111;">&#104;&#101;&#108;&#x6c;&#x6f;&#64;&#111;&#x70;&#101;&#x6e;&#115;&#101;&#x6e;&#115;&#x6f;&#x72;&#x73;&#x2e;&#x69;&#111;</a> for a voucher.</p>
 
 <p>For more details about Organisations and how to use them check out our
 <a href="https://opensensors.io/help/">help pages</a></p>
@@ -370,7 +397,7 @@ will be adding it to my toolkit.</p>
 
 <p>Does this help you solve a problem you’ve been having with your
 connected sensors? If so get contact and let us know what you are up
-to on <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#104;&#101;&#x6c;&#108;&#x6f;&#64;&#111;&#112;&#101;&#110;&#115;&#x65;&#x6e;&#x73;&#111;&#x72;&#115;&#x2e;&#105;&#111;">&#104;&#x65;&#x6c;&#x6c;&#111;&#x40;&#111;&#x70;&#x65;&#x6e;&#x73;&#x65;&#x6e;&#x73;&#x6f;&#x72;&#x73;&#46;&#x69;&#x6f;</a></p>
+to on <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#104;&#101;&#x6c;&#108;&#111;&#x40;&#111;&#x70;&#x65;&#110;&#x73;&#101;&#x6e;&#115;&#111;&#x72;&#115;&#46;&#x69;&#x6f;">&#x68;&#x65;&#108;&#x6c;&#x6f;&#64;&#111;&#112;&#x65;&#110;&#x73;&#101;&#x6e;&#115;&#111;&#x72;&#x73;&#46;&#105;&#x6f;</a></p>
 ]]></content>
   </entry>
   
@@ -1221,61 +1248,6 @@ and start pressing the button. If you&rsquo;ve done everything correctly,
 you&rsquo;ll see your messages in your browser.</p>
 
 <p>Have fun!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Future Cities]]></title>
-    <link href="http://blog.opensensors.io/blog/2013/10/08/future-cities/"/>
-    <updated>2013-10-08T13:07:00+01:00</updated>
-    <id>http://blog.opensensors.io/blog/2013/10/08/future-cities</id>
-    <content type="html"><![CDATA[<p>We were honored to be a platform partner and host the data for <a href="http://futurecitieshackathon.com/">The Future Cities Hackathon: Open Urban Data for The Citizens</a> a collaborative project by <a href="http://datasciencelondon.org/">Data Science London</a> during the weekend of the 5th &ndash; 6th of October.</p>
-
-<p>Granular Data sets where provided by the City of Westminster by street and a period of around a year.
-The full list data sets are below:</p>
-
-<ul>
-<li>Anti Social Behavior data</li>
-<li>Dog fouling</li>
-<li>Graffiti</li>
-<li>Parking Sensors</li>
-<li>Parking Tickets issued</li>
-<li>Crowd Dynamics data measuring foot falls once an hour</li>
-<li>Parking Cashless transactions data</li>
-</ul>
-
-
-<p>Participants spent the weekend working on projects aimed to improve the experiences of City of Westminster residents.  There were approximately 15 submissions in order to win one of 3 prizes.  The prize categories were for Statistical modelling, Data Visualisation and a Windows phone application.  The quality of the final submissions were outstanding.</p>
-
-<p>A few of the submissions were</p>
-
-<ul>
-<li><p>Team &lsquo;Fjölmenni&rsquo;, who won the Statistical modeling challenge, made a &lsquo;CrowdWalk&rsquo; application that predicted how busy streets would be by time and day.</p></li>
-<li><p>Team &lsquo;Kung fu pandas&rsquo; made a number of statistical models on parking spaces, one of the most interesting was finding under utilized car parking spaces.</p></li>
-</ul>
-
-
-<p><img src="http://blog.opensensors.io/images/IMAG0731.jpg" /></p>
-
-<ul>
-<li>Team &lsquo;Street Sweep&rsquo; won the best Visualisation catergory and made a fantastic game 3d game using the opensensors.io api and open street map.  The game allowed players to clean dog fouling, vomit, etc from real data</li>
-</ul>
-
-
-<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/jWkxDIYp6sU "></iframe></div>
-
-
-<p>There were many more amazing projects submitted that could make the lives of people of Westminster so much easier.</p>
-
-<h3>The Problem</h3>
-
-<p>Unfortunately, getting the data in the first place was incredibly difficult.  The painful process and route that it took to get to us was described by Carlos in his talk.  The data was passsed between a multitude of intermediary companies and crossed the Oceans a few times in the below manner</p>
-
-<p>&ldquo;Sensor device >  Data Provider > people > DB > people > ETL > people> CSV > public entity> people > ETL>  IT Vendor> DW > people > CSV > Sharepoint > Dropbox > and… us !!!&rdquo;</p>
-
-<p>This process harms everyone from the council to residents. We can and need to simplify this process.</p>
-
-<p>Smart environments need not be a dream of the distant future if we open the data and enable businesses and developers to build services for the benefit of everyone.</p>
 ]]></content>
   </entry>
   
