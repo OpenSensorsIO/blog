@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Quality | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/quality/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2015-02-24T10:25:40+00:00</updated>
+  <updated>2015-10-07T11:08:09+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -165,7 +165,7 @@ time.sleep(1);
 
 <p>WE recommend adjusting the Arduino code to output the data in JSON format. This will make it easier to read and add functionality.</p>
 
-<p>You can check out the topic producing Open Data we created <a href="https://opensensors.io/users/Louis/ODI/airquality">here</a>!</p>
+<p>You can check out the topic producing Open Data we created <a href="https://opensensors.io/topics/users/Louis/ODI/airquality">here</a>!</p>
 ]]></content>
   </entry>
   

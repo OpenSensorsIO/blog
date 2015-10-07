@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Data | OpenSensors.IO]]></title>
-  <link href="http://blog.opensensors.io/blog/categories/data/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Infastructure | OpenSensors.IO]]></title>
+  <link href="http://blog.opensensors.io/blog/categories/infastructure/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
   <updated>2015-10-07T11:08:09+01:00</updated>
   <id>http://blog.opensensors.io/</id>
@@ -50,61 +50,7 @@
 </ul>
 
 
-<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#99;&#111;&#x6d;&#109;&#x65;&#x72;&#99;&#105;&#x61;&#108;&#116;&#x65;&#x61;&#109;&#64;&#111;&#112;&#x65;&#x6e;&#115;&#101;&#x6e;&#x73;&#x6f;&#x72;&#x73;&#46;&#105;&#x6f;">&#x63;&#x6f;&#x6d;&#x6d;&#x65;&#114;&#x63;&#105;&#97;&#x6c;&#116;&#101;&#x61;&#x6d;&#64;&#111;&#x70;&#101;&#110;&#115;&#101;&#110;&#115;&#x6f;&#x72;&#115;&#46;&#x69;&#111;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Future Cities]]></title>
-    <link href="http://blog.opensensors.io/blog/2013/10/08/future-cities/"/>
-    <updated>2013-10-08T13:07:00+01:00</updated>
-    <id>http://blog.opensensors.io/blog/2013/10/08/future-cities</id>
-    <content type="html"><![CDATA[<p>We were honored to be a platform partner and host the data for <a href="http://futurecitieshackathon.com/">The Future Cities Hackathon: Open Urban Data for The Citizens</a> a collaborative project by <a href="http://datasciencelondon.org/">Data Science London</a> during the weekend of the 5th &ndash; 6th of October.</p>
-
-<p>Granular Data sets where provided by the City of Westminster by street and a period of around a year.
-The full list data sets are below:</p>
-
-<ul>
-<li>Anti Social Behavior data</li>
-<li>Dog fouling</li>
-<li>Graffiti</li>
-<li>Parking Sensors</li>
-<li>Parking Tickets issued</li>
-<li>Crowd Dynamics data measuring foot falls once an hour</li>
-<li>Parking Cashless transactions data</li>
-</ul>
-
-
-<p>Participants spent the weekend working on projects aimed to improve the experiences of City of Westminster residents.  There were approximately 15 submissions in order to win one of 3 prizes.  The prize categories were for Statistical modelling, Data Visualisation and a Windows phone application.  The quality of the final submissions were outstanding.</p>
-
-<p>A few of the submissions were</p>
-
-<ul>
-<li><p>Team &lsquo;Fjölmenni&rsquo;, who won the Statistical modeling challenge, made a &lsquo;CrowdWalk&rsquo; application that predicted how busy streets would be by time and day.</p></li>
-<li><p>Team &lsquo;Kung fu pandas&rsquo; made a number of statistical models on parking spaces, one of the most interesting was finding under utilized car parking spaces.</p></li>
-</ul>
-
-
-<p><img src="/images/IMAG0731.jpg" /></p>
-
-<ul>
-<li>Team &lsquo;Street Sweep&rsquo; won the best Visualisation catergory and made a fantastic game 3d game using the opensensors.io api and open street map.  The game allowed players to clean dog fouling, vomit, etc from real data</li>
-</ul>
-
-
-<p><div class="embed-video-container"><iframe src="http://www.youtube.com/embed/jWkxDIYp6sU "></iframe></div></p>
-
-<p>There were many more amazing projects submitted that could make the lives of people of Westminster so much easier.</p>
-
-<h3>The Problem</h3>
-
-<p>Unfortunately, getting the data in the first place was incredibly difficult.  The painful process and route that it took to get to us was described by Carlos in his talk.  The data was passsed between a multitude of intermediary companies and crossed the Oceans a few times in the below manner</p>
-
-<p>&ldquo;Sensor device >  Data Provider > people > DB > people > ETL > people> CSV > public entity> people > ETL>  IT Vendor> DW > people > CSV > Sharepoint > Dropbox > and… us !!!&rdquo;</p>
-
-<p>This process harms everyone from the council to residents. We can and need to simplify this process.</p>
-
-<p>Smart environments need not be a dream of the distant future if we open the data and enable businesses and developers to build services for the benefit of everyone.</p>
+<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#99;&#111;&#109;&#109;&#x65;&#114;&#99;&#105;&#x61;&#108;&#116;&#101;&#x61;&#109;&#x40;&#x6f;&#112;&#x65;&#110;&#115;&#x65;&#x6e;&#x73;&#x6f;&#114;&#x73;&#x2e;&#105;&#x6f;">&#99;&#111;&#x6d;&#109;&#101;&#x72;&#x63;&#105;&#97;&#x6c;&#x74;&#101;&#97;&#x6d;&#x40;&#111;&#112;&#101;&#x6e;&#115;&#x65;&#x6e;&#x73;&#111;&#114;&#x73;&#46;&#x69;&#111;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
 ]]></content>
   </entry>
   
