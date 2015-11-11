@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cities | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/cities/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2015-10-07T11:08:09+01:00</updated>
+  <updated>2015-02-24T10:25:40+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,21 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[You Use Open Data Every Day]]></title>
-    <link href="http://blog.opensensors.io/blog/2015/05/17/you-use-open-data-every-day/"/>
-    <updated>2015-05-17T13:11:00+01:00</updated>
-    <id>http://blog.opensensors.io/blog/2015/05/17/you-use-open-data-every-day</id>
-    <content type="html"><![CDATA[<p>You&rsquo;ve done your hair, you&rsquo;ve picked out the perfect outfit and you&rsquo;re set  on making a great first impression. How long have I got? What tube should I get? How soon is the next bus? You check the <a href="http://www.techworld.com/news/startups/londons-citymapper-capitalises-on-decade-of-data-3467301/">CityMapper app</a> &ndash; you find a route and within seconds know exactly how long it will take to get to your hot date. You may not know it, but open data has just made your trip a lot easier.</p>
-
-<p>Transport for London, OpenStreetMaps, Foursquare, Google Maps, Apple Maps and Cyclestreets all provide access to <a href="http://theodi.org/what-is-open-data">open data</a> for others to use. In this case, CityMapper ingests the real-time open data produced by Transport for London, remixes it with freely available open mapping data, adds a touch of their own special sauce, real-time usage and congestion data from CityMapper users, and finally curates this brew in an accessible form for the user, waiting at the bus stop. In short, the CityMapper team takes the available open data, adds value to it and provides that as a service.</p>
-
-<p>It is not an exaggeration to claim the future development of the city is <a href="http://theodi.org/research-afternoons/show-me-the-future-of-the-built-environment-and-open-data">intertwined</a> with open data. From transport data to air quality data to real time high-street footfall, as cities become leaner, genuinely smarter and more efficient the availability of reliable high quality data will become more important than ever. Generating open data from our surroundings is unlocking value and insight from our environment, information that is all around us, for the researcher, for the app developer, for the tinkerer, for the activist.</p>
-
-<p>For cities to succeed in building resilient systems and networks, the emerging data ecosystem in the city can&rsquo;t rely on closed data, closed systems. Devices and sensors in the city won&rsquo;t function as JawBone and FitBit do, two closed devices whose real-time data I couldn&rsquo;t access and share even if I wanted to. Open data is disrupting the digital landscape, former data-as-commodity brokers, such as <a href="http://www.landmark.co.uk/">Landmark</a>, have since fundamentally reshaped the way in which they do business, focusing on curating available data.</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Future Cities]]></title>

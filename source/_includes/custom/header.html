@@ -1,6 +1,10 @@
 <hgroup>
-  <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+  <h1><a href="https://www.opensensors.io/">{{ site.title }}</a></h1>
   {% if site.subtitle %}
     <h2>{{ site.subtitle }}</h2>
   {% endif %}
+<div style="float: right">
+  <script src="https://www.opensensors.io/cljs/osio-widget.js"></script>
+  <div class="osio-widget" data-osio-topic-id="/orgs/wd/aqe/co"></div>
+</div>
 </hgroup>
