@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2015-11-11T21:03:04+00:00</updated>
+  <updated>2015-12-18T15:07:17+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,6 +12,127 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Taking the Air at the Turk’s Head]]></title>
+    <link href="http://blog.opensensors.io/blog/2015/12/18/taking-the-air-at-the-turks-head/"/>
+    <updated>2015-12-18T14:45:00+00:00</updated>
+    <id>http://blog.opensensors.io/blog/2015/12/18/taking-the-air-at-the-turks-head</id>
+    <content type="html"><![CDATA[<h2>Summary</h2>
+
+<p><img src="http://blog.opensensors.io/images/TurksHead.jpg" /></p>
+
+<p>Opensensors.io are pioneers in open data and the internet of things, surfacing a wide range of data sets for open analysis. As an open data aggregator we deliver content over a common infrastructure; whether air quality or transport data, you only have to think about one integration point. Future cities need low data transaction costs for friction free operation, bridging technical gaps slow progress, so keeping the number of integration points low makes sense everybody.</p>
+
+<p>Our journey starts here, as we build out our opendata content expect to see more stories, more insight and hopefully some catalysts for positive change.</p>
+
+<p>Before our first story, consider what will make open data and the Internet of things useful.</p>
+
+<p>We must bridge the gap from data to information, allow consumers to abstract away the complexity of IoT to ask questions that makes sense to them.</p>
+
+<p>Take data from the <a href="http://www.londonair.org.uk/LondonAir/guide/default.aspx">London Air Quality network (LAQN)</a>, the network is sparse so it&rsquo;s improbable our need maps directly to a sensor. By coupling some simple python code with <a href="https://www.opensensors.io/orgs/london-air-quality-network">opensensors data</a> we’ll mash some LAQN data together to get some insight about air quality in wapping.</p>
+
+<p>In this story i’ll show how we can bridge the information gap with some simple code, yielding valuable insight along the way!</p>
+
+<h2>Chapter 1: Opensensors.io Primer</h2>
+
+<p>First a quick primer on how data is structured in opensensors.io <a href="http://support.opensensors.io/support/solutions/articles/6000025426-opensensors-glossary-of-terms">(for more detail check out our forum and glossary of terms)</a></p>
+
+<ul>
+<li>Devices &ndash; Each connected ‘thing’ maps to a secured device, things map one-to-one to a device</li>
+<li>Topics &ndash; Data is published by devices to topics, a topic is a URI and is the pointer to a stream of data</li>
+<li>Organisations (orgs) &ndash; An organisation owns many topics and is the route of an orgs topic URI</li>
+<li>Payloads &ndash; Payloads are the string content of messages sent to topic URI’s, typically JSON</li>
+</ul>
+
+
+<p>Also check out our RESTful and streaming APIs on the <a href="https://api.opensensors.io/index.html">website</a> for more background and online examples.</p>
+
+<h2>Chapter 2: Putting JSON to Work</h2>
+
+<p><img src="http://blog.opensensors.io/images/json-to-work.png" />
+You can use the opensensors REST API to gather data for research, but it comes in chunks of JSON which isn’t great for data science. For convenience i wrapped up some common data sources for London into a <a href="https://github.com/troups/AQ">python class</a>. Since IoT data is rarely in a nice columnar form it&rsquo;s valuable to build some simple functions to shape the data into something a bit more useful.</p>
+
+<h2>Chapter 3: Introducing the Turks Head</h2>
+
+<p><img src="http://blog.opensensors.io/images/introturkshead.png" /></p>
+
+<p>I’m fortunate to spend a lot of time in Wapping, in and around the community of the <a href="http://www.turksheadcharity.com/story/">Turk’s Head Workspace and Cafe</a>, but unfortunately we don’t have a local LAQN sensor. With a bit of data science and opensensors.io open data we can estimate what NO2 levels might be around the cafe and workspace.</p>
+
+<p>A simple way to estimate NO2 is a weighted average of all the LAQN sensors, in this case we derive the weights from the distance between the sensor and our location. Since we want to overweight the closest sensors we can use an exponential decay to deflate towards zero for those far away.</p>
+
+<p>For the Turks Head sensors in Aldgate, Southwark and Tower hamlets and the City are the closest and have the biggest impact on our estimate.</p>
+
+<h2>Chapter 4: Getting into the Data</h2>
+
+<p><img src="http://blog.opensensors.io/images/gettingintothedata.png" />
+With our air quality time series, and our weights we can dig into what our estimates for the Turks Head look like (NO2 * weight). Here’s the series for NO2 over the last 20 days, it looks like the peaks and troughs repeat, and the falling or rising trend is persistent in between.</p>
+
+<p>Trend followers in finance use moving averages to identify trends, for example the <a href="https://en.wikipedia.org/wiki/MACD">MACD indicator (moving average convergence divergence)</a>. MACD uses the delta between a fast and slow moving average to identify rising or falling trends, we’ll do the same. For our purposes we’ll speed the averages up using a decay of 3 and 6 periods (LAQN data is hourly and we are resampling to give estimates on the hour).</p>
+
+<p>What can we conclude from the charts for The Turks Head? From the left hand chart we can see the data is little noisy,with a flat line showing some missing or ‘stalled’ data. Looking at the 3 and 6 period decayed averages the data is smoother, with the faster average persistently trending ahead of the slower one.</p>
+
+<p>Even with fast moving decays the averages cross only a couple of times a day, showing persistence when in trend. So using a simple trend indicator and the LAQN we can build a simple air barometer for the Turks Head.</p>
+
+<p>Good    3 period exp average &lt;  6 period average (green)
+Bad     3 period exp average > 6 period average (red)</p>
+
+<p>This is helpful because, given a persistent trend state, where we have a ‘good’ air now, we’ll probably have ‘good’ air for the following hour.</p>
+
+<h2>Chapter 5: What’s the trend across London?</h2>
+
+<p><img src="http://blog.opensensors.io/images/trends.png" />
+So we now have means of defining how NO2 levels at the Turk’s Head are trending, but is the trend state predictable over a 24 hour period?</p>
+
+<p>Remember we define good or bad air quality trend as:</p>
+
+<p>Good    ‘fast’ average  &lt;  ‘slow’ average  = falling NO2
+Bad     ‘fast’ average  >  ‘slow’ average  = rising NO2</p>
+
+<p>If we aggregate data into hourly buckets we can visualise how much of the time, over the past 20 days, a sensor has been in a up trend (‘good’) for a given hour.</p>
+
+<p>x = hour of the day
+y = percentage of bucket that is in a ‘good’ state</p>
+
+<p>We can see that for each 1 hour bucket (24 in total) there is a city wide pattern; if we aggregate across the city (using the same measure, the percentage of sensors in up or down trend) we get an idea of how NO2 trends over a typical day.</p>
+
+<p>Our right hand chart shows the percentage of ‘good’ versus ‘bad’ NO2 sensor states across London over the past 20 days (collected from about 80 sensors over 20 days)</p>
+
+<p>Now this is a really simple analysis but it suggests the proportion of ‘good’ trends across London is high before 7am, and then falls away dramatically during the morning commute. No surprises there.</p>
+
+<p>But the pattern isn’t symmetrical; after peaking around lunchtime, when only ~20% of the cities sensors having improving NO2, NO2 falls throughout the afternoon. From a behavioural standpoint this makes sense; there is a more concentrated morning commute relative to the evening. Most of us arrive at the workplace between say 8 and 9am, but in the evening we may go to the gym, we may go out for dinner, or just work late. The dispersion of our exits from the city is wider than when we enter.</p>
+
+<h2>Chapter 6 &ndash; PM versus NO2</h2>
+
+<p><img src="http://blog.opensensors.io/images/pmvsno2.png" />
+So we have considered NO2 as our core measure, in part because there are more sensors in the LAQN delivering this data than particulates. But let’s consider particulates for a moment, LAQN deliver PM10 and PM2.5 measures, the definition can be found here.</p>
+
+<p>Our temporal curves for particles differ from NO2 taking longer to disperse during the evening rush hour (remember we are measuring percentage of sensors in a ‘good’ state). As a measure of air quality NO2 builds up faster, and decays faster once peak traffic flows have completed, whereas particles linger only fading deep into the night (on average).</p>
+
+<h2>Closing Thoughts</h2>
+
+<p>In our data set, NO2 and PM measures differ in their average behaviour over a typical 24 hour period.</p>
+
+<ul>
+<li><p>Behavioural interventions will need to consider whether particulates or N02 are the most impactful.</p></li>
+<li><p>How can we communicate air quality to our citizens, and relate their personal needs to the measures most impactful on their lives?</p></li>
+<li><p>Do we need additional sensors to create a more dense air quality resource? How can we allocate funds to optimally support network expansion and air quality services?</p></li>
+<li><p>Knowing the characteristics of a sensor (location, calibration, situation [elevated, kerb side, A or B road]) will improve estimates, how can we deliver this meta-data?</p></li>
+</ul>
+
+
+<p>Plenty of food for thought…………..information</p>
+
+<h2>Notes and Resources</h2>
+
+<p>Our stories are quick and dirty demonstrators to promote innovation and should be treated as such. All data science and statistics should be used responsibly :)</p>
+
+<p>All of the code supporting this can be found on <a href="https://github.com/troups/AQ">github</a> with data sourced from <a href="https://www.opensensors.io/orgs/london-air-quality-network">opensensors’ LAQN feed</a>, and i use a postcode lookup to get long/lat locations for wapping. I’ve also taken some inspiration from <a href="https://github.com/e-dard/boris">https://github.com/e-dard/boris</a> and <a href="https://github.com/tzano/OpenSensors.io-Py">https://github.com/tzano/OpenSensors.io-Py</a> so thanks for their contribution!</p>
+
+<p><a href="http://www.londonair.org.uk/">http://www.londonair.org.uk/</a>
+<a href="https://www.opensensors.io/">https://www.opensensors.io/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Path to Smart]]></title>
@@ -50,7 +171,7 @@
 </ul>
 
 
-<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#99;&#111;&#109;&#109;&#101;&#x72;&#x63;&#105;&#97;&#108;&#x74;&#x65;&#x61;&#x6d;&#x40;&#111;&#x70;&#101;&#110;&#x73;&#101;&#x6e;&#115;&#111;&#114;&#115;&#46;&#x69;&#111;">&#x63;&#x6f;&#109;&#x6d;&#x65;&#114;&#x63;&#105;&#97;&#108;&#116;&#101;&#x61;&#109;&#x40;&#x6f;&#x70;&#x65;&#110;&#x73;&#x65;&#x6e;&#x73;&#111;&#x72;&#x73;&#46;&#x69;&#111;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
+<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x63;&#x6f;&#x6d;&#x6d;&#x65;&#x72;&#x63;&#x69;&#x61;&#108;&#116;&#101;&#97;&#x6d;&#x40;&#111;&#112;&#x65;&#110;&#115;&#x65;&#x6e;&#x73;&#x6f;&#114;&#115;&#x2e;&#105;&#x6f;">&#99;&#x6f;&#109;&#109;&#101;&#114;&#x63;&#x69;&#x61;&#108;&#x74;&#101;&#97;&#x6d;&#64;&#111;&#112;&#101;&#110;&#x73;&#x65;&#x6e;&#115;&#111;&#114;&#x73;&#46;&#x69;&#x6f;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
 ]]></content>
   </entry>
   
@@ -179,7 +300,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p><img src="http://blog.opensensors.io/images/editswitch.png" /></p>
 
 <ul>
-<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#111;&#104;&#109;&#x79;&#x67;&#111;&#100;&#105;&#116;&#x68;&#97;&#x70;&#x70;&#101;&#110;&#100;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;&#x2e;">&#x6f;&#x68;&#x6d;&#x79;&#x67;&#x6f;&#x64;&#105;&#x74;&#x68;&#x61;&#x70;&#x70;&#101;&#110;&#100;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;&#x2e;</a></li>
+<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x6f;&#104;&#x6d;&#x79;&#103;&#111;&#x64;&#105;&#116;&#104;&#97;&#x70;&#x70;&#x65;&#110;&#100;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x2e;">&#x6f;&#x68;&#109;&#121;&#103;&#111;&#x64;&#x69;&#x74;&#104;&#97;&#x70;&#112;&#x65;&#x6e;&#x64;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;&#46;</a></li>
 </ul>
 
 
@@ -198,7 +319,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p>We hope that this flow is getting you started! Remember that Node-RED is superbly suited to interact with hardware… &hellip;imagine LEDs and buzzers indicating an earthquake.</p>
 
 <p>The flow JSON:
-[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#109;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#111;&#x68;&#109;&#x79;&#x67;&#x6f;&#x64;&#105;&#x74;&#104;&#97;&#x70;&#x70;&#101;&#x6e;&#x65;&#x64;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#111;&#104;&#109;&#x79;&#103;&#x6f;&#100;&#x69;&#116;&#x68;&#97;&#x70;&#112;&#x65;&#x6e;&#x65;&#100;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
+[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#111;&#x68;&#109;&#x79;&#103;&#x6f;&#x64;&#x69;&#x74;&#x68;&#97;&#112;&#112;&#101;&#x6e;&#x65;&#x64;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#111;&#104;&#109;&#121;&#103;&#x6f;&#100;&#105;&#x74;&#104;&#x61;&#112;&#x70;&#x65;&#110;&#x65;&#x64;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
 ]]></content>
   </entry>
   
@@ -379,7 +500,7 @@ particular protocol you love feel free to send us an <a href="hello@opensensors.
 
 <p>As some of you may have noticed, we released a stripped down Alpha version of Orgs in our last release. We’ve learned from your feedback.</p>
 
-<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#104;&#x65;&#x6c;&#108;&#111;&#64;&#111;&#112;&#x65;&#110;&#x73;&#101;&#x6e;&#x73;&#111;&#x72;&#x73;&#46;&#105;&#111;">&#x68;&#x65;&#x6c;&#x6c;&#111;&#64;&#111;&#x70;&#101;&#x6e;&#x73;&#101;&#110;&#115;&#111;&#114;&#x73;&#x2e;&#105;&#111;</a> for a voucher.</p>
+<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x68;&#101;&#x6c;&#108;&#x6f;&#x40;&#x6f;&#112;&#101;&#110;&#x73;&#x65;&#x6e;&#115;&#x6f;&#x72;&#115;&#x2e;&#105;&#111;">&#104;&#x65;&#108;&#108;&#x6f;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#x73;&#101;&#x6e;&#115;&#x6f;&#114;&#115;&#46;&#105;&#111;</a> for a voucher.</p>
 
 <p>For more details about Organisations and how to use them check out our
 <a href="https://opensensors.io/help/">help pages</a></p>
@@ -438,7 +559,7 @@ will be adding it to my toolkit.</p>
 
 <p>Does this help you solve a problem you’ve been having with your
 connected sensors? If so get contact and let us know what you are up
-to on <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#104;&#x65;&#108;&#x6c;&#111;&#x40;&#111;&#x70;&#101;&#x6e;&#115;&#x65;&#110;&#x73;&#111;&#x72;&#115;&#x2e;&#x69;&#111;">&#x68;&#x65;&#108;&#108;&#111;&#x40;&#x6f;&#x70;&#x65;&#110;&#115;&#101;&#x6e;&#115;&#x6f;&#x72;&#x73;&#x2e;&#x69;&#x6f;</a></p>
+to on <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#104;&#x65;&#x6c;&#x6c;&#x6f;&#64;&#111;&#112;&#x65;&#110;&#x73;&#x65;&#x6e;&#115;&#111;&#114;&#115;&#46;&#x69;&#x6f;">&#x68;&#101;&#108;&#108;&#x6f;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#x73;&#x65;&#110;&#115;&#x6f;&#x72;&#115;&#x2e;&#105;&#111;</a></p>
 ]]></content>
   </entry>
   
@@ -1069,25 +1190,6 @@ height=800px width=900px scrolling = "no"></iframe>
 
 
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Your First Post]]></title>
-    <link href="http://blog.opensensors.io/blog/2013/12/28/lorem/"/>
-    <updated>2013-12-28T15:49:17+00:00</updated>
-    <id>http://blog.opensensors.io/blog/2013/12/28/lorem</id>
-    <content type="html"><![CDATA[<p>This is a lipsum page to demonstrate the theme&rsquo;s typography. Modify this post to your heart&rsquo;s content &ndash; or simply delete it.</p>
-
-<p>Lorem ipsum dolor sit amet, ut brute legimus honestatis cum. Eirmod verear mei ne, id falli conclusionemque est, autem populo duo et. Causae noluisse ex sed. Solet mentitum salutandi ad mei, vis ex esse prima nullam, tation melius aliquid pri ea. Minimum sententiae mei ad, mei et reque novum.</p>
-
-<p>Eu nec eirmod inermis, nominavi deleniti electram ut mei. Veri quidam vivendum sit id, voluptaria percipitur deterruisset an nec. Mei mazim erroribus eu, his in errem nonumy comprehensam. Modo pericula duo id, te vis facete verear. Ex cum volutpat corrumpit aliquando, ad vim assentior argumentum temporibus.</p>
-
-<p>Id est eros justo movet, duo eu alii vitae. Quo altera imperdiet efficiantur in, nec error iudico an. Sed an etiam consul, invenire platonem nam an. Nec an integre splendide, libris oportere duo ei. Has eu solet sententiae, ex nam noster tractatos, sonet patrioque nec ad.</p>
-
-<p>An minim mollis mediocrem est, lucilius atomorum ex eum. Quaeque probatus qui cu, ut mutat dolorem epicurei pro, vel labores delicata rationibus et. Cu eos sumo inermis, viderer molestiae assueverit ius ad. Cum atqui error insolens in. Iuvaret adolescens referrentur cu pri.</p>
-
-<p>Ei putant perfecto atomorum eos, an civibus hendrerit sit. Pri cu probo nominavi, et sea cetero hendrerit incorrupte. Amet unum prompta per at, impedit reprehendunt an cum, vix laudem dolorem at. Suas blandit molestie in eum.</p>
 ]]></content>
   </entry>
   
