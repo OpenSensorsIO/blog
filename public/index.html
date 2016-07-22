@@ -9,7 +9,7 @@
   <meta name="author" content="OpenSensors.IO">
 
   
-  <meta name="description" content="Summary Opensensors.io are pioneers in open data and the internet of things, surfacing a wide range of data sets for open analysis. As an open data &hellip;">
+  <meta name="description" content="How sensors communicate with the internet is a fundamental consideration when conceiving of a connected project. There are many different ways to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,148 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/07/17/getting-to-grips-with-iot-network/">Getting to Grips With IoT Network Technologies</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-07-17T08:18:00+01:00" pubdate data-updated="true">Jul 17<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+
+
+  <div class="entry-content"><p>How sensors communicate with the internet is a fundamental consideration when conceiving of a connected project. There are many different ways to connect your sensors to the web, but how to know which are best for your project?</p>
+
+<p>Having just spent the better part of a week researching these new network technologies, this brief guide outlines the key aspects to focus on for an optimal IoT deployment:</p>
+
+<h2>Advanced radio technology</h2>
+
+<ul>
+<li>Deep indoor performance &ndash; networks utilising sub-GHz ISM (industrial-scientific-medical) frequency bands such as LoRaWAN, NWave and Sigfox are able to penetrate the core of large structures and even subsurface deployments.</li>
+<li>Location aware networking &ndash; a variety of networks are able to track remote sensors even without the use of embedded GPS modules.
+Supporting sensors moving between hubs &ndash; with advanced handoff procedures and innovative network topologies mobile sensors can move around an area and remain in contact with core infrastructure without disrupting data transmission. Intelligent node handoff is also crucial for reducing packet loss, if the connection to one hub is hampered by passing through particularly chatty radiowaves, the node can switch to a better placed hub to relay it&rsquo;s crucial payload.</li>
+<li>Interference resistance &ndash; the capability of a network to cleave through radio traffic and interference that would ordinarily risk data loss.</li>
+</ul>
+
+
+<h2>Low energy profiling</h2>
+
+<ul>
+<li>Device modes &ndash; LoRaWAN is a great case and point with three classes of edge node: the first, Class A, allows a brief downlink window after each uplink upload i.e after having sent a message, the sensor listens in for new instructions; a Class A node appoints a scheduled downlink slot, the device checks in at a certain point; and the last, Class C type nodes, listen for downlink messages from LoRaWAN hubs at all times. The latter burns considerably more power.</li>
+<li>Asynchronous communication &ndash; this enables sensors to communicate data in dribs and drabs where possible, services do not need to wait for eachother thereby reducing power consumption.</li>
+<li>Adaptive data rates (ADR) &ndash; depending on the quality of signal and attenuation, modern networks are able to dynamically allocate data rate depending on interference, distance to hub etc. This delivers real scalability benefits, frees up space on the radio spectrum (spectrum optimisation) and improves overall network reliability.</li>
+</ul>
+
+
+<h2>security</h2>
+
+<ul>
+<li>Authentication &ndash; maintains data integrity by ensuring the sensor which is publishing that mission critical data really is that sensor and not an impostor node. Ensures information privacy.</li>
+<li>End to end encryption (E2E) &ndash; prevents tampering and maintains system integrity.</li>
+<li>Integrated security &ndash; good network security avoids potential breaches and doesn&rsquo;t place the onus on costly, heavily encrypted message payloads.</li>
+<li>Secure management of security keys &ndash; either written remotely on the initial install or embedded at manufacture, security keys are fundamental to system security. ZigBee&rsquo;s recent security issue shows how not to manage security keys, by sending them unencrypted over-the-air to devices on an initial install.</li>
+<li>Receipt acknowledgement &ndash; ensures mission critical data is confirmed received by network or device.</li>
+</ul>
+
+
+<h2>Advanced network design</h2>
+
+<ul>
+<li>Full bidirectional comms &ndash; enables over the air (OTA) updates, enabling operators to push new firmware or system updates to thousands of remotely deployed sparse sensors at the push of a button. This is critical to a dynamic and responsive network. As with device modes mentioned previously, bidirectionality allows deployed devices to function as actuators and take action (close a gate, set off a fire alarm etc) rather than just one-way sensors publishing to a server.</li>
+<li>Embedded scalability and consistent QoS &ndash; as load increases on a network so too does the capacity of the network. This takes the form of adaptive data rates, prevention of packet loss by interference and channel-blocking, the ability to deploy over-the-air updates and ensuring the capability to add nodes, hubs and maintain existing assets without impacting on overall network service, perhaps through automatic adaptation.</li>
+</ul>
+
+
+<p>There are also a number of legal, cost, market and power focused aspects worth considering that I shall not cover here. But, critically, it&rsquo;s worth mentioning that the majority of these technologies operate on ISM (industrial &ndash; scientific &ndash; medical) frequency bands, and as a result are unlicensed. These bands are  regulated and there are rules, however anyone operating on these bands can do so without purchasing a license. Notably, you don&rsquo;t have sole ownership of a slice of the spectrum, you don&rsquo;t get exclusive access. Therefore, with a variety of other vendors blasting away across the radio waves, these technologies encounter significantly more interference than the licensed spectrum. However, the new networks, LoRa, Sigfox, NWave etc are based on protocols and technologies designed to better sort through this noisy environment, grab a channel and send a message.</p>
+
+<p>Understanding that the airwaves are a chaotic mess  underlines the importance placed on features such as adaptive data rates, node handoff and power saving methods such as asynchronous communication. Wired networks do not have to consider such things. But for most it&rsquo;s not just a case of who shouts loudest wins. The majority of wireless protocols &lsquo;play nice&rsquo; opting for a polite &ldquo;listen, then talk&rdquo; approach, waiting for a free slot in the airwaves before sending their message.</p>
+
+<p>Some protocols such as Sigfox forego such niceties and adopt a shout loud, shout longer approach, broadcasting without listening. A typical LoRaWAN payload takes a fraction of a second to transmit, Sigfox by comparison sends messages 3-4 seconds in length. However, if you just broadcast without listening, Sigfox must therefore operate with severe cycle duty limitations, which translate into a limited number of messages sent per device per day and severe data rate limitations.</p>
+
+<p>These choices also translate into varying costs, and critically, into battery life limitations and gains, the crux of any remote deployment.</p>
+
+<p>See <a href="https://www.opensensors.io/connectivity">this link</a> for a matrix of the major technologies currently vying for network domination.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/07/05/what-is-lorawan/">What Is LoRaWAN?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-07-05T20:17:00+01:00" pubdate data-updated="true">Jul 5<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+
+
+  <div class="entry-content"><h1>What is LoRaWAN and why is it &ldquo;better&rdquo; than Zigbee?</h1>
+
+<p>Even long-time IoT enthusiasts struggle with the wealth of technologies that are on offer these days. One of the most confusing phenomena for someone who isn’t a RF engineer is the scale and range of LoRaWAN. If you’ve been in the game for a while, you may have used a ZigBee radio module for wireless data transmission in your own projects. ZigBee-compliant modules had become a gold standard for many industrial applications in the 2000s, featuring >10m range (it was said to be 100m, but that was hardly ever achieved), up to hundreds of kbit/second transfer rate (depending on the model and radio band used) and message encryption by default. Over most cheap proprietary RFM22 transceivers, ZigBee also offered an industry standard following the IEEE 802.15.4 specification for mesh networking. This allowed ZigBee devices to forward messages from one to another, extending the effective range of the network. Despite their rich features, ZigBee devices are limited in range and limiting when it comes to their power consumption and the potential use in IoT application. And this is where LoRaWAN comes into play: It’s a Low-Power Wide Area Network (LPWAN) standard promising a reach of tens of kilometres for line-of-sight connections and aiming to provide battery lives of up to ten years. How can this work?</p>
+
+<p>First, let’s contrast short-range radio standards like the ZigBee with the LPWAN standards like LoRaWAN. RFM22, ZigBee and LPWAN all use radio frequencies in the ultra high frequency (UHF) range. Following the ITU 9 classification, these are devices that use a carrier frequency of 300 MHz to 3 GHz. That is, the radio waves have a peak-to-peak distance of 10-100 cm — a tiny proportion of the electromagnetic spectrum. Here, we find television broadcasts, mobile phone communication, 2.4 GHz WiFi, Bluetooth, and various proprietary radio standards. We all know that television broadcasting transmitters have a significant range, but clearly that’s because they can pack some punch behind the signal. There must be another reason that LoRaWAN does better than the other radio standards. The carrier frequency itself can therefore not explain the range of LPWAN standards.</p>
+
+<p>There is all sorts of hardware trickery that can be applied to radio signals. Rather than allowing those electromagnetic waves orientate randomly on their way to the receiver, various polarisation strategies can increase range. A circular-polarised wave that drills itself forward can often more easily penetrate obstacles, whereas linear-polarised signals stay in one plane when progressing towards the receiver, concentrating the signal rather than dispersing it in different directions of the beam. However, these methods require effort and preparation on both the sender and receiver side, and wouldn’t really lend themselves to IoT field deployment…</p>
+
+<p>The secret sauce of LPWAN is the modulation of the signal. Modulation describes how information is encoded in a signal. From radio broadcasting stations you may remember ‘AM’ or ‘FM’, amplitude or frequency modulation. That’s how the carrier signal is changed in order to express certain sounds. AM/FM are analog modulation techniques and digital modulation interprets changes like phase shifts in the signal as binary toggle. LPWAN standards are using a third set of methods, spectrum modulation, all of which get away with very low, noisy input signals. So as the key function of LPWAN chipsets is the demodulation and interpretation of very faint signals, one could think of a LoRaWAN radio as a pimped ZigBee module. That’s crazy, isn’t it? To understand a little more in detail how one of the LPWAN standards works, in the following we are going to focus on LoRaWAN as it is really ‘the network of the people’ and because The Things Network -a world-wide movement of idealists who install and run LoRaWAN gateways- supports our idea of open data.</p>
+
+<p><img src="/images/LoRaWAN_figure.png" /></p>
+
+<p>LoRaWAN uses a modulation method called Chirp Spread Spectrum (CSS). Spread spectrum methods contrast narrow band radio as ‘they do not put all of their eggs into the same basket’. Consider a radio station that transmits its frequency-modulated programme with high power at one particular frequency, e.g. 89.9 MHz (the carrier is 89.9 MHz with modulations of about 50 kHz to encode the music). If you get to receive that signal, that’s good, but if there is a concurrent station sending their programme over the same frequency, your favourite station may get jammed. With spread spectrum, the message gets sent over a wide frequency range, but even if that signal is just above background noise, it is difficult to deliberately or accidentally destroy the message in its entirety. The ‘chirp’ refers to a particular technique that continuously increases or decreases the frequency while a particular payload is being sent.</p>
+
+<p>The enormous sensitivity and therefore reach of LoRaWAN end devices and gateways has a price: throughput. While the effective range of LoRaWAN is significantly higher than ZigBee, the transmitted data rate of 0.25 to 12.5 kbit/s (depending on the local frequency standard and so-called spreading factor) is a minute fraction of it &ndash; but, hey, your connected dishwasher doesn’t have to watch Netflix, and a payload of 11-242 bytes (again, depending on your local frequency standard etc) is ample for occasional status updates. Here is where the so-called spreading factor comes into play. If your signal-to-noise ratio is great (close proximity, no concurrent signals, etc), you can send your ‘chirp’ within a small frequency range. If you need to compensate for a bad signal-to-noise ratio, it’s better to stretch that ‘chirp’ over a larger range of frequencies. However, that requires smaller payloads per ‘chirp’ and a drop in data rate.</p>
+
+<p>Power consumption, reach and throughput are all linked. To burst out a narrow transmission consumes more power than to emit a spread signal. Hence, LoRaWAN implements an adaptable data rate that can take into account the signal-to-noise ratio as well as the power status of a device.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -247,7 +389,7 @@ So we have considered NO2 as our core measure, in part because there are more se
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2015/10/07/the-path-to-smart/">The Path to Smart</a></h1>
+      <h1 class="entry-title"><a href="/blog/2015/10/07/the-path-to-smart/">The Path to Smart Buildings</a></h1>
     
     
       <p class="meta">
@@ -304,7 +446,7 @@ So we have considered NO2 as our core measure, in part because there are more se
 </ul>
 
 
-<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x63;&#x6f;&#x6d;&#x6d;&#x65;&#x72;&#x63;&#x69;&#x61;&#108;&#116;&#101;&#97;&#x6d;&#x40;&#111;&#112;&#x65;&#110;&#115;&#x65;&#x6e;&#x73;&#x6f;&#114;&#115;&#x2e;&#105;&#x6f;">&#99;&#x6f;&#109;&#109;&#101;&#114;&#x63;&#x69;&#x61;&#108;&#x74;&#101;&#97;&#x6d;&#64;&#111;&#112;&#101;&#110;&#x73;&#x65;&#x6e;&#115;&#111;&#114;&#x73;&#46;&#x69;&#x6f;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
+<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#99;&#x6f;&#109;&#x6d;&#101;&#114;&#x63;&#105;&#97;&#108;&#x74;&#x65;&#97;&#109;&#x40;&#x6f;&#112;&#101;&#x6e;&#x73;&#x65;&#110;&#x73;&#x6f;&#114;&#115;&#x2e;&#105;&#x6f;">&#x63;&#x6f;&#109;&#109;&#101;&#x72;&#99;&#105;&#97;&#x6c;&#116;&#x65;&#97;&#109;&#x40;&#111;&#x70;&#101;&#110;&#x73;&#101;&#110;&#115;&#111;&#x72;&#115;&#46;&#x69;&#x6f;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
 </div>
   
   
@@ -491,7 +633,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p><img src="/images/editswitch.png" /></p>
 
 <ul>
-<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x6f;&#104;&#x6d;&#x79;&#103;&#111;&#x64;&#105;&#116;&#104;&#97;&#x70;&#x70;&#x65;&#110;&#100;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x2e;">&#x6f;&#x68;&#109;&#121;&#103;&#111;&#x64;&#x69;&#x74;&#104;&#97;&#x70;&#112;&#x65;&#x6e;&#x64;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;&#46;</a></li>
+<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x6f;&#104;&#109;&#x79;&#103;&#x6f;&#x64;&#x69;&#x74;&#104;&#97;&#112;&#x70;&#101;&#x6e;&#100;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;&#46;">&#111;&#x68;&#x6d;&#x79;&#103;&#111;&#100;&#x69;&#116;&#x68;&#97;&#x70;&#112;&#101;&#110;&#x64;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;&#x2e;</a></li>
 </ul>
 
 
@@ -510,7 +652,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p>We hope that this flow is getting you started! Remember that Node-RED is superbly suited to interact with hardware… &hellip;imagine LEDs and buzzers indicating an earthquake.</p>
 
 <p>The flow JSON:
-[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#111;&#x68;&#109;&#x79;&#103;&#x6f;&#x64;&#x69;&#x74;&#x68;&#97;&#112;&#112;&#101;&#x6e;&#x65;&#x64;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#111;&#104;&#109;&#121;&#103;&#x6f;&#100;&#105;&#x74;&#104;&#x61;&#112;&#x70;&#x65;&#110;&#x65;&#x64;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
+[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x6f;&#x68;&#109;&#x79;&#x67;&#111;&#100;&#x69;&#116;&#104;&#97;&#112;&#x70;&#101;&#110;&#x65;&#100;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;">&#x6f;&#104;&#x6d;&#x79;&#x67;&#x6f;&#x64;&#105;&#116;&#x68;&#97;&#x70;&#x70;&#x65;&#x6e;&#x65;&#100;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
 </div>
   
   
@@ -725,159 +867,6 @@ particular protocol you love feel free to send us an <a href="hello@opensensors.
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/05/12/how-to-make-a-battery-last-forever-dot-dot-dot/">How to Make a Battery Last Forever…</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-05-12T10:42:00+01:00" pubdate data-updated="true">May 12<span>th</span>, 2015</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><p>Many devices in the IoT won’t be mains powered, but require some sort of supply with limited capacity: be it common batteries or rechargeable cells, energy management is a key challenge for the development of IoT products.</p>
-
-<h2>Background</h2>
-
-<p>The basic anatomy of a program on a microcontroller (the little green boards that run the logic of many digital devices) is an infinite loop: as long as you’re powered, do…</p>
-
-<p>Unfortunately, even “doing nothing” costs energy. While a processor is powered, it’s always going to draw some current for the most basic housekeeping. And it’s not just the processor: voltage regulators, interfaces, nearly everything that is connected to a circuit eats up electricity, and most of it is lost in the form of heat.</p>
-
-<p>The data in this section primarily comes from a very good blog post on <a href="http://www.gammon.com.au/power">Power saving techniques for microprocessors</a> by Nick Gammon. Let’s look at an example: Just running an empty loop on the Ardunio Uno (a commonly used microcontroller for hobbyists) draws about 50 mA. That is, with a standard 9V block (supplying 500 mAh), that Arduino can run just about 10 hours from a battery. Clearly not long enough for a hardware product that’s aimed to participate in the IoT.</p>
-
-<p>Processor manufacturers are well aware of this issue and most platforms support a sleep mode. In case of the Arduino Uno, adding just four lines of code reduces the cost of the empty loop to 35 mA. This is still significant, but mostly owed to all the other components on the microcontroller (including a cheerfully blinking light and a wasteful voltage regulator that takes the 9V of the battery and supplies 5V to the board).</p>
-
-<p>Fortunately, ‘real products’ don’t require all the baggage that the Arduino Uno is carrying around. The processor, the Atmel Atmega328, really just draws 0.35 mA in its most optimal sleep mode. If we don’t require particular features of the processor, this can further be reduced to less than 0.5 uA. (Note that this would allow a 500 mAh battery to drive the processor for 10 years – unfortunately, doing absolutely nothing!).</p>
-
-<p>“But IoT devices are supposed to do things!”, I hear you say. Even more so, the hardware to send information into the Internet can be quite energy hungry – remember the times when it was recommended to switch Wifi off while you were on the road with your laptop? Now, many IoT devices, sensors in particular, only need to work in bursts.</p>
-
-<p>Let’s take a look at one of our favourite core components in connected products: <a href="https://www.wirelessthings.net/rf-328-arduino-atmega-328-compatible-radio-transceiver-rfu-328">The RFu328 from Wireless Things</a>. It combines a barebones Atmega328 with a transceiver that can send and receive radio messages to and from an Internet-connected hub device. The processor and the radio can be sent into a deep sleep, drawing 0.5 uA. However, there’s a timer inside the radio that can trigger the Atmega328 chip and wake the entire system, ready to send or receive data at about 30 mA. We may even have to supply electric current to external sensor hardware and increase our need to more than 50 mA for a second, but for our overall energy budget that’s rather marginal – most of the time, our device will be asleep for minutes if not hours.</p>
-
-<h2>Implementation</h2>
-
-<p>For the standard Atmega sleep modes, consult <a href="http://www.gammon.com.au/power">Power saving techniques for microprocessors</a>.</p>
-
-<p>The sleep modes of the RFu328 depend on a simple modification to the hardware as well as a <a href="https://github.com/CisecoPlc/LLAPSerial">library from Wireless Things</a>. In the absence of in-depth documentation, we learned a lot from PCB designs and software examples from the <a href="https://github.com/oxfloodnet">Oxford Flood Network</a>.</p>
-
-<p>In short, the RFu328 can configure the radio to go into the extended sleep mode by sending the ATSM3 AT command. The Wireless Things library handles a lot of the high-level “+++” string handling to communicate with the SRF radio.</p>
-
-<p>Most of the setup magic happens here:</p>
-
-<pre><code>uint8_t setupSRF(char* sleepString) { // set Sleep mode 2
- if (!enterCommandMode()) { // if failed once then try again
- if (!enterCommandMode()) return 1;
- } 
- if (!sendCommand(sleepString)) return 2;
- if (!sendCommand("ATSM3")) return 3;
- if (!sendCommand("ATDN")) return 4;
- return 5;
- }
-</code></pre>
-
-<p>and sleepString is a combination of a configuration suffix and the millisecond sleep duration in hexadecimal notation: ATSD1388 – 5 sec; ATSD4E20 – 20 sec; ATSDEA60 – 1 min; ATSD493E0 – 5 min; ATSD1B7740 – 30 min; ATSD36EE80 – 60 min</p>
-
-<p>Everytime the radio wakes up from this sleep, it triggers a pin of the Atmega328, and having</p>
-
-<pre><code>LLAP.sleep(WAKE_PIN, RISING, false); // sleep until woken
-</code></pre>
-
-<p>as part of your loop() takes care of listening to that signal.</p>
-
-<h2>Hardware</h2>
-
-<p>So how does the WAKE_PIN (either D2 or D3) get its signal from the SRF? Via a bridge from D11. (A simple wire.) If you have a newer model of the RFu328, there’s a small field labelled ATSM3. This allows you to create a direct solder bridge to D2 or D3 without the need for the wire.</p>
-
-<p>What other hardware modifications may be necessary? Well, most sensors have a quiescent current draw even when they’re not active. Would it not be nice to have them seperated from the battery until they’re really required? That’s exactly what we’re going to do. Transistors can be used to interrupt the flow of current until triggered, and the RFu328 has a sufficient number of pins remaining that allow for controlling (gating) as MOSFET.</p>
-
-<p>An <a href="https://github.com/badryan/arduino/blob/master/ultrasonic_desk_sensor.ino">OpenSensors example</a> on GitHub.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/04/08/closing-the-loop-between-maker-and-customer/">Closing the Loop Between Maker &amp; Customer for Connected Devices</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-04-08T21:49:00+01:00" pubdate data-updated="true">Apr 8<span>th</span>, 2015</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><h2>Onboard IoT hardware as easy as Kindle, at a fraction of the cost.</h2>
-
-<p>Last month we released OpenSensors’ Search and Subscribe features. This IoT Day we’re pushing our latest development, Organisations, or Orgs for short.</p>
-
-<p>Orgs is a new feature focused on streamlining hardware  production workflows and managing large numbers of devices.</p>
-
-<p>With OpenSensors’ Orgs, you are able to manage all of your devices and data in one place with and pretty soon you will get an at-a-glance easy device health monitoring &ndash; giving your customers a seamless user experience equivalent of the Kindle but without Amazon’s budget.  Those of you managing 1000s of devices in the wild are only too aware of how hard it is to manage the workflow between factory and individual devices all over the world.</p>
-
-<p>We’re trying to make IoT onboarding easier for Hardware startups and connected device manufacturers. That’s why we’ve designed a production to customer workflow, think Kindle for IoT.</p>
-
-<p><img src="/images/adddevice.png" /></p>
-
-<p>People managing organisations can now batch provision and manage their new devices.  Devices can be searched for and ‘claimed’ by your customers via the UI or API adding relevant meta-data such as location information to help you keep track of your devices and new customers once your connected devices are out in the wild.</p>
-
-<p>It’s an exciting feature, and we hope you’re just as excited as we are.  We want to save you time and effort and also enable you to get your connected devices to market quicker and cheaper.</p>
-
-<p>As some of you may have noticed, we released a stripped down Alpha version of Orgs in our last release. We’ve learned from your feedback.</p>
-
-<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x68;&#101;&#x6c;&#108;&#x6f;&#x40;&#x6f;&#112;&#101;&#110;&#x73;&#x65;&#x6e;&#115;&#x6f;&#x72;&#115;&#x2e;&#105;&#111;">&#104;&#x65;&#108;&#108;&#x6f;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#x73;&#101;&#x6e;&#115;&#x6f;&#114;&#115;&#46;&#105;&#111;</a> for a voucher.</p>
-
-<p>For more details about Organisations and how to use them check out our
-<a href="https://opensensors.io/help/">help pages</a></p>
-
-<p>Happy IoT Day!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -890,7 +879,7 @@ particular protocol you love feel free to send us an <a href="hello@opensensors.
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Website copyright &copy; 2015 - OpenSensors.IO |
+  Website copyright &copy; 2016 - OpenSensors.IO |
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>.
 </p>
 

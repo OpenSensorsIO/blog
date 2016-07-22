@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Getting to Grips With IoT Network Technologies - OpenSensors.IO</title>
+  <meta name="author" content="OpenSensors.IO">
+
+  
+  <meta name="description" content="How sensors communicate with the internet is a fundamental consideration when conceiving of a connected project. There are many different ways to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.opensensors.io/blog/2016/07/17/getting-to-grips-with-iot-network">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="OpenSensors.IO" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Germania+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<logo>
+
+<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
+</logo>
+
+
+
+<body >
+  <header role="banner"><hgroup>
+  <h1><a href="https://www.opensensors.io/">OpenSensors.IO</a></h1>
+  
+    <h2>News and Updates about OpenSensors.IO</h2>
+  
+<div style="float: right">
+  <script src="https://www.opensensors.io/cljs/osio-widget.js"></script>
+  <div class="osio-widget" data-osio-topic-id="/orgs/wd/aqe/co"></div>
+</div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+<br>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.opensensors.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+-->
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Getting to Grips With IoT Network Technologies</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-07-17T08:18:00+01:00" pubdate data-updated="true">Jul 17<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+
+<div class="entry-content"><p>How sensors communicate with the internet is a fundamental consideration when conceiving of a connected project. There are many different ways to connect your sensors to the web, but how to know which are best for your project?</p>
+
+<p>Having just spent the better part of a week researching these new network technologies, this brief guide outlines the key aspects to focus on for an optimal IoT deployment:</p>
+
+<h2>Advanced radio technology</h2>
+
+<ul>
+<li>Deep indoor performance &ndash; networks utilising sub-GHz ISM (industrial-scientific-medical) frequency bands such as LoRaWAN, NWave and Sigfox are able to penetrate the core of large structures and even subsurface deployments.</li>
+<li>Location aware networking &ndash; a variety of networks are able to track remote sensors even without the use of embedded GPS modules.
+Supporting sensors moving between hubs &ndash; with advanced handoff procedures and innovative network topologies mobile sensors can move around an area and remain in contact with core infrastructure without disrupting data transmission. Intelligent node handoff is also crucial for reducing packet loss, if the connection to one hub is hampered by passing through particularly chatty radiowaves, the node can switch to a better placed hub to relay it&rsquo;s crucial payload.</li>
+<li>Interference resistance &ndash; the capability of a network to cleave through radio traffic and interference that would ordinarily risk data loss.</li>
+</ul>
+
+
+<h2>Low energy profiling</h2>
+
+<ul>
+<li>Device modes &ndash; LoRaWAN is a great case and point with three classes of edge node: the first, Class A, allows a brief downlink window after each uplink upload i.e after having sent a message, the sensor listens in for new instructions; a Class A node appoints a scheduled downlink slot, the device checks in at a certain point; and the last, Class C type nodes, listen for downlink messages from LoRaWAN hubs at all times. The latter burns considerably more power.</li>
+<li>Asynchronous communication &ndash; this enables sensors to communicate data in dribs and drabs where possible, services do not need to wait for eachother thereby reducing power consumption.</li>
+<li>Adaptive data rates (ADR) &ndash; depending on the quality of signal and attenuation, modern networks are able to dynamically allocate data rate depending on interference, distance to hub etc. This delivers real scalability benefits, frees up space on the radio spectrum (spectrum optimisation) and improves overall network reliability.</li>
+</ul>
+
+
+<h2>security</h2>
+
+<ul>
+<li>Authentication &ndash; maintains data integrity by ensuring the sensor which is publishing that mission critical data really is that sensor and not an impostor node. Ensures information privacy.</li>
+<li>End to end encryption (E2E) &ndash; prevents tampering and maintains system integrity.</li>
+<li>Integrated security &ndash; good network security avoids potential breaches and doesn&rsquo;t place the onus on costly, heavily encrypted message payloads.</li>
+<li>Secure management of security keys &ndash; either written remotely on the initial install or embedded at manufacture, security keys are fundamental to system security. ZigBee&rsquo;s recent security issue shows how not to manage security keys, by sending them unencrypted over-the-air to devices on an initial install.</li>
+<li>Receipt acknowledgement &ndash; ensures mission critical data is confirmed received by network or device.</li>
+</ul>
+
+
+<h2>Advanced network design</h2>
+
+<ul>
+<li>Full bidirectional comms &ndash; enables over the air (OTA) updates, enabling operators to push new firmware or system updates to thousands of remotely deployed sparse sensors at the push of a button. This is critical to a dynamic and responsive network. As with device modes mentioned previously, bidirectionality allows deployed devices to function as actuators and take action (close a gate, set off a fire alarm etc) rather than just one-way sensors publishing to a server.</li>
+<li>Embedded scalability and consistent QoS &ndash; as load increases on a network so too does the capacity of the network. This takes the form of adaptive data rates, prevention of packet loss by interference and channel-blocking, the ability to deploy over-the-air updates and ensuring the capability to add nodes, hubs and maintain existing assets without impacting on overall network service, perhaps through automatic adaptation.</li>
+</ul>
+
+
+<p>There are also a number of legal, cost, market and power focused aspects worth considering that I shall not cover here. But, critically, it&rsquo;s worth mentioning that the majority of these technologies operate on ISM (industrial &ndash; scientific &ndash; medical) frequency bands, and as a result are unlicensed. These bands are  regulated and there are rules, however anyone operating on these bands can do so without purchasing a license. Notably, you don&rsquo;t have sole ownership of a slice of the spectrum, you don&rsquo;t get exclusive access. Therefore, with a variety of other vendors blasting away across the radio waves, these technologies encounter significantly more interference than the licensed spectrum. However, the new networks, LoRa, Sigfox, NWave etc are based on protocols and technologies designed to better sort through this noisy environment, grab a channel and send a message.</p>
+
+<p>Understanding that the airwaves are a chaotic mess  underlines the importance placed on features such as adaptive data rates, node handoff and power saving methods such as asynchronous communication. Wired networks do not have to consider such things. But for most it&rsquo;s not just a case of who shouts loudest wins. The majority of wireless protocols &lsquo;play nice&rsquo; opting for a polite &ldquo;listen, then talk&rdquo; approach, waiting for a free slot in the airwaves before sending their message.</p>
+
+<p>Some protocols such as Sigfox forego such niceties and adopt a shout loud, shout longer approach, broadcasting without listening. A typical LoRaWAN payload takes a fraction of a second to transmit, Sigfox by comparison sends messages 3-4 seconds in length. However, if you just broadcast without listening, Sigfox must therefore operate with severe cycle duty limitations, which translate into a limited number of messages sent per device per day and severe data rate limitations.</p>
+
+<p>These choices also translate into varying costs, and critically, into battery life limitations and gains, the crux of any remote deployment.</p>
+
+<p>See <a href="https://www.opensensors.io/connectivity">this link</a> for a matrix of the major technologies currently vying for network domination.</p>
+</div>
+
+
+  <footer>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.opensensors.io/blog/2016/07/17/getting-to-grips-with-iot-network/" data-via="opensensorsio" data-counturl="http://blog.opensensors.io/blog/2016/07/17/getting-to-grips-with-iot-network/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Text authored by <span class="fn">James Moulding</span></span>
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/networks/'>networks,</a>, <a class='category' href='/blog/categories/radio/'>radio</a>
+  
+</span>
+
+
+    </p>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2016/07/05/what-is-lorawan/" title="Previous Post: What is LoRaWAN?">&laquo; What is LoRaWAN?</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Website copyright &copy; 2016 - OpenSensors.IO |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>.
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Path to Smart"
+title: "The Path to Smart Buildings"
 date: 2015-10-07 10:14
 categories: Buildings, data infastructure
 author: "Simon Troup"

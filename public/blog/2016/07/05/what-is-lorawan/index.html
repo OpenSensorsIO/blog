@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>What Is LoRaWAN? - OpenSensors.IO</title>
+  <meta name="author" content="OpenSensors.IO">
+
+  
+  <meta name="description" content="What is LoRaWAN and why is it &ldquo;better&rdquo; than Zigbee? Even long-time IoT enthusiasts struggle with the wealth of technologies that are on &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.opensensors.io/blog/2016/07/05/what-is-lorawan">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="OpenSensors.IO" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Germania+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<logo>
+
+<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
+</logo>
+
+
+
+<body >
+  <header role="banner"><hgroup>
+  <h1><a href="https://www.opensensors.io/">OpenSensors.IO</a></h1>
+  
+    <h2>News and Updates about OpenSensors.IO</h2>
+  
+<div style="float: right">
+  <script src="https://www.opensensors.io/cljs/osio-widget.js"></script>
+  <div class="osio-widget" data-osio-topic-id="/orgs/wd/aqe/co"></div>
+</div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+<br>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.opensensors.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+-->
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">What Is LoRaWAN?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-07-05T20:17:00+01:00" pubdate data-updated="true">Jul 5<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+
+<div class="entry-content"><h1>What is LoRaWAN and why is it &ldquo;better&rdquo; than Zigbee?</h1>
+
+<p>Even long-time IoT enthusiasts struggle with the wealth of technologies that are on offer these days. One of the most confusing phenomena for someone who isn’t a RF engineer is the scale and range of LoRaWAN. If you’ve been in the game for a while, you may have used a ZigBee radio module for wireless data transmission in your own projects. ZigBee-compliant modules had become a gold standard for many industrial applications in the 2000s, featuring >10m range (it was said to be 100m, but that was hardly ever achieved), up to hundreds of kbit/second transfer rate (depending on the model and radio band used) and message encryption by default. Over most cheap proprietary RFM22 transceivers, ZigBee also offered an industry standard following the IEEE 802.15.4 specification for mesh networking. This allowed ZigBee devices to forward messages from one to another, extending the effective range of the network. Despite their rich features, ZigBee devices are limited in range and limiting when it comes to their power consumption and the potential use in IoT application. And this is where LoRaWAN comes into play: It’s a Low-Power Wide Area Network (LPWAN) standard promising a reach of tens of kilometres for line-of-sight connections and aiming to provide battery lives of up to ten years. How can this work?</p>
+
+<p>First, let’s contrast short-range radio standards like the ZigBee with the LPWAN standards like LoRaWAN. RFM22, ZigBee and LPWAN all use radio frequencies in the ultra high frequency (UHF) range. Following the ITU 9 classification, these are devices that use a carrier frequency of 300 MHz to 3 GHz. That is, the radio waves have a peak-to-peak distance of 10-100 cm — a tiny proportion of the electromagnetic spectrum. Here, we find television broadcasts, mobile phone communication, 2.4 GHz WiFi, Bluetooth, and various proprietary radio standards. We all know that television broadcasting transmitters have a significant range, but clearly that’s because they can pack some punch behind the signal. There must be another reason that LoRaWAN does better than the other radio standards. The carrier frequency itself can therefore not explain the range of LPWAN standards.</p>
+
+<p>There is all sorts of hardware trickery that can be applied to radio signals. Rather than allowing those electromagnetic waves orientate randomly on their way to the receiver, various polarisation strategies can increase range. A circular-polarised wave that drills itself forward can often more easily penetrate obstacles, whereas linear-polarised signals stay in one plane when progressing towards the receiver, concentrating the signal rather than dispersing it in different directions of the beam. However, these methods require effort and preparation on both the sender and receiver side, and wouldn’t really lend themselves to IoT field deployment…</p>
+
+<p>The secret sauce of LPWAN is the modulation of the signal. Modulation describes how information is encoded in a signal. From radio broadcasting stations you may remember ‘AM’ or ‘FM’, amplitude or frequency modulation. That’s how the carrier signal is changed in order to express certain sounds. AM/FM are analog modulation techniques and digital modulation interprets changes like phase shifts in the signal as binary toggle. LPWAN standards are using a third set of methods, spectrum modulation, all of which get away with very low, noisy input signals. So as the key function of LPWAN chipsets is the demodulation and interpretation of very faint signals, one could think of a LoRaWAN radio as a pimped ZigBee module. That’s crazy, isn’t it? To understand a little more in detail how one of the LPWAN standards works, in the following we are going to focus on LoRaWAN as it is really ‘the network of the people’ and because The Things Network -a world-wide movement of idealists who install and run LoRaWAN gateways- supports our idea of open data.</p>
+
+<p><img src="/images/LoRaWAN_figure.png" /></p>
+
+<p>LoRaWAN uses a modulation method called Chirp Spread Spectrum (CSS). Spread spectrum methods contrast narrow band radio as ‘they do not put all of their eggs into the same basket’. Consider a radio station that transmits its frequency-modulated programme with high power at one particular frequency, e.g. 89.9 MHz (the carrier is 89.9 MHz with modulations of about 50 kHz to encode the music). If you get to receive that signal, that’s good, but if there is a concurrent station sending their programme over the same frequency, your favourite station may get jammed. With spread spectrum, the message gets sent over a wide frequency range, but even if that signal is just above background noise, it is difficult to deliberately or accidentally destroy the message in its entirety. The ‘chirp’ refers to a particular technique that continuously increases or decreases the frequency while a particular payload is being sent.</p>
+
+<p>The enormous sensitivity and therefore reach of LoRaWAN end devices and gateways has a price: throughput. While the effective range of LoRaWAN is significantly higher than ZigBee, the transmitted data rate of 0.25 to 12.5 kbit/s (depending on the local frequency standard and so-called spreading factor) is a minute fraction of it &ndash; but, hey, your connected dishwasher doesn’t have to watch Netflix, and a payload of 11-242 bytes (again, depending on your local frequency standard etc) is ample for occasional status updates. Here is where the so-called spreading factor comes into play. If your signal-to-noise ratio is great (close proximity, no concurrent signals, etc), you can send your ‘chirp’ within a small frequency range. If you need to compensate for a bad signal-to-noise ratio, it’s better to stretch that ‘chirp’ over a larger range of frequencies. However, that requires smaller payloads per ‘chirp’ and a drop in data rate.</p>
+
+<p>Power consumption, reach and throughput are all linked. To burst out a narrow transmission consumes more power than to emit a spread signal. Hence, LoRaWAN implements an adaptable data rate that can take into account the signal-to-noise ratio as well as the power status of a device.</p>
+</div>
+
+
+  <footer>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.opensensors.io/blog/2016/07/05/what-is-lorawan/" data-via="opensensorsio" data-counturl="http://blog.opensensors.io/blog/2016/07/05/what-is-lorawan/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Text authored by <span class="fn">Boris Adryan</span></span>
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/lorawan/'>LoRaWAN</a>
+  
+</span>
+
+
+    </p>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/12/18/taking-the-air-at-the-turks-head/" title="Previous Post: Taking the Air at the Turk’s Head">&laquo; Taking the Air at the Turk’s Head</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2016/07/17/getting-to-grips-with-iot-network/" title="Next Post: Getting to grips with IoT network technologies">Getting to grips with IoT network technologies &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Website copyright &copy; 2016 - OpenSensors.IO |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>.
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Air | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/air/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2015-12-18T15:07:17+00:00</updated>
+  <updated>2015-02-24T10:25:40+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,127 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Taking the Air at the Turk’s Head]]></title>
-    <link href="http://blog.opensensors.io/blog/2015/12/18/taking-the-air-at-the-turks-head/"/>
-    <updated>2015-12-18T14:45:00+00:00</updated>
-    <id>http://blog.opensensors.io/blog/2015/12/18/taking-the-air-at-the-turks-head</id>
-    <content type="html"><![CDATA[<h2>Summary</h2>
-
-<p><img src="/images/TurksHead.jpg" /></p>
-
-<p>Opensensors.io are pioneers in open data and the internet of things, surfacing a wide range of data sets for open analysis. As an open data aggregator we deliver content over a common infrastructure; whether air quality or transport data, you only have to think about one integration point. Future cities need low data transaction costs for friction free operation, bridging technical gaps slow progress, so keeping the number of integration points low makes sense everybody.</p>
-
-<p>Our journey starts here, as we build out our opendata content expect to see more stories, more insight and hopefully some catalysts for positive change.</p>
-
-<p>Before our first story, consider what will make open data and the Internet of things useful.</p>
-
-<p>We must bridge the gap from data to information, allow consumers to abstract away the complexity of IoT to ask questions that makes sense to them.</p>
-
-<p>Take data from the <a href="http://www.londonair.org.uk/LondonAir/guide/default.aspx">London Air Quality network (LAQN)</a>, the network is sparse so it&rsquo;s improbable our need maps directly to a sensor. By coupling some simple python code with <a href="https://www.opensensors.io/orgs/london-air-quality-network">opensensors data</a> we’ll mash some LAQN data together to get some insight about air quality in wapping.</p>
-
-<p>In this story i’ll show how we can bridge the information gap with some simple code, yielding valuable insight along the way!</p>
-
-<h2>Chapter 1: Opensensors.io Primer</h2>
-
-<p>First a quick primer on how data is structured in opensensors.io <a href="http://support.opensensors.io/support/solutions/articles/6000025426-opensensors-glossary-of-terms">(for more detail check out our forum and glossary of terms)</a></p>
-
-<ul>
-<li>Devices &ndash; Each connected ‘thing’ maps to a secured device, things map one-to-one to a device</li>
-<li>Topics &ndash; Data is published by devices to topics, a topic is a URI and is the pointer to a stream of data</li>
-<li>Organisations (orgs) &ndash; An organisation owns many topics and is the route of an orgs topic URI</li>
-<li>Payloads &ndash; Payloads are the string content of messages sent to topic URI’s, typically JSON</li>
-</ul>
-
-
-<p>Also check out our RESTful and streaming APIs on the <a href="https://api.opensensors.io/index.html">website</a> for more background and online examples.</p>
-
-<h2>Chapter 2: Putting JSON to Work</h2>
-
-<p><img src="/images/json-to-work.png" />
-You can use the opensensors REST API to gather data for research, but it comes in chunks of JSON which isn’t great for data science. For convenience i wrapped up some common data sources for London into a <a href="https://github.com/troups/AQ">python class</a>. Since IoT data is rarely in a nice columnar form it&rsquo;s valuable to build some simple functions to shape the data into something a bit more useful.</p>
-
-<h2>Chapter 3: Introducing the Turks Head</h2>
-
-<p><img src="/images/introturkshead.png" /></p>
-
-<p>I’m fortunate to spend a lot of time in Wapping, in and around the community of the <a href="http://www.turksheadcharity.com/story/">Turk’s Head Workspace and Cafe</a>, but unfortunately we don’t have a local LAQN sensor. With a bit of data science and opensensors.io open data we can estimate what NO2 levels might be around the cafe and workspace.</p>
-
-<p>A simple way to estimate NO2 is a weighted average of all the LAQN sensors, in this case we derive the weights from the distance between the sensor and our location. Since we want to overweight the closest sensors we can use an exponential decay to deflate towards zero for those far away.</p>
-
-<p>For the Turks Head sensors in Aldgate, Southwark and Tower hamlets and the City are the closest and have the biggest impact on our estimate.</p>
-
-<h2>Chapter 4: Getting into the Data</h2>
-
-<p><img src="/images/gettingintothedata.png" />
-With our air quality time series, and our weights we can dig into what our estimates for the Turks Head look like (NO2 * weight). Here’s the series for NO2 over the last 20 days, it looks like the peaks and troughs repeat, and the falling or rising trend is persistent in between.</p>
-
-<p>Trend followers in finance use moving averages to identify trends, for example the <a href="https://en.wikipedia.org/wiki/MACD">MACD indicator (moving average convergence divergence)</a>. MACD uses the delta between a fast and slow moving average to identify rising or falling trends, we’ll do the same. For our purposes we’ll speed the averages up using a decay of 3 and 6 periods (LAQN data is hourly and we are resampling to give estimates on the hour).</p>
-
-<p>What can we conclude from the charts for The Turks Head? From the left hand chart we can see the data is little noisy,with a flat line showing some missing or ‘stalled’ data. Looking at the 3 and 6 period decayed averages the data is smoother, with the faster average persistently trending ahead of the slower one.</p>
-
-<p>Even with fast moving decays the averages cross only a couple of times a day, showing persistence when in trend. So using a simple trend indicator and the LAQN we can build a simple air barometer for the Turks Head.</p>
-
-<p>Good    3 period exp average &lt;  6 period average (green)
-Bad     3 period exp average > 6 period average (red)</p>
-
-<p>This is helpful because, given a persistent trend state, where we have a ‘good’ air now, we’ll probably have ‘good’ air for the following hour.</p>
-
-<h2>Chapter 5: What’s the trend across London?</h2>
-
-<p><img src="/images/trends.png" />
-So we now have means of defining how NO2 levels at the Turk’s Head are trending, but is the trend state predictable over a 24 hour period?</p>
-
-<p>Remember we define good or bad air quality trend as:</p>
-
-<p>Good    ‘fast’ average  &lt;  ‘slow’ average  = falling NO2
-Bad     ‘fast’ average  >  ‘slow’ average  = rising NO2</p>
-
-<p>If we aggregate data into hourly buckets we can visualise how much of the time, over the past 20 days, a sensor has been in a up trend (‘good’) for a given hour.</p>
-
-<p>x = hour of the day
-y = percentage of bucket that is in a ‘good’ state</p>
-
-<p>We can see that for each 1 hour bucket (24 in total) there is a city wide pattern; if we aggregate across the city (using the same measure, the percentage of sensors in up or down trend) we get an idea of how NO2 trends over a typical day.</p>
-
-<p>Our right hand chart shows the percentage of ‘good’ versus ‘bad’ NO2 sensor states across London over the past 20 days (collected from about 80 sensors over 20 days)</p>
-
-<p>Now this is a really simple analysis but it suggests the proportion of ‘good’ trends across London is high before 7am, and then falls away dramatically during the morning commute. No surprises there.</p>
-
-<p>But the pattern isn’t symmetrical; after peaking around lunchtime, when only ~20% of the cities sensors having improving NO2, NO2 falls throughout the afternoon. From a behavioural standpoint this makes sense; there is a more concentrated morning commute relative to the evening. Most of us arrive at the workplace between say 8 and 9am, but in the evening we may go to the gym, we may go out for dinner, or just work late. The dispersion of our exits from the city is wider than when we enter.</p>
-
-<h2>Chapter 6 &ndash; PM versus NO2</h2>
-
-<p><img src="/images/pmvsno2.png" />
-So we have considered NO2 as our core measure, in part because there are more sensors in the LAQN delivering this data than particulates. But let’s consider particulates for a moment, LAQN deliver PM10 and PM2.5 measures, the definition can be found here.</p>
-
-<p>Our temporal curves for particles differ from NO2 taking longer to disperse during the evening rush hour (remember we are measuring percentage of sensors in a ‘good’ state). As a measure of air quality NO2 builds up faster, and decays faster once peak traffic flows have completed, whereas particles linger only fading deep into the night (on average).</p>
-
-<h2>Closing Thoughts</h2>
-
-<p>In our data set, NO2 and PM measures differ in their average behaviour over a typical 24 hour period.</p>
-
-<ul>
-<li><p>Behavioural interventions will need to consider whether particulates or N02 are the most impactful.</p></li>
-<li><p>How can we communicate air quality to our citizens, and relate their personal needs to the measures most impactful on their lives?</p></li>
-<li><p>Do we need additional sensors to create a more dense air quality resource? How can we allocate funds to optimally support network expansion and air quality services?</p></li>
-<li><p>Knowing the characteristics of a sensor (location, calibration, situation [elevated, kerb side, A or B road]) will improve estimates, how can we deliver this meta-data?</p></li>
-</ul>
-
-
-<p>Plenty of food for thought…………..information</p>
-
-<h2>Notes and Resources</h2>
-
-<p>Our stories are quick and dirty demonstrators to promote innovation and should be treated as such. All data science and statistics should be used responsibly :)</p>
-
-<p>All of the code supporting this can be found on <a href="https://github.com/troups/AQ">github</a> with data sourced from <a href="https://www.opensensors.io/orgs/london-air-quality-network">opensensors’ LAQN feed</a>, and i use a postcode lookup to get long/lat locations for wapping. I’ve also taken some inspiration from <a href="https://github.com/e-dard/boris">https://github.com/e-dard/boris</a> and <a href="https://github.com/tzano/OpenSensors.io-Py">https://github.com/tzano/OpenSensors.io-Py</a> so thanks for their contribution!</p>
-
-<p><a href="http://www.londonair.org.uk/">http://www.londonair.org.uk/</a>
-<a href="https://www.opensensors.io/">https://www.opensensors.io/</a></p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Measuring Air Quality on Opensensors]]></title>
@@ -286,7 +165,7 @@ time.sleep(1);
 
 <p>WE recommend adjusting the Arduino code to output the data in JSON format. This will make it easier to read and add functionality.</p>
 
-<p>You can check out the topic producing Open Data we created <a href="https://opensensors.io/topics/users/Louis/ODI/airquality">here</a>!</p>
+<p>You can check out the topic producing Open Data we created <a href="https://opensensors.io/users/Louis/ODI/airquality">here</a>!</p>
 ]]></content>
   </entry>
   
