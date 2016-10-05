@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2016-07-18T15:03:39+01:00</updated>
+  <updated>2016-09-09T08:17:33+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lessons Learned From First Generation IoT Installations]]></title>
+    <link href="http://blog.opensensors.io/blog/2016/09/09/lessons-learned-from-first-generation-iot-installations/"/>
+    <updated>2016-09-09T08:06:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2016/09/09/lessons-learned-from-first-generation-iot-installations</id>
+    <content type="html"><![CDATA[<p>At first glance,Wi-Fi-based sensors seems like a good choice for a non consumer facing sensor network, however, we have discovered that Wi-Fi has some significant drawbacks.</p>
+
+<h2>Access</h2>
+
+<p>One of the biggest drawbacks to Wi-Fi enabled sensors in a corporate environment at many of the companies is gaining access. Corporate IT often has valid security concerns of hundreds if not thousands of sensors joining the network and have deployed corporate firewalls that block any access.  Often this means that we are not allowed to spin up our own Wi-Fi network in order to have a gateway for a customer’s IoT sensor network. If IT has already deployed a Wi-Fi network they are rarely willing to provide the passwords to allow the IoT network devices and gateways to take advantage of it.  Relying on corporate Wi-Fi can make on-site installations and maintenance extremely complex and painful. The whole project becomes dependent on the goodwill of a network administrator for access every time maintenance needs to be performed.</p>
+
+<h2>Power</h2>
+
+<p>Wi-Fi has good transmission range but that comes with a cost of high power usage. With a short battery life, maintenance costs for Wi-Fi sensors are higher than low-power alternatives. One wireless protocol that is we see in many successful deployments is LoRa because it offers long transmission range at a much lower battery usage than Wi-Fi.</p>
+
+<p>Moving to LoRa and other long range protocols</p>
+
+<p>If you follow our blog and publications, you will notice we have been talking a lot about network technologies, this isn’t a coincidence.  We have spent a long time evaluating and piloting these stacks with our community.</p>
+
+<p> Network access and battery constraints are driving the move to long range networks and off WiFi for many IoT installations. LoRa is working well for us so far for a number of use cases most of our customer spin up a private network.  The ecosystem of providers is maturing and we are finding a lot of companies who are adopting existing sensors for their networks Gateway providers such as <a href="http://www.multitech.com/brands/multiconnect-conduit">Multi Tech</a> provide good support for the long tail of small scale (> 250 sensor installs) hardware providers to thrive.</p>
+
+<p>LoRa is a wireless protocol that promises between two and five kilometers transmission range between sensors and gateway, if you haven&rsquo;t already done so please read our introduction to <a href="http://blog.opensensors.io/blog/2016/07/05/what-is-lorawan/">what it is</a>. With a separate LoRa network, facilities and/or operations can install and manage the whole operation without the access and security issues of using the corporate Wi-Fi network. A typical network will have hundreds of sensor devices sending messages to a gateway. The LoRa gateway is a self contained system, we can have the LoRa network sit completely outside of the corporate firewall (GSM) and minimize IT security concerns.</p>
+
+<p>One LoRA gateway can normally cover an entire real estate. This can significantly reduce infrastructure, deployment, and administration costs compared to other shorter range wireless options like Zigbee or Bluetooth that requires complex installs.  Our aim is to have a system that non technical engineers can roll out and support, more on how to do this on later blog posts, but in most cases the OpenSensors team is the equivalent of &lsquo;2nd line support&rsquo; to the onsite team who have intergrated our apis to their helpdesk ticketing systems etc.</p>
+
+<p>LoRa networks can be public or private. An example of a public network is The Things Network, we continue to work with and support that community.  Most current commercial projects are running private networks at this time but will be interesting to see how that evolves over time.</p>
+
+<p>To conclude, LoRa is working well for us at the moment but we will keep researching other networks to enable us to understand the pros and cons of all the network providers.  Sigfox is a very interesting offering that we will properly test over the next few months, for example.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Savvy Building Managers Use Sensors to Reduce Operating Expenses]]></title>
+    <link href="http://blog.opensensors.io/blog/2016/09/08/savy-building-managers-use-sensors-to-reduce-operating-expenses/"/>
+    <updated>2016-09-08T18:16:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2016/09/08/savy-building-managers-use-sensors-to-reduce-operating-expenses</id>
+    <content type="html"><![CDATA[<p>Sensor networks are emerging as a mission critical method for offices and commercial spaces to save money. Offices and commercial spaces are undergoing a smart transformation by connecting and linking HVAC, lighting, environmental sensors, security, and safety equipment. Building and facilities managers are also installing utilization sensors to manage their spaces more efficiently.</p>
+
+<p>Main benefits of data driven buildings
+* Operational efficiency
+* Use data for better design
+* Better workspace experience for employees</p>
+
+<h2>Changing workforce</h2>
+
+<p>Recently we helped a company design a prototype of a desk sensor monitoring system. Because so many of their people were working from home they wanted to accurately measure the peak demand during the day to see if they could save 10-20% of their desk space. Goals for the system were:
+* Monitor desk occupancy anonymously.
+* Minimize installation and deployment costs: rely on solutions that were simple enough that existing non-expert personnel could be trained to deploy.
+* Minimize day-to-day maintenance and deployment: this drove strategies for long battery life among others.
+* Design a deployment process that ensured install team could easily add sensor location metadata to allow for rich reporting and analysis once IoT sensor network was operational.
+* Limit the IT resources needed for deployment</p>
+
+<h2>The  phased approach works best</h2>
+
+<p>First, we looked at many sensors, evaluating quality, signal-to-noise ratio and power consumption. It&rsquo;s always a good idea to get a handful of different types of sensors and try them out in a very small scale. We chose an infrared red sensor with good battery life-time and a single LoRa gateway that could support all the floors and provide connection to the cloud.</p>
+
+<p>Next we did a full end-to-end test, where we hooked up 5-10 sensors up completely to a cloud infrastructure all the way through the connectivity gateway. Now we had real data flowing into the infrastructure and could verify that the queries and analytics were feasible.  This step just makes sure everything works as planned and you will get all the data that you will need.</p>
+
+<p>Once you&rsquo;re happy with the proof of concept phase, it is time for the real pilot phase. Instead of having just a handful of working sensors, now you&rsquo;ll hook up an entire floor or a street or whatever your use case might be. It should be somewhere between thirty, forty, maybe up to a hundred sensors. At this point you can ensure that the sensors work at scale and the gateway can handle the load. Typically we see customers running these for a month or two to get a good feel for how the sensors will perform in a production situation.</p>
+
+<p>After the pilot phase, you should have enough data to verify network performance and your choices for sensors and gateways. Now you can plan the full deployment in detail. It’s been our experience, based on a number of customer installations, that the most successful IoT networks follow these steps in a phased implementation approach.</p>
+
+<p> The technology at the silicon, software, and system level continues to evolve rapidly and our aim is to reduce the time to go live and minimise risk.  The internet of things is a nebulous term that includes quite a lot of specialised skillsets such as sensor manufacturing, network design, data analysis, etc.</p>
+
+<p>In order to make projects successful, we have taken the approach of building many hardware, installation and network provider partnerships, and relationships to help customers succeed as opposed to trying to do it all ourselves.  We have been working with customers to develop methods to lower the sensor density and in turn lower the cost of projects whilst still getting comparable accuracy.</p>
+
+<p>Contact us if you would like assistance on sensor selection, network design, or planning a proof of concept deployment.</p>
+
+<p><img src="http://blog.opensensors.io/images/office.jpg" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Getting to Grips With IoT Network Technologies]]></title>
@@ -255,7 +327,7 @@ So we have considered NO2 as our core measure, in part because there are more se
 </ul>
 
 
-<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#99;&#x6f;&#109;&#x6d;&#101;&#114;&#x63;&#105;&#97;&#108;&#x74;&#x65;&#97;&#109;&#x40;&#x6f;&#112;&#101;&#x6e;&#x73;&#x65;&#110;&#x73;&#x6f;&#114;&#115;&#x2e;&#105;&#x6f;">&#x63;&#x6f;&#109;&#109;&#101;&#x72;&#99;&#105;&#97;&#x6c;&#116;&#x65;&#97;&#109;&#x40;&#111;&#x70;&#101;&#110;&#x73;&#101;&#110;&#115;&#111;&#x72;&#115;&#46;&#x69;&#x6f;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
+<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#99;&#x6f;&#109;&#109;&#101;&#114;&#99;&#x69;&#97;&#x6c;&#116;&#x65;&#97;&#x6d;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#115;&#101;&#x6e;&#115;&#x6f;&#x72;&#115;&#x2e;&#105;&#x6f;">&#x63;&#111;&#x6d;&#x6d;&#101;&#x72;&#x63;&#x69;&#97;&#108;&#x74;&#x65;&#x61;&#109;&#x40;&#111;&#112;&#101;&#x6e;&#x73;&#x65;&#x6e;&#115;&#x6f;&#x72;&#x73;&#46;&#x69;&#x6f;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
 ]]></content>
   </entry>
   
@@ -384,7 +456,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p><img src="http://blog.opensensors.io/images/editswitch.png" /></p>
 
 <ul>
-<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x6f;&#104;&#109;&#x79;&#103;&#x6f;&#x64;&#x69;&#x74;&#104;&#97;&#112;&#x70;&#101;&#x6e;&#100;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;&#46;">&#111;&#x68;&#x6d;&#x79;&#103;&#111;&#100;&#x69;&#116;&#x68;&#97;&#x70;&#112;&#101;&#110;&#x64;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;&#x2e;</a></li>
+<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x6f;&#104;&#x6d;&#121;&#x67;&#111;&#x64;&#105;&#116;&#104;&#97;&#112;&#x70;&#x65;&#110;&#x64;&#64;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;&#46;">&#111;&#x68;&#x6d;&#121;&#x67;&#x6f;&#x64;&#x69;&#x74;&#104;&#97;&#x70;&#112;&#x65;&#x6e;&#100;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#46;</a></li>
 </ul>
 
 
@@ -403,7 +475,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p>We hope that this flow is getting you started! Remember that Node-RED is superbly suited to interact with hardware… &hellip;imagine LEDs and buzzers indicating an earthquake.</p>
 
 <p>The flow JSON:
-[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x6f;&#x68;&#109;&#x79;&#x67;&#111;&#100;&#x69;&#116;&#104;&#97;&#112;&#x70;&#101;&#110;&#x65;&#100;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;">&#x6f;&#104;&#x6d;&#x79;&#x67;&#x6f;&#x64;&#105;&#116;&#x68;&#97;&#x70;&#x70;&#x65;&#x6e;&#x65;&#100;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
+[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x6f;&#x68;&#109;&#x79;&#103;&#x6f;&#x64;&#x69;&#116;&#x68;&#97;&#x70;&#112;&#101;&#x6e;&#101;&#100;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#x6f;&#104;&#109;&#x79;&#x67;&#111;&#x64;&#105;&#116;&#104;&#x61;&#x70;&#112;&#x65;&#x6e;&#x65;&#x64;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
 ]]></content>
   </entry>
   
@@ -584,7 +656,7 @@ particular protocol you love feel free to send us an <a href="hello@opensensors.
 
 <p>As some of you may have noticed, we released a stripped down Alpha version of Orgs in our last release. We’ve learned from your feedback.</p>
 
-<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#x68;&#x65;&#108;&#108;&#x6f;&#64;&#111;&#x70;&#x65;&#x6e;&#115;&#x65;&#110;&#x73;&#x6f;&#114;&#x73;&#x2e;&#x69;&#x6f;">&#104;&#101;&#108;&#108;&#111;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#115;&#101;&#110;&#x73;&#x6f;&#x72;&#x73;&#x2e;&#x69;&#111;</a> for a voucher.</p>
+<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#104;&#101;&#108;&#x6c;&#111;&#x40;&#111;&#x70;&#x65;&#x6e;&#115;&#x65;&#110;&#115;&#x6f;&#114;&#115;&#46;&#105;&#111;">&#x68;&#x65;&#x6c;&#108;&#111;&#x40;&#111;&#x70;&#x65;&#x6e;&#115;&#x65;&#x6e;&#115;&#111;&#114;&#115;&#46;&#x69;&#x6f;</a> for a voucher.</p>
 
 <p>For more details about Organisations and how to use them check out our
 <a href="https://opensensors.io/help/">help pages</a></p>
@@ -643,7 +715,7 @@ will be adding it to my toolkit.</p>
 
 <p>Does this help you solve a problem you’ve been having with your
 connected sensors? If so get contact and let us know what you are up
-to on <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#104;&#x65;&#108;&#x6c;&#111;&#64;&#111;&#112;&#101;&#x6e;&#115;&#101;&#110;&#x73;&#x6f;&#x72;&#115;&#x2e;&#x69;&#x6f;">&#104;&#x65;&#x6c;&#108;&#x6f;&#x40;&#x6f;&#112;&#x65;&#110;&#115;&#101;&#110;&#115;&#x6f;&#114;&#115;&#x2e;&#105;&#111;</a></p>
+to on <a href="&#109;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#104;&#101;&#108;&#x6c;&#x6f;&#x40;&#x6f;&#x70;&#101;&#x6e;&#115;&#101;&#x6e;&#115;&#x6f;&#x72;&#115;&#x2e;&#105;&#111;">&#104;&#x65;&#x6c;&#108;&#x6f;&#x40;&#x6f;&#112;&#101;&#110;&#x73;&#101;&#110;&#x73;&#111;&#114;&#x73;&#x2e;&#x69;&#x6f;</a></p>
 ]]></content>
   </entry>
   
@@ -949,177 +1021,6 @@ time.sleep(1);
 <p><img src="http://blog.opensensors.io/images/eventssuccess.jpg" /></p>
 
 <p>You’re now publishing Open Data through the OpenSensors.io messaging broker! From this you are able to create smart apps and projects using your data, all we need to do now is have your app and project subscribe to our twitter hashtags of the IoT, topics &ndash; but you’ll have to wait and see until part two of our OwnTrack journey!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Installing an Arduino Wifi Shield]]></title>
-    <link href="http://blog.opensensors.io/blog/2014/11/19/installing-an-arduino-wifi-shield/"/>
-    <updated>2014-11-19T20:07:00+00:00</updated>
-    <id>http://blog.opensensors.io/blog/2014/11/19/installing-an-arduino-wifi-shield</id>
-    <content type="html"><![CDATA[<p>After a few Arduino projects (mainly blinking LEDs and connecting sensors) I tried
-to connect my Arduino to the internet using a Wifi shield!</p>
-
-<p>I started by looking at Arduino Wifi shield <a href="http://arduino.cc/en/Guide/ArduinoWiFiShield">instructions</a>.</p>
-
-<p>Then I physically connected my Arduino and Wifi shield:</p>
-
-<p><img src="http://blog.opensensors.io/images/arduino-wifishield.jpg" /></p>
-
-<p>As a test I wanted to scan for available networks using the example code on <a href="http://arduino.cc/en/Guide/ArduinoWiFiShield#toc5">this</a>
-Arduino Wifi shield webpage.</p>
-
-<p>I mentioned in a previous blog <a href="http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux/">post</a>
-I had an issue with the Arduino IDE and now use <a href="http://inotool.org/">inotool</a>.
-It enables to code for Arduino in your text editor/IDE of choice and compile and
-upload code from the command line (but it still needs the Arduino IDE to be installed).</p>
-
-<p>Here&rsquo;s how I start a project with inotool:</p>
-
-<pre><code>~$ mkdir new_project && cd new_project</code>
-<code>~$ ino init</code></pre>
-
-
-<p>Here&rsquo;s the structure of my project afterwards:</p>
-
-<p><img src="http://blog.opensensors.io/images/directory_structure.png" /></p>
-
-<p>I can then edit the code in src/sketch.ino. In that case I just copied/pasted
-the code from Arduino&rsquo;s example:</p>
-
-<p><img src="http://blog.opensensors.io/images/Test_wifishield.png" /></p>
-
-<p>I built as usual using this command: <pre><code>~$ ino build</code></pre> &hellip; and got
-the following error:</p>
-
-<p><img src="http://blog.opensensors.io/images/build_error_wifi.png" /></p>
-
-<p>=> It seemed there was a conflict between the Ethernet and WiFi Libraries.</p>
-
-<p>&hellip; Then I kind of lost it (O_O) and tried all those things:</p>
-
-<ul>
-<li>bypassing both Arduino IDE and inotool by using a Makefile for compiling Arduino (<a href="http://hardwarefun.com/tutorials/compiling-arduino-sketches-using-makefile">http://hardwarefun.com/tutorials/compiling-arduino-sketches-using-makefile</a>)
-   => and I got lost down makefile rabbit hole&hellip;</li>
-<li>updating (or trying to update) the wifi shield firmware using Arduino&rsquo;s <a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading">instructions</a> and blog posts.
-  => when I finally managed it, it didn&rsquo;t have any effect&hellip;</li>
-<li>downgrading from Arduino IDE version 1.0.5 to 1.0.2 (older versions are found <a href="http://arduino.cc/en/Main/OldSoftwareReleases">here</a>).
-  => no improvement really&hellip;</li>
-</ul>
-
-
-<p>I went back and forth between those solutions and at best I could compile the sketch but my MAC address was 0.0.0.0 (same for my IP address)!</p>
-
-<p><strong>Here&rsquo;s how it finally worked for me:</strong></p>
-
-<ul>
-<li>I downgraded to Arduino IDE version 1.0.1.</li>
-<li>Copied &ldquo;arduino-1.0.1&rdquo; in usr/share/ and renamed it to &ldquo;arduino&rdquo; so that the path to the IDE was /usr/share/arduino/.</li>
-<li>I added wifishield/ folder from <a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield">https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield</a> to /usr/share/arduino/hardware/arduino/firmwares/.</li>
-<li>I added the WiFi library from <a href="https://github.com/arduino/Arduino/tree/master/libraries/WiFi">https://github.com/arduino/Arduino/tree/master/libraries/WiFi</a> to /usr/share/arduino.</li>
-<li>I upgraded the firmware (not sure if necessary) => <em>Note</em> : you need a USB 2.0 Mini B cable to link the wifi shield directly to your computer!
-
-<ul>
-<li> here are the instructions to install dfu-programmer: <a href="https://github.com/dfu-programmer/dfu-programmer">https://github.com/dfu-programmer/dfu-programmer</a></li>
-<li> and you can get the latest wifi shield scripts from <a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield/scripts">https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield/scripts</a></li>
-<li> replace your scripts in /usr/share/arduino/hardware/arduino/firmwares/wifishield/scripts/ with the ones from Arduino Github repo.</li>
-<li> close the J3 jumper on the shield (***),
-   then run:
-   <pre><code>~$ sudo ./ArduinoWifiShield_upgrade.sh -a /usr/share/arduino -f all</code></pre></li>
-</ul>
-</li>
-</ul>
-
-
-<p>Yay! (^o^) You can now try new projects like creating a <a href="http://arduino.cc/en/Tutorial/WiFiWebServer">webserver</a> or sending sensor data via internet!</p>
-
-<br>
-
-
-<p>(***) In case you wonder what a <strong>J3 jumper</strong> looks like,
-those pictures could be useful to you:</p>
-
-<ul>
-<li>Here the J3 jumper is open (for when the shield communicate with the Arduino):</li>
-</ul>
-
-
-<p><img src="http://blog.opensensors.io/images/j3_opened.jpg" /></p>
-
-<ul>
-<li>Here the J3 jumper is closed (or in programming mode, to update the firmware):</li>
-</ul>
-
-
-<p><img src="http://blog.opensensors.io/images/j3_closed.jpg" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[An Open Data Startup]]></title>
-    <link href="http://blog.opensensors.io/blog/2014/10/30/an-open-data-startup/"/>
-    <updated>2014-10-30T18:00:00+00:00</updated>
-    <id>http://blog.opensensors.io/blog/2014/10/30/an-open-data-startup</id>
-    <content type="html"><![CDATA[<p>In that intense start up haze we occupy, the fact that
-OpenSensors has turned 1 this month completely passed me
-by! I feel that occasion should be marked with at least a post to
-reflect on how far we have come in a year.</p>
-
-<h2>An ODI startup <img src="http://blog.opensensors.io/images/odi.png" /></h2>
-
-<p>The highlight of the year has to be our inclusion to the
-<a href="http://opendatainstitute.org/">Open Data Institute&rsquo;s</a> startup
-program.</p>
-
-<p>The ODI&rsquo;s mission is to unlock the potential of public data held by
-governments and businesses to help solve the world&rsquo;s hard
-problems. As our mission is to build a connected world based on open
-data and technologies, being part of the ODI&rsquo;s network of like minded
-people is the natural home for OpenSensors.</p>
-
-<h2>Engineering Middleware is Hard</h2>
-
-<p>The original middleware we designed and prototyped for OpenSensors has long been thrown
-out, actually rewritten several times. We have spent hundreds of
-engineering hours making it fast and secure. We can now comfortably process millions of
-messages per second from hundreds of thousands of devices.  And most
-importantly we let each of our users get their own real time feeds of data that they are interested in.</p>
-
-<p>If you told me a year ago that it would take this long to build the
-middleware we would be happy with, how I would have laughed at you&hellip;.</p>
-
-<h2>Hardware is very Hard</h2>
-
-<p>After spending some time working under the radar, towards the middle of 2014 the Internet
-of Things
-<a href="http://www.forbes.com/sites/gilpress/2014/08/18/its-official-the-internet-of-things-takes-over-big-data-as-the-most-hyped-technology/">hypecycle</a>
-suddenly went into overdrive.</p>
-
-<p>That being said designing and manufacturing hardware products at scale
-is a significantly different proposition to scaling software. The
-skill sets necessary to build and manufacture electronics products is
-rare and laborious. We have found ourselves in the surprising position
-of prototyping hardware for clients and cities as well as learning the
-process of manufacturing.</p>
-
-<h2>Aims for the coming year</h2>
-
-<p>Our central ambition for the next year is to make it very easy for
-people to find and contribute to rich sources of real time data that is of interest to them.</p>
-
-<p>We have some exciting partnerships and projects with various cities and
-groups in parking, disability accessibility and smart buildings all publishing open data. We
-also want to help showcase the excellent work of the many community
-based environmental sensing projects.</p>
-
-<h2>Sunsetting the early access period</h2>
-
-<p>As of the 1st of December 2014, we will be charging for private use of the
-service. Open Data projects will always be free. Private projects
-will incur a small monthly cost towards the service based on the
-number of devices you run.</p>
-
-<p>For a full details of the pricing, see <a href="https://opensensors.io/pricing">https://opensensors.io/pricing</a></p>
 ]]></content>
   </entry>
   

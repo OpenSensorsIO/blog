@@ -9,7 +9,8 @@
   <meta name="author" content="OpenSensors.IO">
 
   
-  <meta name="description" content="Ordered and received your Arduino Uno (I actually received it a while ago!) now what? The first step is to rush to the &lsquo;Getting Started&rsquo; &hellip;">
+  <meta name="description" content="After a few Arduino projects (mainly blinking LEDs and connecting sensors) I tried
+to connect my Arduino to the internet using a Wifi shield! I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +92,235 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/19/installing-an-arduino-wifi-shield/">Installing an Arduino Wifi Shield</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-19T20:07:00+00:00" pubdate data-updated="true">Nov 19<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+
+
+  <div class="entry-content"><p>After a few Arduino projects (mainly blinking LEDs and connecting sensors) I tried
+to connect my Arduino to the internet using a Wifi shield!</p>
+
+<p>I started by looking at Arduino Wifi shield <a href="http://arduino.cc/en/Guide/ArduinoWiFiShield">instructions</a>.</p>
+
+<p>Then I physically connected my Arduino and Wifi shield:</p>
+
+<p><img src="/images/arduino-wifishield.jpg" /></p>
+
+<p>As a test I wanted to scan for available networks using the example code on <a href="http://arduino.cc/en/Guide/ArduinoWiFiShield#toc5">this</a>
+Arduino Wifi shield webpage.</p>
+
+<p>I mentioned in a previous blog <a href="http://blog.opensensors.io/blog/2014/09/13/getting-started-with-arduino-on-linux/">post</a>
+I had an issue with the Arduino IDE and now use <a href="http://inotool.org/">inotool</a>.
+It enables to code for Arduino in your text editor/IDE of choice and compile and
+upload code from the command line (but it still needs the Arduino IDE to be installed).</p>
+
+<p>Here&rsquo;s how I start a project with inotool:</p>
+
+<pre><code>~$ mkdir new_project && cd new_project</code>
+<code>~$ ino init</code></pre>
+
+
+<p>Here&rsquo;s the structure of my project afterwards:</p>
+
+<p><img src="/images/directory_structure.png" /></p>
+
+<p>I can then edit the code in src/sketch.ino. In that case I just copied/pasted
+the code from Arduino&rsquo;s example:</p>
+
+<p><img src="/images/Test_wifishield.png" /></p>
+
+<p>I built as usual using this command: <pre><code>~$ ino build</code></pre> &hellip; and got
+the following error:</p>
+
+<p><img src="/images/build_error_wifi.png" /></p>
+
+<p>=> It seemed there was a conflict between the Ethernet and WiFi Libraries.</p>
+
+<p>&hellip; Then I kind of lost it (O_O) and tried all those things:</p>
+
+<ul>
+<li>bypassing both Arduino IDE and inotool by using a Makefile for compiling Arduino (<a href="http://hardwarefun.com/tutorials/compiling-arduino-sketches-using-makefile">http://hardwarefun.com/tutorials/compiling-arduino-sketches-using-makefile</a>)
+   => and I got lost down makefile rabbit hole&hellip;</li>
+<li>updating (or trying to update) the wifi shield firmware using Arduino&rsquo;s <a href="http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading">instructions</a> and blog posts.
+  => when I finally managed it, it didn&rsquo;t have any effect&hellip;</li>
+<li>downgrading from Arduino IDE version 1.0.5 to 1.0.2 (older versions are found <a href="http://arduino.cc/en/Main/OldSoftwareReleases">here</a>).
+  => no improvement really&hellip;</li>
+</ul>
+
+
+<p>I went back and forth between those solutions and at best I could compile the sketch but my MAC address was 0.0.0.0 (same for my IP address)!</p>
+
+<p><strong>Here&rsquo;s how it finally worked for me:</strong></p>
+
+<ul>
+<li>I downgraded to Arduino IDE version 1.0.1.</li>
+<li>Copied &ldquo;arduino-1.0.1&rdquo; in usr/share/ and renamed it to &ldquo;arduino&rdquo; so that the path to the IDE was /usr/share/arduino/.</li>
+<li>I added wifishield/ folder from <a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield">https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield</a> to /usr/share/arduino/hardware/arduino/firmwares/.</li>
+<li>I added the WiFi library from <a href="https://github.com/arduino/Arduino/tree/master/libraries/WiFi">https://github.com/arduino/Arduino/tree/master/libraries/WiFi</a> to /usr/share/arduino.</li>
+<li>I upgraded the firmware (not sure if necessary) => <em>Note</em> : you need a USB 2.0 Mini B cable to link the wifi shield directly to your computer!
+
+<ul>
+<li> here are the instructions to install dfu-programmer: <a href="https://github.com/dfu-programmer/dfu-programmer">https://github.com/dfu-programmer/dfu-programmer</a></li>
+<li> and you can get the latest wifi shield scripts from <a href="https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield/scripts">https://github.com/arduino/Arduino/tree/master/hardware/arduino/firmwares/wifishield/scripts</a></li>
+<li> replace your scripts in /usr/share/arduino/hardware/arduino/firmwares/wifishield/scripts/ with the ones from Arduino Github repo.</li>
+<li> close the J3 jumper on the shield (***),
+   then run:
+   <pre><code>~$ sudo ./ArduinoWifiShield_upgrade.sh -a /usr/share/arduino -f all</code></pre></li>
+</ul>
+</li>
+</ul>
+
+
+<p>Yay! (^o^) You can now try new projects like creating a <a href="http://arduino.cc/en/Tutorial/WiFiWebServer">webserver</a> or sending sensor data via internet!</p>
+
+<br>
+
+
+<p>(***) In case you wonder what a <strong>J3 jumper</strong> looks like,
+those pictures could be useful to you:</p>
+
+<ul>
+<li>Here the J3 jumper is open (for when the shield communicate with the Arduino):</li>
+</ul>
+
+
+<p><img src="/images/j3_opened.jpg" /></p>
+
+<ul>
+<li>Here the J3 jumper is closed (or in programming mode, to update the firmware):</li>
+</ul>
+
+
+<p><img src="/images/j3_closed.jpg" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/30/an-open-data-startup/">An Open Data Startup</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-30T18:00:00+00:00" pubdate data-updated="true">Oct 30<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+
+
+  <div class="entry-content"><p>In that intense start up haze we occupy, the fact that
+OpenSensors has turned 1 this month completely passed me
+by! I feel that occasion should be marked with at least a post to
+reflect on how far we have come in a year.</p>
+
+<h2>An ODI startup <img src="/images/odi.png" /></h2>
+
+<p>The highlight of the year has to be our inclusion to the
+<a href="http://opendatainstitute.org/">Open Data Institute&rsquo;s</a> startup
+program.</p>
+
+<p>The ODI&rsquo;s mission is to unlock the potential of public data held by
+governments and businesses to help solve the world&rsquo;s hard
+problems. As our mission is to build a connected world based on open
+data and technologies, being part of the ODI&rsquo;s network of like minded
+people is the natural home for OpenSensors.</p>
+
+<h2>Engineering Middleware is Hard</h2>
+
+<p>The original middleware we designed and prototyped for OpenSensors has long been thrown
+out, actually rewritten several times. We have spent hundreds of
+engineering hours making it fast and secure. We can now comfortably process millions of
+messages per second from hundreds of thousands of devices.  And most
+importantly we let each of our users get their own real time feeds of data that they are interested in.</p>
+
+<p>If you told me a year ago that it would take this long to build the
+middleware we would be happy with, how I would have laughed at you&hellip;.</p>
+
+<h2>Hardware is very Hard</h2>
+
+<p>After spending some time working under the radar, towards the middle of 2014 the Internet
+of Things
+<a href="http://www.forbes.com/sites/gilpress/2014/08/18/its-official-the-internet-of-things-takes-over-big-data-as-the-most-hyped-technology/">hypecycle</a>
+suddenly went into overdrive.</p>
+
+<p>That being said designing and manufacturing hardware products at scale
+is a significantly different proposition to scaling software. The
+skill sets necessary to build and manufacture electronics products is
+rare and laborious. We have found ourselves in the surprising position
+of prototyping hardware for clients and cities as well as learning the
+process of manufacturing.</p>
+
+<h2>Aims for the coming year</h2>
+
+<p>Our central ambition for the next year is to make it very easy for
+people to find and contribute to rich sources of real time data that is of interest to them.</p>
+
+<p>We have some exciting partnerships and projects with various cities and
+groups in parking, disability accessibility and smart buildings all publishing open data. We
+also want to help showcase the excellent work of the many community
+based environmental sensing projects.</p>
+
+<h2>Sunsetting the early access period</h2>
+
+<p>As of the 1st of December 2014, we will be charging for private use of the
+service. Open Data projects will always be free. Private projects
+will incur a small monthly cost towards the service based on the
+number of devices you run.</p>
+
+<p>For a full details of the pricing, see <a href="https://opensensors.io/pricing">https://opensensors.io/pricing</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -706,7 +936,7 @@ The full list data sets are below:</p>
 
 <p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
 
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x68;&#101;&#x6c;&#x6c;&#111;&#x40;&#111;&#x70;&#x65;&#x6e;&#x73;&#101;&#110;&#x73;&#x6f;&#114;&#115;&#46;&#105;&#111;">&#x68;&#101;&#x6c;&#x6c;&#x6f;&#x40;&#111;&#112;&#x65;&#x6e;&#115;&#101;&#x6e;&#115;&#111;&#x72;&#x73;&#46;&#105;&#111;</a>&rsquo; to join our private beta.</p>
+<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#58;&#104;&#101;&#x6c;&#x6c;&#111;&#64;&#111;&#112;&#101;&#x6e;&#115;&#101;&#110;&#115;&#111;&#114;&#x73;&#x2e;&#x69;&#x6f;">&#x68;&#x65;&#x6c;&#x6c;&#111;&#64;&#x6f;&#112;&#x65;&#110;&#x73;&#101;&#110;&#115;&#x6f;&#114;&#115;&#x2e;&#105;&#111;</a>&rsquo; to join our private beta.</p>
 </div>
   
   

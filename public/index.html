@@ -9,7 +9,7 @@
   <meta name="author" content="OpenSensors.IO">
 
   
-  <meta name="description" content="How sensors communicate with the internet is a fundamental consideration when conceiving of a connected project. There are many different ways to &hellip;">
+  <meta name="description" content="At first glance,Wi-Fi-based sensors seems like a good choice for a non consumer facing sensor network, however, we have discovered that Wi-Fi has &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,136 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/09/09/lessons-learned-from-first-generation-iot-installations/">Lessons Learned From First Generation IoT Installations</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-09-09T08:06:00+01:00" pubdate data-updated="true">Sep 9<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+
+
+  <div class="entry-content"><p>At first glance,Wi-Fi-based sensors seems like a good choice for a non consumer facing sensor network, however, we have discovered that Wi-Fi has some significant drawbacks.</p>
+
+<h2>Access</h2>
+
+<p>One of the biggest drawbacks to Wi-Fi enabled sensors in a corporate environment at many of the companies is gaining access. Corporate IT often has valid security concerns of hundreds if not thousands of sensors joining the network and have deployed corporate firewalls that block any access.  Often this means that we are not allowed to spin up our own Wi-Fi network in order to have a gateway for a customer’s IoT sensor network. If IT has already deployed a Wi-Fi network they are rarely willing to provide the passwords to allow the IoT network devices and gateways to take advantage of it.  Relying on corporate Wi-Fi can make on-site installations and maintenance extremely complex and painful. The whole project becomes dependent on the goodwill of a network administrator for access every time maintenance needs to be performed.</p>
+
+<h2>Power</h2>
+
+<p>Wi-Fi has good transmission range but that comes with a cost of high power usage. With a short battery life, maintenance costs for Wi-Fi sensors are higher than low-power alternatives. One wireless protocol that is we see in many successful deployments is LoRa because it offers long transmission range at a much lower battery usage than Wi-Fi.</p>
+
+<p>Moving to LoRa and other long range protocols</p>
+
+<p>If you follow our blog and publications, you will notice we have been talking a lot about network technologies, this isn’t a coincidence.  We have spent a long time evaluating and piloting these stacks with our community.</p>
+
+<p> Network access and battery constraints are driving the move to long range networks and off WiFi for many IoT installations. LoRa is working well for us so far for a number of use cases most of our customer spin up a private network.  The ecosystem of providers is maturing and we are finding a lot of companies who are adopting existing sensors for their networks Gateway providers such as <a href="http://www.multitech.com/brands/multiconnect-conduit">Multi Tech</a> provide good support for the long tail of small scale (> 250 sensor installs) hardware providers to thrive.</p>
+
+<p>LoRa is a wireless protocol that promises between two and five kilometers transmission range between sensors and gateway, if you haven&rsquo;t already done so please read our introduction to <a href="http://blog.opensensors.io/blog/2016/07/05/what-is-lorawan/">what it is</a>. With a separate LoRa network, facilities and/or operations can install and manage the whole operation without the access and security issues of using the corporate Wi-Fi network. A typical network will have hundreds of sensor devices sending messages to a gateway. The LoRa gateway is a self contained system, we can have the LoRa network sit completely outside of the corporate firewall (GSM) and minimize IT security concerns.</p>
+
+<p>One LoRA gateway can normally cover an entire real estate. This can significantly reduce infrastructure, deployment, and administration costs compared to other shorter range wireless options like Zigbee or Bluetooth that requires complex installs.  Our aim is to have a system that non technical engineers can roll out and support, more on how to do this on later blog posts, but in most cases the OpenSensors team is the equivalent of &lsquo;2nd line support&rsquo; to the onsite team who have intergrated our apis to their helpdesk ticketing systems etc.</p>
+
+<p>LoRa networks can be public or private. An example of a public network is The Things Network, we continue to work with and support that community.  Most current commercial projects are running private networks at this time but will be interesting to see how that evolves over time.</p>
+
+<p>To conclude, LoRa is working well for us at the moment but we will keep researching other networks to enable us to understand the pros and cons of all the network providers.  Sigfox is a very interesting offering that we will properly test over the next few months, for example.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/09/08/savy-building-managers-use-sensors-to-reduce-operating-expenses/">Savvy Building Managers Use Sensors to Reduce Operating Expenses</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-09-08T18:16:00+01:00" pubdate data-updated="true">Sep 8<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+
+
+  <div class="entry-content"><p>Sensor networks are emerging as a mission critical method for offices and commercial spaces to save money. Offices and commercial spaces are undergoing a smart transformation by connecting and linking HVAC, lighting, environmental sensors, security, and safety equipment. Building and facilities managers are also installing utilization sensors to manage their spaces more efficiently.</p>
+
+<p>Main benefits of data driven buildings
+* Operational efficiency
+* Use data for better design
+* Better workspace experience for employees</p>
+
+<h2>Changing workforce</h2>
+
+<p>Recently we helped a company design a prototype of a desk sensor monitoring system. Because so many of their people were working from home they wanted to accurately measure the peak demand during the day to see if they could save 10-20% of their desk space. Goals for the system were:
+* Monitor desk occupancy anonymously.
+* Minimize installation and deployment costs: rely on solutions that were simple enough that existing non-expert personnel could be trained to deploy.
+* Minimize day-to-day maintenance and deployment: this drove strategies for long battery life among others.
+* Design a deployment process that ensured install team could easily add sensor location metadata to allow for rich reporting and analysis once IoT sensor network was operational.
+* Limit the IT resources needed for deployment</p>
+
+<h2>The  phased approach works best</h2>
+
+<p>First, we looked at many sensors, evaluating quality, signal-to-noise ratio and power consumption. It&rsquo;s always a good idea to get a handful of different types of sensors and try them out in a very small scale. We chose an infrared red sensor with good battery life-time and a single LoRa gateway that could support all the floors and provide connection to the cloud.</p>
+
+<p>Next we did a full end-to-end test, where we hooked up 5-10 sensors up completely to a cloud infrastructure all the way through the connectivity gateway. Now we had real data flowing into the infrastructure and could verify that the queries and analytics were feasible.  This step just makes sure everything works as planned and you will get all the data that you will need.</p>
+
+<p>Once you&rsquo;re happy with the proof of concept phase, it is time for the real pilot phase. Instead of having just a handful of working sensors, now you&rsquo;ll hook up an entire floor or a street or whatever your use case might be. It should be somewhere between thirty, forty, maybe up to a hundred sensors. At this point you can ensure that the sensors work at scale and the gateway can handle the load. Typically we see customers running these for a month or two to get a good feel for how the sensors will perform in a production situation.</p>
+
+<p>After the pilot phase, you should have enough data to verify network performance and your choices for sensors and gateways. Now you can plan the full deployment in detail. It’s been our experience, based on a number of customer installations, that the most successful IoT networks follow these steps in a phased implementation approach.</p>
+
+<p> The technology at the silicon, software, and system level continues to evolve rapidly and our aim is to reduce the time to go live and minimise risk.  The internet of things is a nebulous term that includes quite a lot of specialised skillsets such as sensor manufacturing, network design, data analysis, etc.</p>
+
+<p>In order to make projects successful, we have taken the approach of building many hardware, installation and network provider partnerships, and relationships to help customers succeed as opposed to trying to do it all ourselves.  We have been working with customers to develop methods to lower the sensor density and in turn lower the cost of projects whilst still getting comparable accuracy.</p>
+
+<p>Contact us if you would like assistance on sensor selection, network design, or planning a proof of concept deployment.</p>
+
+<p><img src="/images/office.jpg" /></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -446,7 +576,7 @@ So we have considered NO2 as our core measure, in part because there are more se
 </ul>
 
 
-<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#99;&#x6f;&#109;&#x6d;&#101;&#114;&#x63;&#105;&#97;&#108;&#x74;&#x65;&#97;&#109;&#x40;&#x6f;&#112;&#101;&#x6e;&#x73;&#x65;&#110;&#x73;&#x6f;&#114;&#115;&#x2e;&#105;&#x6f;">&#x63;&#x6f;&#109;&#109;&#101;&#x72;&#99;&#105;&#97;&#x6c;&#116;&#x65;&#97;&#109;&#x40;&#111;&#x70;&#101;&#110;&#x73;&#101;&#110;&#115;&#111;&#x72;&#115;&#46;&#x69;&#x6f;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
+<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#99;&#x6f;&#109;&#109;&#101;&#114;&#99;&#x69;&#97;&#x6c;&#116;&#x65;&#97;&#x6d;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#115;&#101;&#x6e;&#115;&#x6f;&#x72;&#115;&#x2e;&#105;&#x6f;">&#x63;&#111;&#x6d;&#x6d;&#101;&#x72;&#x63;&#x69;&#97;&#108;&#x74;&#x65;&#x61;&#109;&#x40;&#111;&#112;&#101;&#x6e;&#x73;&#x65;&#x6e;&#115;&#x6f;&#x72;&#x73;&#46;&#x69;&#x6f;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
 </div>
   
   
@@ -633,7 +763,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p><img src="/images/editswitch.png" /></p>
 
 <ul>
-<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x6f;&#104;&#109;&#x79;&#103;&#x6f;&#x64;&#x69;&#x74;&#104;&#97;&#112;&#x70;&#101;&#x6e;&#100;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;&#46;">&#111;&#x68;&#x6d;&#x79;&#103;&#111;&#100;&#x69;&#116;&#x68;&#97;&#x70;&#112;&#101;&#110;&#x64;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;&#x2e;</a></li>
+<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x6f;&#104;&#x6d;&#121;&#x67;&#111;&#x64;&#105;&#116;&#104;&#97;&#112;&#x70;&#x65;&#110;&#x64;&#64;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;&#46;">&#111;&#x68;&#x6d;&#121;&#x67;&#x6f;&#x64;&#x69;&#x74;&#104;&#97;&#x70;&#112;&#x65;&#x6e;&#100;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#46;</a></li>
 </ul>
 
 
@@ -652,7 +782,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p>We hope that this flow is getting you started! Remember that Node-RED is superbly suited to interact with hardware… &hellip;imagine LEDs and buzzers indicating an earthquake.</p>
 
 <p>The flow JSON:
-[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x6f;&#x68;&#109;&#x79;&#x67;&#111;&#100;&#x69;&#116;&#104;&#97;&#112;&#x70;&#101;&#110;&#x65;&#100;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;">&#x6f;&#104;&#x6d;&#x79;&#x67;&#x6f;&#x64;&#105;&#116;&#x68;&#97;&#x70;&#x70;&#x65;&#x6e;&#x65;&#100;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
+[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x6f;&#x68;&#109;&#x79;&#103;&#x6f;&#x64;&#x69;&#116;&#x68;&#97;&#x70;&#112;&#101;&#x6e;&#101;&#100;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#x6f;&#104;&#109;&#x79;&#x67;&#111;&#x64;&#105;&#116;&#104;&#x61;&#x70;&#112;&#x65;&#x6e;&#x65;&#x64;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
 </div>
   
   
@@ -763,103 +893,6 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p>Put open data to work – ‘I can’t define it, but I know it when I see it’, to paraphrase Justice Potter Stewart. The debate about what is open data will remain, what is rightly or wrongly tagged as such. But expect innovation in business models firmly founded on principles of open data. ‘Open’ may mean sharing data with your neighbour, your street, your city. Most importantly make it economically attractive for all enterprises to make data available in some form, even if it’s not ‘open’ in the purest sense.</p>
 
 <p>We have an exciting journey ahead delivering significant change to our urban environment. Over a century ago ‘The league of American Wheelman’ catalysed improvements to America’s transport infrastructure; open data movement can deliver similar disruptive change to our urban environment. I hope open data becomes as ubiquitous as our transport network is today; in future no one will recall activists like the ODI and opensensors.io, but that would be a sign of open data’s success.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/06/06/http-post/">HTTP Post</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-06-06T11:41:00+01:00" pubdate data-updated="true">Jun 6<span>th</span>, 2015</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><p>Here at OpenSensors we are committed to making it as easy as possible
-to get started with your IOT projects. You can now have the ability to
-post messages through OpenSensors using HTTP-POST as well as MQTT.</p>
-
-<p>To post a message to a topic simply use this URL:
-<a href="https://opensensors.io/topics/TopicID">https://opensensors.io/topics/TopicID</a> and adding the client-id and
-password of your device as well as your username in the header</p>
-
-<p>An example command using Curl is:</p>
-
-<pre><code>curl -X POST -H 'client-id: XX' -H 'password: XXXXXXX' -H 'username: yods' https:opensensors.io/topics/users/yods/foo -d '{"value": 1}'
-</code></pre>
-
-<p>Next up is support for another great IOT protocol, CoAP!! My policy is
-that we will support any open standard and protocol so if there is a
-particular protocol you love feel free to send us an <a href="hello@opensensors.io">email</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/05/17/you-use-open-data-every-day/">You Use Open Data Every Day</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-05-17T13:11:00+01:00" pubdate data-updated="true">May 17<span>th</span>, 2015</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><p>You&rsquo;ve done your hair, you&rsquo;ve picked out the perfect outfit and you&rsquo;re set  on making a great first impression. How long have I got? What tube should I get? How soon is the next bus? You check the <a href="http://www.techworld.com/news/startups/londons-citymapper-capitalises-on-decade-of-data-3467301/">CityMapper app</a> &ndash; you find a route and within seconds know exactly how long it will take to get to your hot date. You may not know it, but open data has just made your trip a lot easier.</p>
-
-<p>Transport for London, OpenStreetMaps, Foursquare, Google Maps, Apple Maps and Cyclestreets all provide access to <a href="http://theodi.org/what-is-open-data">open data</a> for others to use. In this case, CityMapper ingests the real-time open data produced by Transport for London, remixes it with freely available open mapping data, adds a touch of their own special sauce, real-time usage and congestion data from CityMapper users, and finally curates this brew in an accessible form for the user, waiting at the bus stop. In short, the CityMapper team takes the available open data, adds value to it and provides that as a service.</p>
-
-<p>It is not an exaggeration to claim the future development of the city is <a href="http://theodi.org/research-afternoons/show-me-the-future-of-the-built-environment-and-open-data">intertwined</a> with open data. From transport data to air quality data to real time high-street footfall, as cities become leaner, genuinely smarter and more efficient the availability of reliable high quality data will become more important than ever. Generating open data from our surroundings is unlocking value and insight from our environment, information that is all around us, for the researcher, for the app developer, for the tinkerer, for the activist.</p>
-
-<p>For cities to succeed in building resilient systems and networks, the emerging data ecosystem in the city can&rsquo;t rely on closed data, closed systems. Devices and sensors in the city won&rsquo;t function as JawBone and FitBit do, two closed devices whose real-time data I couldn&rsquo;t access and share even if I wanted to. Open data is disrupting the digital landscape, former data-as-commodity brokers, such as <a href="http://www.landmark.co.uk/">Landmark</a>, have since fundamentally reshaped the way in which they do business, focusing on curating available data.</p>
 </div>
   
   
