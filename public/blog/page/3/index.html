@@ -9,8 +9,7 @@
   <meta name="author" content="OpenSensors.IO">
 
   
-  <meta name="description" content="After a few Arduino projects (mainly blinking LEDs and connecting sensors) I tried
-to connect my Arduino to the internet using a Wifi shield! I &hellip;">
+  <meta name="description" content="Today we’re going to look at using the OwnTracks app within the OpenSensors platform. &lsquo;OwnTracks&rsquo; (formerly MQTTitude) allows you to keep &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -92,6 +91,68 @@ to connect my Arduino to the internet using a Wifi shield! I &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/20/owntracks-journey-part-one/">OwnTracks Journey - Part One</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-20T12:56:00+00:00" pubdate data-updated="true">Jan 20<span>th</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+
+
+  <div class="entry-content"><p>Today we’re going to look at using the OwnTracks app within the OpenSensors platform. <a href="http://owntracks.org">&lsquo;OwnTracks&rsquo; (formerly MQTTitude)</a> allows you to keep track of your connected devices location. The app is open-source and uses open protocols for secure and private communications. First off we’ll start by installing the OwnTracks app on our device, I’m using a Nexus tablet for this attempt. Also, make sure your device <em>Location Data is enabled</em>. Whilst we’re waiting for that to sort itself out, let’s open up OpenSensors.io.</p>
+
+<p>If you haven’t already, create a new account, when you’re in &ndash; select Devices on the nav bar to the left. You should see the interface below.</p>
+
+<p><img src="/images/createdev.jpg" /></p>
+
+<p>Click <em>Create New Device</em>, give it a name and, optionally, a description (what is your device?). Importantly, choose whether you’d like to publish your data as public Open Data or Private Data. Whilst we’re on this screen, take note of the <em>Client ID</em> and <em>Password</em>, if you forget or lose your device password, don’t worry, just come back to <a href="https://opensensors.io/devices">this page</a>, select your device and click the small padlock icon on the far right next to the bin, this will reset your password.</p>
+
+<p>Now we’ve got that sorted, let’s run OwnTracks on our device. You should see this screen. In the top right we see two buttons, on the left is the Report button, essentially submitting data to our server, and the right, options. Click options and then preferences.</p>
+
+<p><img src="/images/owntracks.png" /> alongside <img src="/images/owntrackspref.png" /></p>
+
+<p>As you can see we’re currently disconnected from any network, let’s change that. Firstly, click <em>Advanced</em> and select <em>Advanced connection preferences</em>. Now go back to preferences menu and click <em>Connection</em> and input the following &ndash; input your own <em>username</em>, <em>Device ID</em> and <em>Device Password</em> as displayed earlier on OpenSensors.io device manager, and type OpenSensors.io as <em>Host</em> and 1883 as <em>Port Number</em>. Change <em>Connection Security</em> to None. These are OSIO’s settings. You can go back to Preferences and change the automatic reporting interval etc.</p>
+
+<p><img src="/images/owntracksconnection.png" /></p>
+
+<p>We’re all set. Now let’s go back to our devices page, and scroll down to the <em>Events</em> box, whereas before it looked this…</p>
+
+<p><img src="/images/events1.jpg" /></p>
+
+<p>We should now be publishing data &ndash; test your new connected device, publishing your location data by pressing the <em>Report</em> button on the OwnTracks main screen. Each time you submit data through the app you should see…</p>
+
+<p><img src="/images/eventssuccess.jpg" /></p>
+
+<p>You’re now publishing Open Data through the OpenSensors.io messaging broker! From this you are able to create smart apps and projects using your data, all we need to do now is have your app and project subscribe to our twitter hashtags of the IoT, topics &ndash; but you’ll have to wait and see until part two of our OwnTrack journey!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -936,7 +997,7 @@ The full list data sets are below:</p>
 
 <p><strong>Publishing and Access of data under an <a href="http://www.theodi.org/guide/what-open-data">Open Data Licence</a> will be free to anyone irrespective of the volume of data.</strong></p>
 
-<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#58;&#104;&#101;&#x6c;&#x6c;&#111;&#64;&#111;&#112;&#101;&#x6e;&#115;&#101;&#110;&#115;&#111;&#114;&#x73;&#x2e;&#x69;&#x6f;">&#x68;&#x65;&#x6c;&#x6c;&#111;&#64;&#x6f;&#112;&#x65;&#110;&#x73;&#101;&#110;&#115;&#x6f;&#114;&#115;&#x2e;&#105;&#111;</a>&rsquo; to join our private beta.</p>
+<p>Individuals with a small number of personal devices will also be free to publish their data under a private licence and share with whom they choose.  Contact on &lsquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x68;&#101;&#108;&#108;&#111;&#64;&#111;&#x70;&#101;&#x6e;&#x73;&#101;&#x6e;&#x73;&#x6f;&#x72;&#115;&#x2e;&#x69;&#x6f;">&#104;&#101;&#108;&#x6c;&#x6f;&#64;&#x6f;&#x70;&#101;&#110;&#115;&#101;&#110;&#115;&#111;&#114;&#115;&#x2e;&#105;&#111;</a>&rsquo; to join our private beta.</p>
 </div>
   
   

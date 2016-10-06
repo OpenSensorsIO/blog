@@ -21,7 +21,7 @@ GEM
       maruku (~> 0.5)
       pygments.rb (~> 0.3.2)
     kramdown (0.14.2)
-    liquid (2.3.0)
+    liquid (2.6.3)
     maruku (0.7.0)
     posix-spawn (0.3.6)
     pygments.rb (0.3.7)
@@ -54,7 +54,7 @@ DEPENDENCIES
   directory_watcher (= 1.4.1)
   haml (~> 3.1.7)
   jekyll (~> 0.12)
-  liquid (~> 2.3.0)
+  liquid (~> 2.6.2)
   pygments.rb (~> 0.3.4)
   rake (~> 10.4.2)
   rb-fsevent (~> 0.9)
@@ -65,5 +65,8 @@ DEPENDENCIES
   sinatra (~> 1.4.2)
   stringex (~> 1.4.0)
 
+RUBY VERSION
+   ruby 2.3.1p112
+
 BUNDLED WITH
-   1.10.5
+   1.13.2

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Buildings, | OpenSensors.IO]]></title>
+  <title><![CDATA[Category: Buildings | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/buildings/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2016-09-09T08:17:33+01:00</updated>
+  <updated>2016-10-06T10:19:18+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -14,70 +14,62 @@
 
   
   <entry>
-    <title type="html"><![CDATA[The Path to Smart Buildings]]></title>
-    <link href="http://blog.opensensors.io/blog/2015/10/07/the-path-to-smart/"/>
-    <updated>2015-10-07T10:14:00+01:00</updated>
-    <id>http://blog.opensensors.io/blog/2015/10/07/the-path-to-smart</id>
-    <content type="html"><![CDATA[<p>Google <a href="http://lmgtfy.com/?q=principles+of+good+architectural+design#seen">&lsquo;principles of good architectural design&rsquo;</a>  and you’ll get links to technology, to buildings and all manner of other services. But it’s hard to find principles of design for the tech services that facilitate smart buildings. Let’s remind ourselves what a smart building is with the help of <a href="http://sustainabletechnologyforum.com/from-inspired-to-awful-8-definitions-of-smart-buildings_18078.html">sustainable tech forum</a>; ‘The simple answer is that there’s automation involved somehow that makes managing and operating buildings more efficient’. So the need is well documented but we want to bridge to the ‘practice of designing and constructing buildings’, after all that’s what architecture is about.</p>
+    <title type="html"><![CDATA[Path to Smart Buildings]]></title>
+    <link href="http://blog.opensensors.io/blog/2016/10/05/path-to-smart-buildings-2/"/>
+    <updated>2016-10-05T08:31:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2016/10/05/path-to-smart-buildings-2</id>
+    <content type="html"><![CDATA[<p>Whether you are a building manager planning efficient space usage or an architect looking to design state-of-the-art buildings, we have broken down the steps to get you to your desired end goal. IoT planning should start with the business needs, of course, and quickly moves from the component layer all the way up to the application layer. We need to figure out what core data should be gathered and ways to effectively leverage that data. These IoT solutions require an end-to-end or device-to-cloud view.</p>
 
-<p>Opensensors hosted its first Smart Building Exchange (SBeX) event in September, and we are grateful to the panelists and attendees who made it such a success. Our goal was to bridge the gap between widely documented features of smart buildings and the tech that underpins it. Through our workshops we decomposed tenant needs and identified services to support them using the <a href="http://www.businessmodelgeneration.com/canvas/vpc">value proposition canvas</a>. We borrow from lean product design principles since building operators need to rapidly innovate using processes inherited from startups. Mapping the pains and gains of users to the features and products of the tech stack revealed a common theme, data infrastructure. Data is the new commodity that new services will be built upon, some will be open and others private, but data will be the currency of the next generation smart building.</p>
+<p><img src="/images/OS Path to Smart-color.png" /></p>
 
-<p><img src="/images/sbex-summary.png"/></p>
+<h2>A Phased implementation approach works best.</h2>
 
-<p>Take integrated facilities management (IFM) where data serves the desire to deliver better UX at a lower cost with fewer outages. IFM has pivoted from a set of siloed software services to a set of application services overlaid upon a horizontal data infrastructure. For example:</p>
+<p>We have found that the most successful IoT projects follow a phased implementation approach: Design Phase, Proof of Concept, Pilot, and Deployment. The design phase asks questions such as which sensors, who will be installing and maintaining the sensors. For Proof of Concept, a lab evaluation should include hooking up 5-8 sensors all the way through a gateway to data collection in the cloud. This will give enough real data to verify that the queries and the  analytics are feasible. The Pilot Phase ensures that the sensors work at scale and that the gateway configuration has been made easy for the deployment specialists. A pilot phase should be about 40 sensors depending on the density of the sensors. At this point, you can scale up to the number of sensors and the bandwidth required for full deployment.</p>
 
-<ul>
-<li>Data science services will develop to identify ‘rogue’ devices operating outside expected patterns, they will identify assets that need inspection or replacement and schedule maintenance works using time and cost optimisation routines.</li>
-<li>Digital concierge services will use personal devices, location based technology and corporate data (calendar and HR data) to optimise both user experience and spacial allocation.</li>
-</ul>
+<h2>OpenSensors' Deployments</h2>
 
-
-<p>So can we identify a tech architecture to support this pivot from monolithic apps? Data services facilitated by a central messaging backbone allows the complexity of building services to be broken down and tackled one service at a time, lowering the risk failure and allowing agile iterations at a reduced cost. Take the pillars of data driven applications for IFM as identified by our workshop group; predictive/reactive alerting and tactical/strategic reporting, how might we go about servicing these needs? Consider how the path to smart buildings outlined below could help build an IFM product.</p>
-
-<p><img src="/images/PathToSmart.png" /></p>
-
-<ul>
-<li>Build the value proposition founded on a clear vision of what your users want.</li>
-<li>Identify the data that will drive your smart building product including open data</li>
-<li>Identify the sensors needed to gather your data, they could be mobile devices or occupancy sensors</li>
-<li>Identify connectivity from the sensor to your data infrastructure, this might be radio to IP connected gateways or directly onto the local network via POE (power over ethernet)</li>
-<li>Structure your message payloads and commit to schemas to deliver repeatable processes for message parsing and routing within your building</li>
-<li>Configure your events turning your data into information using rules based platforms for IoT such as node red</li>
-<li>Build widgets and data services that can be bound together for dashboarding. By identifying common user needs across the enterprise we can operate a leaner system stack</li>
-<li>Build user portals and dashboards using your common data services and components</li>
-<li>Validate tenant user experience through surveys and modelling tenant behaviour using occupancy devices</li>
-<li>Iterate to improve using data gathered throughout the building to deliver better products and experiences</li>
-</ul>
-
-
-<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#x63;&#111;&#x6d;&#x6d;&#101;&#114;&#x63;&#105;&#97;&#108;&#116;&#101;&#97;&#109;&#64;&#111;&#112;&#101;&#110;&#x73;&#x65;&#110;&#115;&#111;&#x72;&#115;&#x2e;&#105;&#111;">&#x63;&#x6f;&#x6d;&#x6d;&#x65;&#114;&#x63;&#x69;&#x61;&#108;&#116;&#x65;&#97;&#109;&#x40;&#111;&#x70;&#x65;&#110;&#x73;&#x65;&#110;&#115;&#111;&#114;&#115;&#x2e;&#105;&#x6f;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
+<p>We have built hardware, installation and network provider partnerships and relationships to help customers get rollouts live efficiently. Either roll out your own network or we will put you in touch with your local sensor installation specialist to take care of the install and maintenance.  We are working with customers and the community to understand what is required at each level for your IoT solution and can ease development and integration issues.</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Don't Make Me Think]]></title>
-    <link href="http://blog.opensensors.io/blog/2015/08/24/dont-make-me-think/"/>
-    <updated>2015-08-24T13:18:00+01:00</updated>
-    <id>http://blog.opensensors.io/blog/2015/08/24/dont-make-me-think</id>
-    <content type="html"><![CDATA[<p>Expect the early adopters of ‘enchanted’ buildings to be our employers, the world green building council estimate we spend 10% of our costs on facilities management, 90% is the expense of executing our business. You don’t have to be an accountant to realise a 1% improvement in productivity trumps a 1% saving facilities costs by 9 to 1!  So how might smart buildings deliver productivity and improved user experience (UX)?</p>
+    <title type="html"><![CDATA[Savvy Building Managers Use Sensors to Reduce Operating Expenses]]></title>
+    <link href="http://blog.opensensors.io/blog/2016/09/08/savy-building-managers-use-sensors-to-reduce-operating-expenses/"/>
+    <updated>2016-09-08T18:16:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2016/09/08/savy-building-managers-use-sensors-to-reduce-operating-expenses</id>
+    <content type="html"><![CDATA[<p>Sensor networks are emerging as a mission critical method for offices and commercial spaces to save money. Offices and commercial spaces are undergoing a smart transformation by connecting and linking HVAC, lighting, environmental sensors, security, and safety equipment. Building and facilities managers are also installing utilization sensors to manage their spaces more efficiently.</p>
 
-<p>Great UX should be pain free,”Don’t make me think” (Steve Krug). Whilst smart phones offer a means of logging in to a workplace, it’s a bind to install the app, to login, to connect and privacy and indoor location services are a challenge. IoT tech such as OpenSensors, beacons, noise and air quality sensors, coupled with responsible anonymisation can deliver on productivity because improved building and personal wellness simply means we get more done. But how might this work?</p>
+<p>Main benefits of data driven buildings
+* Operational efficiency
+* Use data for better design
+* Better workspace experience for employees</p>
 
-<p>Aarron Walter said “Designers shooting for usable is like a chef shooting for edible.”, as techies we can apply these ideas to civic interactions. Take a large office space, I arrive from out of town, I’m visiting for a meeting with my project team. I register, head off to the flexible space and grab a desk, perhaps wasting time trying to find my guys. Each of the team then arrive, some may co-locate, others disperse, there’s no convenient breakout space; the collaboration is diluted and we’re disturbing others. We ate but it wasn’t a great meal.</p>
+<h2>Changing workforce</h2>
 
-<p>The lack of an inexpensive, robust, secure and open tech stack rendered us powerless, we have been consuming ‘edible’ tenant experiences rather than a delightful meal. But tech is moving fast; expect new digital services enabled by advances in IoT hardware and data software to shake down the industry. Organisations ready to invest and experiment will move ahead, they’ll develop an ‘edge’ that will define their services and branding for years to come.</p>
+<p>Recently we helped a company design a prototype of a desk sensor monitoring system. Because so many of their people were working from home they wanted to accurately measure the peak demand during the day to see if they could save 10-20% of their desk space. Goals for the system were:
+* Monitor desk occupancy anonymously.
+* Minimize installation and deployment costs: rely on solutions that were simple enough that existing non-expert personnel could be trained to deploy.
+* Minimize day-to-day maintenance and deployment: this drove strategies for long battery life among others.
+* Design a deployment process that ensured install team could easily add sensor location metadata to allow for rich reporting and analysis once IoT sensor network was operational.
+* Limit the IT resources needed for deployment</p>
 
-<p><strong>Digital concierge</strong> &ndash; expect to sign in digitally on a device that will bind you, your calendar, your co-workers and your building. Through data expect intelligent routing to the best work space for your or your groups needs.</p>
+<h2>The  phased approach works best</h2>
 
-<p><strong>Location based services</strong> &ndash; sensors enable ‘just in time’ cleaning services that clear flexible working space when meetings conclude, or sweep loitering coffee cups and deliver fresh coffee during breaks in longer workshops.</p>
+<p>First, we looked at many sensors, evaluating quality, signal-to-noise ratio and power consumption. It&rsquo;s always a good idea to get a handful of different types of sensors and try them out in a very small scale. We chose an infrared red sensor with good battery life-time and a single LoRa gateway that could support all the floors and provide connection to the cloud.</p>
 
-<p><strong>Environmental factors</strong> &ndash; expect IoT to bubble up environmental data such as air quality, temperature, humidity, light and noise that can be used to adjust HVAC systems in real time, or to aide interior designers in improving the workplace.</p>
+<p>Next we did a full end-to-end test, where we hooked up 5-10 sensors up completely to a cloud infrastructure all the way through the connectivity gateway. Now we had real data flowing into the infrastructure and could verify that the queries and analytics were feasible.  This step just makes sure everything works as planned and you will get all the data that you will need.</p>
 
-<p><strong>Smart facilities management</strong> &ndash; location based services coupled with smart energy grid technology will allow fine tuning of energy supply reacting to changes in demand and national grid status (smart grid frequency response).</p>
+<p>Once you&rsquo;re happy with the proof of concept phase, it is time for the real pilot phase. Instead of having just a handful of working sensors, now you&rsquo;ll hook up an entire floor or a street or whatever your use case might be. It should be somewhere between thirty, forty, maybe up to a hundred sensors. At this point you can ensure that the sensors work at scale and the gateway can handle the load. Typically we see customers running these for a month or two to get a good feel for how the sensors will perform in a production situation.</p>
 
-<p><strong>Data science</strong> &ndash; each of the above services a specific need whilst wrangling data sets into an ordered store. Technology like opensensors can then add further value through real time dashboarding for health and safety or real time productivity management. Furthermore, once data is captured we can apply machine learning to deeper understand the interactions of our human resources and physical assets through A/B testing or other data science.</p>
+<p>After the pilot phase, you should have enough data to verify network performance and your choices for sensors and gateways. Now you can plan the full deployment in detail. It’s been our experience, based on a number of customer installations, that the most successful IoT networks follow these steps in a phased implementation approach.</p>
 
-<p>Unlocking great UX in buildings boils down to data; capturing it, wrangling it, applying science and iterating to make things better. First we must gather the data from the systems in place (see First ‘Things’ First) whilst supplementing from new devices such as air quality, occupancy through sensors or beacons. Having provided a robust data fabric tenants need to become active rather than passive, agile rather than rigid in their approach to managing their assets. IoT devices and data services will deliver an edge for delivering the best of breed user experience that tenants value so highly.</p>
+<p> The technology at the silicon, software, and system level continues to evolve rapidly and our aim is to reduce the time to go live and minimise risk.  The internet of things is a nebulous term that includes quite a lot of specialised skillsets such as sensor manufacturing, network design, data analysis, etc.</p>
+
+<p>In order to make projects successful, we have taken the approach of building many hardware, installation and network provider partnerships, and relationships to help customers succeed as opposed to trying to do it all ourselves.  We have been working with customers to develop methods to lower the sensor density and in turn lower the cost of projects whilst still getting comparable accuracy.</p>
+
+<p>Contact us if you would like assistance on sensor selection, network design, or planning a proof of concept deployment.</p>
+
+<p><img src="/images/office.jpg" /></p>
 ]]></content>
   </entry>
   

@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "1.9.3"
+ruby "2.3.1"
 
 group :development do
   gem 'rake', '~>  10.4.2'
@@ -14,7 +14,7 @@ group :development do
   gem 'rubypants', '~> 0.2.0'
   gem 'rb-fsevent', '~> 0.9'
   gem 'stringex', '~> 1.4.0'
-  gem 'liquid', '~> 2.3.0'
+  gem 'liquid', '~> 2.6.2'
   gem 'directory_watcher', '1.4.1'
 end
 
