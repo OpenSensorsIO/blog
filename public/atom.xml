@@ -4,7 +4,7 @@
   <title><![CDATA[OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2016-10-06T10:19:18+01:00</updated>
+  <updated>2016-10-17T19:28:33+01:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tips for Installing a Community Air Quality Sensor Network]]></title>
+    <link href="http://blog.opensensors.io/blog/2016/10/17/tips-for-installing-a-community-air-quality-sensor-network/"/>
+    <updated>2016-10-17T19:15:00+01:00</updated>
+    <id>http://blog.opensensors.io/blog/2016/10/17/tips-for-installing-a-community-air-quality-sensor-network</id>
+    <content type="html"><![CDATA[<p>Small air pollution sensor technologies have enabled deployment of numerous sensors across a small geographic area that can supplement existing monitoring networks and significantly reduce the cost of longer-term community air pollution studies.This helps mitigate the risk of current approaches to monitoring air quality in a region that rely on only a dozen or so stations and may give you an average that is not be representative of what’s happening where you live.</p>
+
+<h2>What are you trying to do</h2>
+
+<p>Air quality is affected by many possible contaminants, in fact the Environmental Protection Agency (EPA) has identified six “criteria pollutants” as pollutants of concern because of their impacts on health and the environment . The criteria pollutants (<a href="http://www.epa.gov/airquality/urbanair/">http://www.epa.gov/airquality/urbanair/</a>)  are:</p>
+
+<ol>
+<li>ozone (O3) <a href="http://www.epa.gov/air/ozonepollution/">http://www.epa.gov/air/ozonepollution/</a></li>
+<li>particulate matter (PM) <a href="http://www.epa.gov/air/particlepollution/">http://www.epa.gov/air/particlepollution/</a></li>
+<li>carbon monoxide (CO)  <a href="http://www.epa.gov/airquality/carbonmonoxide/">http://www.epa.gov/airquality/carbonmonoxide/</a></li>
+<li>nitrogen dioxide (NO2) <a href="http://www.epa.gov/air/nitrogenoxides/">http://www.epa.gov/air/nitrogenoxides/</a></li>
+<li>sulfur dioxide (SO2) <a href="http://www.epa.gov/air/sulfurdioxide/">http://www.epa.gov/air/sulfurdioxide/</a></li>
+<li>lead (Pb). <a href="http://www.epa.gov/air/lead/">http://www.epa.gov/air/lead/</a></li>
+</ol>
+
+
+<p>Under the Clean Air Act, the EPA has established primary and secondary National Ambient Air Quality Standards (NAAQS) for these six pollutants. As you begin, keep in mind what you want to measure and how that information will be used. Is there some final output or final report you&rsquo;ve got to get to?</p>
+
+<h2>Understand your sensor choices for collecting air quality data</h2>
+
+<p>Commercially available sensors can measure the level of potential contaminants including  O3, NO2, NO, SO2, CO, PM2.5 and lead.  These devices should be designed to be easy to connect and provide quality data measurements so that non technical community groups can deploy them.</p>
+
+<p>Here are some factors to consider in assessing options for sensors to collect air quality data
+* cost
+* operating lifetime
+* accuracy, precision,and bias of measurement
+* range of sensitivity
+* speed of response time
+* maintenance requirements
+* reliability</p>
+
+<p>More information on what and how to measure see <a href="https://cfpub.epa.gov/si/si_public_file_download.cfm?p_download_id=519616">https://cfpub.epa.gov/si/si_public_file_download.cfm?p_download_id=519616</a></p>
+
+<p>Beyond the sensors, you will need to make tradeoffs between cost and redundancy for the best network connectivity.</p>
+
+<p>Point to point &ndash; lowest cost, greater number of coverage points, least redundancy for each individual point
+Mesh &ndash; higher cost, greater redundancy</p>
+
+<p>Most community-based sensor networks are adopting point-to-point network connectivity because of the ease of connection and low-cost structure. Here is a guide that we already have around pros and cons around connectivity, use that to find the best connectivity network</p>
+
+<h2>Our Process</h2>
+
+<p>OpenSensors recommends a phased approach, from proof of concept to full-scale deployment, to ensure a successful installation of an IoT network in a business environment. Our aim is to reduce the time to go live and minimize risk.</p>
+
+<h3>Phase 1 Evaluate sensors:</h3>
+
+<p>Evaluate different sensors for quality, signal-to-noise ratio, power consumption and ease of setup by trying them out on a very small scale in a lab.</p>
+
+<h3>Phase 2 Proof of concept:</h3>
+
+<p>Do a full end-to-end test to verify that the queries and analytics were feasible. Connect 5 to 10 sensors to a cloud infrastructure.</p>
+
+<h3>Phase 3 Pilot phase:</h3>
+
+<p>Move out of the lab into your actual environment. Typically, this requires somewhere between 30 to 100 sensors. We suggest a one to two-month test to ensure that the sensors work at scale and the gateway can handle the load, similar to production usage.</p>
+
+<p>In addition to testing the sensors in the wild, this is the time to think through your onboarding process for the devices.  Questions like; who will install the sensors feeds into design decisions on the firmware of how much pre-configuration has to be done.  We recommend a ‘just works’ approach and an assumption that all sensors will be installed by people who willnot configure firmware.  If you need to deploy 200-300 sensors, the installation engineers need to be able to deploy a lot of sensors in a distributed physical environment over a short amount of time.  It is much more efficient for your sensors to be pre configured.  In these situations, we give usually give people a simple interface to enable them to add meta data such as location and elevation.  Sensors should be labelled clearly and details pre-loaded on a cloud platform like OpenSensors before they are deployed so that adding meta data information is a matter of 1-2 steps.</p>
+
+<h3>Phase 4 Plan and implement full-scale deployment:</h3>
+
+<p>After the pilot phase, there should be enough data to verify network performance and your choices for sensors and connectivity, after which, full deployment can be planned in detail and implemented.</p>
+
+<p>Contact us if you would like assistance on sensor selection, network design, or planning a proof of concept deployment.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Path to Smart Buildings]]></title>
@@ -346,7 +417,7 @@ So we have considered NO2 as our core measure, in part because there are more se
 </ul>
 
 
-<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#99;&#x6f;&#109;&#109;&#x65;&#x72;&#x63;&#x69;&#x61;&#108;&#116;&#101;&#x61;&#x6d;&#x40;&#x6f;&#x70;&#101;&#x6e;&#115;&#101;&#x6e;&#115;&#x6f;&#x72;&#x73;&#x2e;&#105;&#111;">&#99;&#111;&#109;&#x6d;&#x65;&#x72;&#99;&#105;&#97;&#x6c;&#x74;&#101;&#x61;&#x6d;&#x40;&#x6f;&#x70;&#101;&#110;&#x73;&#x65;&#110;&#115;&#111;&#x72;&#x73;&#x2e;&#105;&#x6f;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
+<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#99;&#111;&#109;&#x6d;&#x65;&#114;&#99;&#105;&#97;&#108;&#x74;&#101;&#97;&#109;&#x40;&#111;&#x70;&#101;&#x6e;&#x73;&#101;&#110;&#115;&#111;&#114;&#x73;&#46;&#x69;&#111;">&#99;&#111;&#x6d;&#109;&#101;&#114;&#x63;&#105;&#97;&#108;&#116;&#101;&#x61;&#x6d;&#64;&#x6f;&#112;&#101;&#110;&#115;&#x65;&#110;&#115;&#111;&#114;&#115;&#46;&#105;&#111;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
 ]]></content>
   </entry>
   
@@ -475,7 +546,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p><img src="http://blog.opensensors.io/images/editswitch.png" /></p>
 
 <ul>
-<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#111;&#104;&#x6d;&#121;&#103;&#111;&#x64;&#105;&#116;&#104;&#x61;&#x70;&#x70;&#x65;&#110;&#x64;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#x6d;&#46;">&#x6f;&#x68;&#109;&#x79;&#103;&#111;&#100;&#105;&#116;&#104;&#x61;&#112;&#112;&#101;&#110;&#x64;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;&#46;</a></li>
+<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#111;&#104;&#109;&#121;&#103;&#111;&#100;&#x69;&#116;&#104;&#97;&#x70;&#x70;&#101;&#110;&#x64;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;&#x2e;">&#111;&#104;&#x6d;&#x79;&#103;&#x6f;&#x64;&#x69;&#x74;&#x68;&#x61;&#x70;&#112;&#101;&#x6e;&#x64;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;&#46;</a></li>
 </ul>
 
 
@@ -494,7 +565,7 @@ In this short tutorial, we’re showing you how to use OpenSensors together with
 <p>We hope that this flow is getting you started! Remember that Node-RED is superbly suited to interact with hardware… &hellip;imagine LEDs and buzzers indicating an earthquake.</p>
 
 <p>The flow JSON:
-[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#111;&#104;&#x6d;&#121;&#103;&#111;&#100;&#105;&#116;&#x68;&#97;&#112;&#112;&#x65;&#110;&#101;&#x64;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#111;&#104;&#x6d;&#x79;&#x67;&#111;&#100;&#x69;&#116;&#104;&#97;&#112;&#x70;&#x65;&#110;&#x65;&#x64;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#x6d;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
+[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#111;&#104;&#x6d;&#x79;&#x67;&#111;&#x64;&#x69;&#x74;&#x68;&#x61;&#x70;&#112;&#101;&#110;&#101;&#100;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;">&#111;&#x68;&#109;&#x79;&#x67;&#x6f;&#100;&#105;&#116;&#x68;&#x61;&#x70;&#112;&#101;&#110;&#x65;&#x64;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
 ]]></content>
   </entry>
   
@@ -675,7 +746,7 @@ particular protocol you love feel free to send us an <a href="hello@opensensors.
 
 <p>As some of you may have noticed, we released a stripped down Alpha version of Orgs in our last release. We’ve learned from your feedback.</p>
 
-<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#104;&#x65;&#x6c;&#x6c;&#111;&#x40;&#111;&#x70;&#x65;&#110;&#x73;&#x65;&#110;&#115;&#x6f;&#114;&#115;&#x2e;&#x69;&#x6f;">&#x68;&#x65;&#x6c;&#108;&#111;&#x40;&#x6f;&#112;&#101;&#110;&#x73;&#101;&#x6e;&#115;&#x6f;&#114;&#115;&#x2e;&#x69;&#x6f;</a> for a voucher.</p>
+<p>And we’re not finished yet, we have a lot of plans for Orgs and this is the first step in the journey.  To celebrate IOT day we are giving away 3 months worth of Organisational hosting and functionality to IoT startups.  Get in touch on <a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#104;&#x65;&#108;&#108;&#x6f;&#x40;&#111;&#x70;&#x65;&#110;&#115;&#101;&#x6e;&#115;&#111;&#x72;&#115;&#x2e;&#105;&#111;">&#104;&#101;&#108;&#x6c;&#111;&#64;&#x6f;&#x70;&#101;&#x6e;&#x73;&#101;&#x6e;&#x73;&#111;&#114;&#115;&#46;&#x69;&#111;</a> for a voucher.</p>
 
 <p>For more details about Organisations and how to use them check out our
 <a href="https://opensensors.io/help/">help pages</a></p>
@@ -734,7 +805,7 @@ will be adding it to my toolkit.</p>
 
 <p>Does this help you solve a problem you’ve been having with your
 connected sensors? If so get contact and let us know what you are up
-to on <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#104;&#x65;&#108;&#x6c;&#x6f;&#64;&#111;&#112;&#101;&#110;&#x73;&#x65;&#110;&#115;&#x6f;&#114;&#115;&#x2e;&#x69;&#x6f;">&#x68;&#101;&#x6c;&#x6c;&#111;&#64;&#x6f;&#x70;&#101;&#x6e;&#115;&#101;&#110;&#115;&#x6f;&#x72;&#115;&#x2e;&#105;&#111;</a></p>
+to on <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#x65;&#108;&#108;&#x6f;&#x40;&#111;&#112;&#x65;&#x6e;&#115;&#101;&#110;&#115;&#x6f;&#x72;&#x73;&#x2e;&#105;&#111;">&#x68;&#101;&#108;&#108;&#111;&#64;&#111;&#x70;&#x65;&#110;&#x73;&#x65;&#110;&#x73;&#x6f;&#x72;&#115;&#x2e;&#105;&#x6f;</a></p>
 ]]></content>
   </entry>
   
@@ -985,28 +1056,6 @@ time.sleep(1);
 <p>WE recommend adjusting the Arduino code to output the data in JSON format. This will make it easier to read and add functionality.</p>
 
 <p>You can check out the topic producing Open Data we created <a href="https://opensensors.io/topics/users/Louis/ODI/airquality">here</a>!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Search Has Landed]]></title>
-    <link href="http://blog.opensensors.io/blog/2015/02/16/search-has-landed/"/>
-    <updated>2015-02-16T10:51:00+00:00</updated>
-    <id>http://blog.opensensors.io/blog/2015/02/16/search-has-landed</id>
-    <content type="html"><![CDATA[<p>There’s a lot of data out there. We’re doing our best to help you discover it. With the latest release of OpenSensors, users are now able to search the OpenSensors database of thousands of real-time public Open Data feeds and subscribe to Topics of interest.</p>
-
-<p>To search the OSIO datasets simply type your query into the search box at the top of the site. A search query can relate to any parts of a Topic, name, unit, description, or the user who created the Topic.</p>
-
-<p>Once found, you can subscribe to a Topic by clicking on the star icon allowing you to build a library of bookmarked Topics of interest that you can recall at any time in the new Favourite Topics page.</p>
-
-<p>The savvy user will note the new Organisation page too. Organisations will enable you to own a topic tree for your business or citizen science group under</p>
-
-<pre><code>/orgs/&lt;business name&gt;/*
-</code></pre>
-
-<p>but other people such as members of your group or customers can publish to the organisations topic tree, the clearest example of this is Github’s organisations.  Organisations will help you manage your products and assets out in the wild whether in cities or people’s homes.</p>
-
-<p>This is the first, very much alpha, iteration of the seamless connected experiences we are building throughout the next releases over the coming days, along with Featured Feeds and dynamic data feed visualisations.</p>
 ]]></content>
   </entry>
   
