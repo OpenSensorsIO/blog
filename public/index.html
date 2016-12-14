@@ -9,7 +9,7 @@
   <meta name="author" content="OpenSensors.IO">
 
   
-  <meta name="description" content="Small air pollution sensor technologies have enabled deployment of numerous sensors across a small geographic area that can supplement existing &hellip;">
+  <meta name="description" content="On a daily basis our customers and community ask us to recommend a sensor provider to buy from, you should ping me on &#104;&#101;&#108;&#108;&#x6f &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,75 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/12/13/the-good-sensor/">The Good Sensor</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-12-13T18:55:00+00:00" pubdate data-updated="true">Dec 13<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+
+
+  <div class="entry-content"><p>On a daily basis our customers and community ask us to recommend a sensor provider to buy from, you should ping me on <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#104;&#x65;&#108;&#x6c;&#111;&#64;&#x6f;&#112;&#101;&#x6e;&#x73;&#x65;&#x6e;&#115;&#111;&#x72;&#x73;&#46;&#x69;&#111;">&#104;&#101;&#108;&#108;&#x6f;&#x40;&#x6f;&#112;&#101;&#110;&#x73;&#101;&#x6e;&#x73;&#111;&#x72;&#115;&#x2e;&#x69;&#111;</a> if you want us to recommend your sensor.  Often the requirement is vague, “I need an air quality sensor to put on my street for $100?” or “What sensors shall I use to understand my space usage?”.  My process of assessment has grown more refined over time because if the sensors we recommend are unsuitable or unusable our company’s reputation is also on the line by association.</p>
+
+<p>So we have come up with our own unscientific way to rate the quality of a sensor that should be applied simply.  Most large scale sensor rollout projects of 1K or more often have these requirements as well.  It’s possible that sensor providers that don’t rate highly using our criteria produce good sensors but getting the below right takes iteration and discipline in design and the likelihood is that the provider will a higher chance of being able to deliver.</p>
+
+<p>Battery life
+If a sensor is battery powered, the typical expected life of battery should be clearly stated.  Buyers will often want some explanation of what typical means for your sensor i.e. if it’s a PIR sensor have you calculated battery life based on being triggered once a day?  The last thing your customers wants to do is invest in a lot of sensors, plus the cost of installation in order to find out that the battery life is only % of what they expected as it will still cost them a lot of money to rip them out and return them.</p>
+
+<p>Bonus point for sensors that publish their battery status as standard so that the sensor owners can have some warning before changing.</p>
+
+<h2>Heartbeats</h2>
+
+<p>Sensors should tell people whether they are still alive or not periodically.  Depending on your battery and connectivity constraints, this can vary, the important thing is that the buyer should not find out a bunch of devices are not working because they haven’t been heard from in days or weeks.  Top tip; Heartbeats every 10-60 minutes when possible is sufficient, anymore and it ceases to be informative.</p>
+
+<h2>Installation and maintenance procedure</h2>
+
+<p>In non consumer environments, the people installing and maintaining sensors are often not the technical design firms or manufacturers.  Does your device clearly tell people how to install it, do you have helper applications so that they don’t have to configure firmware? We are working on some solutions for this but more on this later; hint it’s all about enabling people to install sensors efficiently and a non technical installer being able to walk away knowing that the device has joined the network correctly. Does your sensor come with mounting and fittings?</p>
+
+<p>Do people have to unscrew the casing to change batteries?  Have you tested this with people and verified it?</p>
+
+<h2> Data Quality</h2>
+
+<p>Quality in my definition means, is the data from your sensor easily understandable for someone that doesn’t know your domain.  The reality is that often manufacturers pass on the analogue value of the particular sensor and that is too low of an abstraction for most people trying to read it.  Battery voltage is a good example, during its life an AA battery will go from 1.5v to about 0.8v, but it follows a curve specific to the device and the battery. Understanding how this maps to a percentage or days of life is often complex. If it’s not possible to do much conversions or processing on your sensor or gateway, perhaps a handy explainer when people buy your device making them understand what the data means.</p>
+
+<h2>Support</h2>
+
+<p>Please state clear terms for warranties and return procedures to protect your consumers. Consumer protection should naturally apply.</p>
+
+<p>Finally developing high quality hardware is hard, I am always amazed at the skill and dedication it takes when hardware designers and engineers take an idea and get it to manufacturing stage.  We try to manage the community’s expectations on sensors they should buy vs the attitude of ‘just throw around cheap sensors’.  It would be better in terms of environmental sustainability and user experience to get into the habit of doing more with less sensor density.  For more on this, see Dr Boris Adryan’s <a href="http://iot.ghost.io/less-can-be-more-in-sensor-deployment/">excellent blog post</a></p>
+
+<p>I have purposefully not mentioned security in this post as security assessments come with a lot of complexity, will aim to write up on this sometime soon.</p>
+
+<p>Many Thanks to Toby Jaffey for editing.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -183,6 +252,10 @@ Mesh &ndash; higher cost, greater redundancy</p>
 <h3>Phase 4 Plan and implement full-scale deployment:</h3>
 
 <p>After the pilot phase, there should be enough data to verify network performance and your choices for sensors and connectivity, after which, full deployment can be planned in detail and implemented.</p>
+
+<h2>Want to create your own Air Quality project?</h2>
+
+<p>The EPA Smart City Air Challenge (<a href="https://www.challenge.gov/challenge/smart-city-air-challenge/">https://www.challenge.gov/challenge/smart-city-air-challenge/</a>) is now live. The challenge is trying to help communities figure out how to manage installations of 250 to 500 sensors and make the data public.  OpenSensors.io is free to use for community projects working on IoT Open Data projects and will be supporting the EPA&rsquo;s iniative.</p>
 
 <p>Contact us if you would like assistance on sensor selection, network design, or planning a proof of concept deployment.</p>
 </div>
@@ -724,7 +797,7 @@ So we have considered NO2 as our core measure, in part because there are more se
 </ul>
 
 
-<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#99;&#111;&#109;&#x6d;&#x65;&#114;&#99;&#105;&#97;&#108;&#x74;&#101;&#97;&#109;&#x40;&#111;&#x70;&#101;&#x6e;&#x73;&#101;&#110;&#115;&#111;&#114;&#x73;&#46;&#x69;&#111;">&#99;&#111;&#x6d;&#109;&#101;&#114;&#x63;&#105;&#97;&#108;&#116;&#101;&#x61;&#x6d;&#64;&#x6f;&#112;&#101;&#110;&#115;&#x65;&#110;&#115;&#111;&#114;&#115;&#46;&#105;&#111;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
+<p>Opensensors has firmly backed Open Source and Open Data as the best way to yield value from the Internet of Things choosing to collaborate with the tech community to enable facilities managers to build higher order systems focused on their domain expertise.  Please contact <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#99;&#111;&#109;&#109;&#x65;&#x72;&#x63;&#x69;&#97;&#108;&#x74;&#101;&#97;&#x6d;&#64;&#111;&#112;&#101;&#x6e;&#x73;&#x65;&#110;&#115;&#x6f;&#114;&#x73;&#46;&#105;&#x6f;">&#x63;&#111;&#x6d;&#x6d;&#x65;&#114;&#x63;&#105;&#x61;&#108;&#116;&#x65;&#97;&#109;&#64;&#x6f;&#112;&#101;&#x6e;&#x73;&#101;&#x6e;&#115;&#111;&#x72;&#115;&#46;&#105;&#111;</a> should you have a need for a smart building workshop or are ready to build your next generation smart building product.</p>
 </div>
   
   
@@ -781,156 +854,6 @@ So we have considered NO2 as our core measure, in part because there are more se
 <p><strong>Data science</strong> &ndash; each of the above services a specific need whilst wrangling data sets into an ordered store. Technology like opensensors can then add further value through real time dashboarding for health and safety or real time productivity management. Furthermore, once data is captured we can apply machine learning to deeper understand the interactions of our human resources and physical assets through A/B testing or other data science.</p>
 
 <p>Unlocking great UX in buildings boils down to data; capturing it, wrangling it, applying science and iterating to make things better. First we must gather the data from the systems in place (see First ‘Things’ First) whilst supplementing from new devices such as air quality, occupancy through sensors or beacons. Having provided a robust data fabric tenants need to become active rather than passive, agile rather than rigid in their approach to managing their assets. IoT devices and data services will deliver an edge for delivering the best of breed user experience that tenants value so highly.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/08/14/monitoring-for-earthquakes-with-node-red/">Monitoring for Earthquakes With Node-red</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-08-14T15:07:00+01:00" pubdate data-updated="true">Aug 14<span>th</span>, 2015</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><p>OpenSensors now capture seismic data from the Euro-Med Seismic Centre (EMSC) and the United States Geological Survey (USGS). Every ten minutes we are polling the latest information of major and minor earthquakes around the globe and make this information available via our programming interface (API) or as MQTT feed.
-In this short tutorial, we’re showing you how to use OpenSensors together with Node-RED to receive email alerts whenever there’s a major incident in a region of interest. You can use this guide as starting point for further experiments with Node-RED and develop your own earthquake-triggered workflows. Let’s shake it.</p>
-
-<h2>On OpenSensors</h2>
-
-<ul>
-<li><p>First, you need to login to your account on OpenSensor or sign up for one if you haven’t done so already at <a href="https://opensensors.io.">https://opensensors.io.</a></p></li>
-<li><p>Next, it’s good practice to have a new ‘device’ for this application, i.e. a dedicated set of credentials you’re going to use to log in to OpenSensors for this particular set of MQTT feeds.</p>
-
-<ul>
-<li>In the panel on the left, click My Devices in the Devices menu.</li>
-<li>Click the yellow Create New Device button at the top of the page.</li>
-<li>Optional: Add some optional descriptions and press the disk icon to save your new device.</li>
-<li>Take a note of your ‘Client id’ and ‘Password’ as you’re going to need them in your Node-RED workflow.</li>
-</ul>
-</li>
-</ul>
-
-
-<p><img src="/images/quakelistener.png" /></p>
-
-<h2>For Node-RED</h2>
-
-<p>Install node.js and Node-RED on your system. There’s a very good guide for this on the <a href="http://nodered.org/docs/getting-started/installation.html">Node-RED website</a>. Follow the instructions, including the separate section on Running Node-RED.</p>
-
-<p>Once you’re ready, open a web browser and direct it to localhost:1880, the default address and port of the Node-RED GUI on your system.</p>
-
-<p><img src="/images/noderedquake.png" /></p>
-
-<p>(A very basic description of the Node-RED vocabulary can also be found at <a href="http://www.slideshare.net/BorisAdryan/node-red-workflowcoursetoulouse">SlideShare</a>.)</p>
-
-<h2>Developing a workflow</h2>
-
-<ul>
-<li><p>From the input panel of your nodes library on the left side, drag and drop a pink mqtt input node into the work area named Sheet  1.</p></li>
-<li><p>Double-click the mqtt node. A window with configuration details opens.</p>
-
-<ul>
-<li>Click the pen symbol next to ‘Add new mqtt-broker&hellip;’. Your Broker is opensensors.io, your Client ID and Password those you generated in the previous step on the OpenSensors website, and User is your OpenSensor user name.</li>
-</ul>
-</li>
-</ul>
-
-
-<p><img src="/images/noderedmqtt.png" /></p>
-
-<ul>
-<li>Once the Broker is defined, enter /orgs/EMSC/+ into the Topic field. This is going to instruct Node-RED to subscribe to all MQTT topics generated by the EMSC.</li>
-<li><p>Optional: Set the Name of this node to ‘EMSC’.</p></li>
-<li><p>Drag and drop a second mqtt input node. When you double-click the node, you will realise that the Broker settings default to the ones you previously entered.</p>
-
-<ul>
-<li>Enter /orgs/USGS/+ in the Topics field and ‘USGS’ as optional Name.</li>
-</ul>
-</li>
-<li><p>Drag and drop a dark green debug node from the output panel on the left. While debugging has the connotation of fixing a problem, in Node-RED it’s the default way of directly communicating messages to the user.</p></li>
-<li><p>Draw connection lines (“pipes”) from both mqtt nodes to the debug node.</p></li>
-</ul>
-
-
-<p><img src="/images/noderedflow.png" /></p>
-
-<ul>
-<li>Press the red Deploy button in the upper right corner. This starts your Node-RED flow. If everything worked, you should see ‘connected’ underneath the mqtt nodes and your debug panel (on the right) should soon produce the following JSON-formatted output if there’s an event (which may take a while!):</li>
-</ul>
-
-
-<p><img src="/images/nddebugger.png" /></p>
-
-<p>While it is pleasing to be informed about every time the earth shakes, it soon becomes tedious staring at the debug panel in expectation of an earthquake. Also, you may not be interested in events in remote areas of the world, or exactly in those &ndash; whatever interests you.</p>
-
-<p>We are going to extend our flow with some decision making:</p>
-
-<p>First, we need to parse the information from the EMSC and USGS. For this example, we’re going to be particularly interested in the fields region and magnitude. There are plenty more fields in their records, and you may want to adjust this flow to your needs.</p>
-
-<ul>
-<li><p>Drag and drop a pale orange function node from the functions panel into your flow. Connect both mqtt nodes to the input side (the left side) of your function node. Function nodes allow you directly interact with your data using JavaScript.</p></li>
-<li><p>Enter the following code (or download the OpenSensors workflow).</p></li>
-</ul>
-
-
-<p><img src="/images/nseditor.png" /></p>
-
-<p>Here be a JavaScript course… :&ndash;) In a nutshell, this code takes data from the ‘payload’ of the incoming message (read up on the topic and payload concept of Node-RED in the SlideShare article suggested earlier). The payload is then parsed for the region and magnitude fields using standard regular expressions. If we can successfully extract information (in this case: the region containing ‘ia’ somewhere in it’s name), we’re going to set the outgoing message’s payload to the magnitude, its topic to ‘EVENT in ‘ plus the name of the region and pass it on (‘return msg’) to the next node.</p>
-
-<ul>
-<li>Drag and drop a lime green switch node from the function panel into your workflow. Connect the output of the function node to the input of the switch node. Configure (by double-clicking) the switch node to assert if the payload (being the magnitude of the earthquake) is greater than 2. Only then the message is going to be passed on.</li>
-</ul>
-
-
-<p><img src="/images/editswitch.png" /></p>
-
-<ul>
-<li>Last, we’re going to drag and drop a light green e-mail output node from the social panel and configure it like an e-mail client, but with a default recipient: here in this case, <a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#111;&#104;&#109;&#121;&#103;&#111;&#100;&#x69;&#116;&#104;&#97;&#x70;&#x70;&#101;&#110;&#x64;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;&#x2e;">&#111;&#104;&#x6d;&#x79;&#103;&#x6f;&#x64;&#x69;&#x74;&#x68;&#x61;&#x70;&#112;&#101;&#x6e;&#x64;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;&#46;</a></li>
-</ul>
-
-
-<p><img src="/images/nseditemail.png" /></p>
-
-<ul>
-<li><p>Connect the output of the switch node to our debug node, as well as to the outgoing e-mail node.</p></li>
-<li><p>We can then deploy the new workflow and should see something like this after a while:</p></li>
-</ul>
-
-
-<p><img src="/images/newflow.png" /></p>
-
-<p>In this case, an event was detected ‘off the coast of Northern California’ with a magnitude of 4.4 and at the same time, you should receive an e-mail with the region as subject and the magnitude in the body of the e-mail.</p>
-
-<p>We hope that this flow is getting you started! Remember that Node-RED is superbly suited to interact with hardware… &hellip;imagine LEDs and buzzers indicating an earthquake.</p>
-
-<p>The flow JSON:
-[{&ldquo;id&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt-broker&rdquo;,&ldquo;broker&rdquo;:&ldquo;opensensors.io&rdquo;,&ldquo;port&rdquo;:&ldquo;1883&rdquo;,&ldquo;clientid&rdquo;:&ldquo;1646&rdquo;},{&ldquo;id&rdquo;:&ldquo;2952b879.d6ad48&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;EMSC&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/EMSC/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:127,&ldquo;y&rdquo;:104,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;54239d6.fabdc64&rdquo;,&ldquo;type&rdquo;:&ldquo;mqtt in&rdquo;,&ldquo;name&rdquo;:&ldquo;USGS&rdquo;,&ldquo;topic&rdquo;:&ldquo;/orgs/USGS/+&rdquo;,&ldquo;broker&rdquo;:&ldquo;e9024ae0.16fdb8&rdquo;,&ldquo;x&rdquo;:128,&ldquo;y&rdquo;:159,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;163677af.e9c988&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;type&rdquo;:&ldquo;debug&rdquo;,&ldquo;name&rdquo;:&ldquo;&rdquo;,&ldquo;active&rdquo;:true,&ldquo;console&rdquo;:&ldquo;false&rdquo;,&ldquo;complete&rdquo;:&ldquo;false&rdquo;,&ldquo;x&rdquo;:538,&ldquo;y&rdquo;:86,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]},{&ldquo;id&rdquo;:&ldquo;163677af.e9c988&rdquo;,&ldquo;type&rdquo;:&ldquo;function&rdquo;,&ldquo;name&rdquo;:&ldquo;parse&rdquo;,&ldquo;func&rdquo;:&ldquo;// uppercase the payload (different centres report in mixed formats)\nmsg.payload = msg.payload.toUpperCase();\n\n// extracting interesting fields with regular expressions,\n// instead of using JSON.parse which fails with null fields\nvar places_with_ia_regex = new RegExp(&#34;REGION&#92;&rdquo;:&#92;&ldquo;(.<em>IA.</em>)&#92;&rdquo;,&#92;&ldquo;UPDATED\&rdquo;);\nvar result1 = places_with_ia_regex.exec(msg.payload);\n\nvar magnitude_regex = new RegExp(\&ldquo;MAGNITUDE&#92;&rdquo;:([0-9].[0-9]+)\&ldquo;);\nvar result2 = magnitude_regex.exec(msg.payload);\n\n// if successful, sets topic to the region and payload to the magnitude\nif (result1 &amp;&amp; result2) {\n  msg.topic = &lsquo;EVENT in &rsquo;+result1[1];\n  msg.payload = result2[1];\n  return msg;\n}&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;noerr&rdquo;:0,&ldquo;x&rdquo;:296,&ldquo;y&rdquo;:251,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;64f4f2ea.9b0b0c&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;64f4f2ea.9b0b0c&rdquo;,&ldquo;type&rdquo;:&ldquo;switch&rdquo;,&ldquo;name&rdquo;:&ldquo;at least magnitude 2&rdquo;,&ldquo;property&rdquo;:&ldquo;payload&rdquo;,&ldquo;rules&rdquo;:[{&ldquo;t&rdquo;:&ldquo;gte&rdquo;,&ldquo;v&rdquo;:&ldquo;2&rdquo;}],&ldquo;checkall&rdquo;:&ldquo;true&rdquo;,&ldquo;outputs&rdquo;:1,&ldquo;x&rdquo;:428,&ldquo;y&rdquo;:179,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[[&ldquo;490a140f.b6f5ec&rdquo;,&ldquo;f7bcc59c.084338&rdquo;]]},{&ldquo;id&rdquo;:&ldquo;f7bcc59c.084338&rdquo;,&ldquo;type&rdquo;:&ldquo;e-mail&rdquo;,&ldquo;server&rdquo;:&ldquo;smtp.gmail.com&rdquo;,&ldquo;port&rdquo;:&ldquo;465&rdquo;,&ldquo;name&rdquo;:&ldquo;<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#111;&#104;&#x6d;&#x79;&#x67;&#111;&#x64;&#x69;&#x74;&#x68;&#x61;&#x70;&#112;&#101;&#110;&#101;&#100;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;">&#111;&#x68;&#109;&#x79;&#x67;&#x6f;&#100;&#105;&#116;&#x68;&#x61;&#x70;&#112;&#101;&#110;&#x65;&#x64;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a>&rdquo;,&ldquo;dname&rdquo;:&ldquo;&rdquo;,&ldquo;x&rdquo;:581,&ldquo;y&rdquo;:256,&ldquo;z&rdquo;:&ldquo;82a1c632.7d5e38&rdquo;,&ldquo;wires&rdquo;:[]}]</p>
 </div>
   
   

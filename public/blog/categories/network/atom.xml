@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Network | OpenSensors.IO]]></title>
   <link href="http://blog.opensensors.io/blog/categories/network/atom.xml" rel="self"/>
   <link href="http://blog.opensensors.io/"/>
-  <updated>2016-10-17T19:28:33+01:00</updated>
+  <updated>2016-12-13T19:08:23+00:00</updated>
   <id>http://blog.opensensors.io/</id>
   <author>
     <name><![CDATA[OpenSensors.IO]]></name>
@@ -79,6 +79,10 @@ Mesh &ndash; higher cost, greater redundancy</p>
 <h3>Phase 4 Plan and implement full-scale deployment:</h3>
 
 <p>After the pilot phase, there should be enough data to verify network performance and your choices for sensors and connectivity, after which, full deployment can be planned in detail and implemented.</p>
+
+<h2>Want to create your own Air Quality project?</h2>
+
+<p>The EPA Smart City Air Challenge (<a href="https://www.challenge.gov/challenge/smart-city-air-challenge/">https://www.challenge.gov/challenge/smart-city-air-challenge/</a>) is now live. The challenge is trying to help communities figure out how to manage installations of 250 to 500 sensors and make the data public.  OpenSensors.io is free to use for community projects working on IoT Open Data projects and will be supporting the EPA&rsquo;s iniative.</p>
 
 <p>Contact us if you would like assistance on sensor selection, network design, or planning a proof of concept deployment.</p>
 ]]></content>

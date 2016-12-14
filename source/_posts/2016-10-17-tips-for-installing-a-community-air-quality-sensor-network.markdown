@@ -61,5 +61,8 @@ In addition to testing the sensors in the wild, this is the time to think throug
 ### Phase 4 Plan and implement full-scale deployment:
 After the pilot phase, there should be enough data to verify network performance and your choices for sensors and connectivity, after which, full deployment can be planned in detail and implemented.
  
+## Want to create your own Air Quality project?
+The EPA Smart City Air Challenge (https://www.challenge.gov/challenge/smart-city-air-challenge/) is now live. The challenge is trying to help communities figure out how to manage installations of 250 to 500 sensors and make the data public.  OpenSensors.io is free to use for community projects working on IoT Open Data projects and will be supporting the EPA's iniative.
+
 Contact us if you would like assistance on sensor selection, network design, or planning a proof of concept deployment.
  
